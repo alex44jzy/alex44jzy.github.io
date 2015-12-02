@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[科学SciArt生活]]></title>
+  <subtitle><![CDATA[身下万丈深渊，头上无尽苍穹]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-12-02T13:23:57.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[江之源Alex]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[atom的强力plugin:activate-power-mode]]></title>
+    <link href="http://yoursite.com/2015/12/02/atom%E7%9A%84%E5%BC%BA%E5%8A%9Bplugin-activate-power-mode/"/>
+    <id>http://yoursite.com/2015/12/02/atom的强力plugin-activate-power-mode/</id>
+    <published>2015-12-02T09:02:56.000Z</published>
+    <updated>2015-12-02T13:23:57.000Z</updated>
+    <content type="html"><![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件，</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件，</p>
+]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[第一篇博文，姑且就叫Hello World]]></title>
+    <link href="http://yoursite.com/2015/11/30/hello-world/"/>
+    <id>http://yoursite.com/2015/11/30/hello-world/</id>
+    <published>2015-11-30T09:42:40.000Z</published>
+    <updated>2015-11-30T09:42:40.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to my own WebSite~~，试打两个中文<code>嘿嘿字体一般般</code>，本想改个洋气的名字，盯着这个<code>hello world</code>看了好一会儿，好吧，一切的孽缘可能都是源于这两个贱比单词。</p>
+<h3 id="关于博客">关于博客</h3><p>本博客其实已经拖了整整两个星期，鉴于本人只是一只菜狗，基础知识无比拙计，所以好多东西都还是TM没搞定，先写点搞定的吧。</p>
+<ul>
+<li>本博基于hexo，托管于github，完全废话。</li>
+<li>本博theme采用的是<a href="https://github.com/someus/huno" target="_blank" rel="external">huno</a>，源于Uno。</li>
+<li>本博后期会转向域名alexjiangzy.com，现在这个也就几天寿命。</li>
+<li>本博主要用于记录自己一些学习心得(哎呀)，可能会包括：前端，后端，算法，科研，艺术鉴赏，历史长廊……还可能包括自己的生活感悟和记录，可能还是会以生活小随笔为主嗯嗯，because我懒。</li>
+</ul>
+<h4 id="顺便列个明天的Todolist：">顺便列个明天的Todolist：</h4><ul>
+<li>要折腾主页的Logo。</li>
+<li>要折腾评论区功能，以后不要发反共反党言论哟。</li>
+<li>提交导师项目的中期报告，呵呵呵呵哒～</li>
+<li>看文章看文章看文章。</li>
+</ul>
+<h3 id="感谢">感谢</h3><p>感谢mushroom同学对于我生活上的无私关怀和对灵魂上的关照，感谢超哥对于我的敦促和悉心帮助。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to my own WebSite~~，试打两个中文<code>嘿嘿字体一般般</code>，本想改个洋气的名字，盯着这个<code>hello world</code>看了好一会儿，好吧，一切的孽缘可能都是源于这两个贱比单词。</p>
+<h3 id="关于]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
