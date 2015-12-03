@@ -4,7 +4,7 @@
   <subtitle><![CDATA[身下万丈深渊，头上无尽苍穹]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-02T14:58:11.000Z</updated>
+  <updated>2015-12-03T04:24:05.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,13 +19,13 @@
     <link href="http://yoursite.com/2015/12/02/atom%E7%9A%84%E5%BC%BA%E5%8A%9Bplugin-activate-power-mode/"/>
     <id>http://yoursite.com/2015/12/02/atom的强力plugin-activate-power-mode/</id>
     <published>2015-12-02T09:02:56.000Z</published>
-    <updated>2015-12-02T14:58:11.000Z</updated>
+    <updated>2015-12-03T04:24:05.000Z</updated>
     <content type="html"><![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
 <h3 id="工具">工具</h3><ul>
 <li>mac osx</li>
-<li><a href="atom.io">atom</a><h3 id="安装atom">安装atom</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install Caskroom/cask/atom #在安装homebrew的前提下</span><br></pre></td></tr></table></figure>
-</li>
+<li><a href="atom.io">atom</a></li>
 </ul>
+<h3 id="安装atom">安装atom</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">$ brew install Caskroom/cask/atom #&#22312;&#23433;&#35013;homebrew&#30340;&#21069;&#25552;&#19979;</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
