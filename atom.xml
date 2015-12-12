@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[科学SciArt生活]]></title>
-  <subtitle><![CDATA[身下万丈深渊，头上无尽苍穹]]></subtitle>
+  <subtitle><![CDATA[My Blog]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://alexjiangzy.com/"/>
   <updated>2015-12-04T13:59:41.000Z</updated>
@@ -48,15 +48,15 @@
     <link href="http://alexjiangzy.com/2015/12/02/atom%E7%9A%84%E5%BC%BA%E5%8A%9Bplugin-activate-power-mode/"/>
     <id>http://alexjiangzy.com/2015/12/02/atom的强力plugin-activate-power-mode/</id>
     <published>2015-12-02T09:02:56.000Z</published>
-    <updated>2015-12-11T09:12:05.000Z</updated>
+    <updated>2015-12-11T09:18:10.000Z</updated>
     <content type="html"><![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
 <h3 id="工具">工具</h3><ul>
 <li>mac osx</li>
 <li><a href="atom.io">atom</a></li>
 </ul>
-<h3 id="安装atom">安装atom</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>brew install <span class="constant">Caskroom</span>/cask/atom <span class="comment">#在安装homebrew的前提下</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'addEventListener'</span> <span class="keyword">in</span> <span class="built_in">document</span>) &#123;</span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    FastClick.attach(<span class="built_in">document</span>.body);</span><br><span class="line">  &#125;, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安装atom">安装atom</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>brew install <span class="constant">Caskroom</span>/cask/atom <span class="comment">#在安装homebrew的前提下</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'addEventListener'</span> <span class="keyword">in</span> <span class="built_in">document</span>) &#123;</span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    FastClick.attach(<span class="built_in">document</span>.body);</span><br><span class="line">  &#125;, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
