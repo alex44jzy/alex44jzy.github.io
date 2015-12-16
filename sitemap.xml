@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alexjiangzy.com/2015/12/14/atomPlugin/</loc>
+    <lastmod>2015-12-16T13:12:53.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://alexjiangzy.com/2015/11/29/helloWorld/</loc>
+    <lastmod>2015-12-16T12:51:05.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://alexjiangzy.com/about/index.html</loc>
-    <lastmod>2015-12-16T12:41:08.000Z</lastmod>
+    <lastmod>2015-12-16T12:46:06.000Z</lastmod>
   </url>
   
   <url>
@@ -12,18 +22,8 @@
   </url>
   
   <url>
-    <loc>http://alexjiangzy.com/2015/12/14/atomPlugin/</loc>
-    <lastmod>2015-12-14T15:24:48.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://alexjiangzy.com/tags/index.html</loc>
     <lastmod>2015-12-11T09:15:51.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://alexjiangzy.com/2015/12/04/helloWorld/</loc>
-    <lastmod>2015-12-04T13:59:41.000Z</lastmod>
   </url>
   
 </urlset>

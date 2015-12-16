@@ -4,7 +4,7 @@
   <subtitle><![CDATA[My Blog]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://alexjiangzy.com/"/>
-  <updated>2015-12-14T15:24:48.000Z</updated>
+  <updated>2015-12-16T13:12:53.000Z</updated>
   <id>http://alexjiangzy.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://alexjiangzy.com/2015/12/14/atomPlugin/"/>
     <id>http://alexjiangzy.com/2015/12/14/atomPlugin/</id>
     <published>2015-12-14T15:02:56.000Z</published>
-    <updated>2015-12-14T15:24:48.000Z</updated>
+    <updated>2015-12-16T13:12:53.000Z</updated>
     <content type="html"><![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
 <h2 id="工具">工具</h2><ul>
 <li>mac osx</li>
@@ -40,14 +40,16 @@
     
       <category term="前端" scheme="http://alexjiangzy.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
+      <category term="工具Tools" scheme="http://alexjiangzy.com/categories/%E5%B7%A5%E5%85%B7Tools/"/>
+    
   </entry>
   
   <entry>
     <title><![CDATA[第一篇博文，姑且就叫Hello World]]></title>
-    <link href="http://alexjiangzy.com/2015/12/04/helloWorld/"/>
-    <id>http://alexjiangzy.com/2015/12/04/helloWorld/</id>
-    <published>2015-12-04T13:59:41.000Z</published>
-    <updated>2015-12-04T13:59:41.000Z</updated>
+    <link href="http://alexjiangzy.com/2015/11/29/helloWorld/"/>
+    <id>http://alexjiangzy.com/2015/11/29/helloWorld/</id>
+    <published>2015-11-29T15:02:56.000Z</published>
+    <updated>2015-12-16T12:51:05.000Z</updated>
     <content type="html"><![CDATA[<p>Welcome to my own WebSite~~，试打两个中文<code>嘿嘿字体一般般</code>，本想改个洋气的名字，盯着这个<code>hello world</code>看了好一会儿，好吧，一切的孽缘可能都是源于这两个贱比单词。</p>
 <h3 id="关于博客">关于博客</h3><p>本博客其实已经拖了整整两个星期，鉴于本人只是一只菜狗，基础知识无比拙计，所以好多东西都还是TM没搞定，先写点搞定的吧。</p>
 <ul>
@@ -68,6 +70,10 @@
     <![CDATA[<p>Welcome to my own WebSite~~，试打两个中文<code>嘿嘿字体一般般</code>，本想改个洋气的名字，盯着这个<code>hello world</code>看了好一会儿，好吧，一切的孽缘可能都是源于这两个贱比单词。</p>
 <h3 id="关于]]>
     </summary>
+    
+      <category term="小介绍" scheme="http://alexjiangzy.com/tags/%E5%B0%8F%E4%BB%8B%E7%BB%8D/"/>
+    
+      <category term="生活感悟" scheme="http://alexjiangzy.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
     
   </entry>
   
