@@ -222,6 +222,138 @@
             
               
                 
+                <a class="post-title-link" href="/2015/12/16/MactexTool/" itemprop="url">
+                  Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-16T21:38:48+08:00" content="2015-12-16">
+              2015-12-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具Tools/" itemprop="url" rel="index">
+                    <span itemprop="name">工具Tools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/12/16/MactexTool/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/16/MactexTool/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p><img src="http://www.macupdate.com/images/icons256/12104.png" alt=""></p>
+<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：</p>
+<ul>
+<li>MacTex+Sublime3+Skim安装</li>
+<li>MacTex中文支持</li>
+<li>LaTeX的一些特殊字符总结</li>
+</ul>
+<hr>
+<h3 id="MacTex的安装">MacTex的安装</h3><p><a href="https://tug.org/mactex/" target="_blank" rel="external">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p>
+<h3 id="Sublime3(LaTeXTools)的安装">Sublime3(LaTeXTools)的安装</h3><p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="external"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<code>LaTeXTools</code>，确认后安装就OK了。</p>
+<h3 id="Skim的安装">Skim的安装</h3><p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="external">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，需要在Skim中进行配置同步选项如下，见下图。<br>这样做的目的是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。</p>
+<table>
+<thead>
+<tr>
+<th>预设</th>
+<th>自定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命令</td>
+<td>/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl</td>
+</tr>
+<tr>
+<td>参数</td>
+<td>“%file”:%line</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/skimsync.png" alt=""></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/12/14/atomPlugin/" itemprop="url">
                   atom的强力plugin:activate-power-mode
                 </a>
@@ -472,7 +604,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -486,7 +618,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[My Blog]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://alexjiangzy.com/"/>
-  <updated>2015-12-16T13:12:53.000Z</updated>
+  <updated>2015-12-17T02:42:34.000Z</updated>
   <id>http://alexjiangzy.com/</id>
   
   <author>
@@ -13,6 +13,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令]]></title>
+    <link href="http://alexjiangzy.com/2015/12/16/MactexTool/"/>
+    <id>http://alexjiangzy.com/2015/12/16/MactexTool/</id>
+    <published>2015-12-16T13:38:48.000Z</published>
+    <updated>2015-12-17T02:42:34.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://www.macupdate.com/images/icons256/12104.png" alt=""></p>
+<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：</p>
+<ul>
+<li>MacTex+Sublime3+Skim安装</li>
+<li>MacTex中文支持</li>
+<li>LaTeX的一些特殊字符总结</li>
+</ul>
+<hr>
+<h3 id="MacTex的安装">MacTex的安装</h3><p><a href="https://tug.org/mactex/" target="_blank" rel="external">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p>
+<h3 id="Sublime3(LaTeXTools)的安装">Sublime3(LaTeXTools)的安装</h3><p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="external"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<code>LaTeXTools</code>，确认后安装就OK了。</p>
+<h3 id="Skim的安装">Skim的安装</h3><p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="external">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，需要在Skim中进行配置同步选项如下，见下图。<br>这样做的目的是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。</p>
+<table>
+<thead>
+<tr>
+<th>预设</th>
+<th>自定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命令</td>
+<td>/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl</td>
+</tr>
+<tr>
+<td>参数</td>
+<td>“%file”:%line</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/skimsync.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://www.macupdate.com/images/icons256/12104.png" alt=""></p>
+<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好]]>
+    </summary>
+    
+      <category term="mactex" scheme="http://alexjiangzy.com/tags/mactex/"/>
+    
+      <category term="工具Tools" scheme="http://alexjiangzy.com/categories/%E5%B7%A5%E5%85%B7Tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[atom的强力plugin:activate-power-mode]]></title>

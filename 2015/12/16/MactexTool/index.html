@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端," />
+  <meta name="keywords" content="mactex," />
 
 
 
@@ -53,36 +53,39 @@
 
 
 
-<meta name="description" content="最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。
-工具
-mac osx
-atom, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。
+<meta name="description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了MacTex+Sublime3+Skim的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：
 
-安装atom1$ brew install Caskroom/cask/atom #在安装homebrew的前提下
-安装plugin:activa">
+MacTex+Sublime3+Skim安装
+MacTex中文支持
+LaTeX的一些特殊字符总结
+
+
+MacTex的安装Mactex官网进行安装即">
 <meta property="og:type" content="article">
-<meta property="og:title" content="atom的强力plugin:activate-power-mode">
-<meta property="og:url" content="http://alexjiangzy.com/2015/12/14/atomPlugin/index.html">
+<meta property="og:title" content="Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令">
+<meta property="og:url" content="http://alexjiangzy.com/2015/12/16/MactexTool/index.html">
 <meta property="og:site_name" content="科学SciArt生活">
-<meta property="og:description" content="最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。
-工具
-mac osx
-atom, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。
+<meta property="og:description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了MacTex+Sublime3+Skim的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：
 
-安装atom1$ brew install Caskroom/cask/atom #在安装homebrew的前提下
-安装plugin:activa">
-<meta property="og:image" content="http://alexjiangzy.com/images/pluginToggle.jpg">
-<meta property="og:image" content="http://www.dvel.cc/upload/2015/12/b8f249ec-9605-11e5-978c-eb3bb21eecd8.gif">
-<meta property="og:updated_time" content="2015-12-16T13:12:53.000Z">
+MacTex+Sublime3+Skim安装
+MacTex中文支持
+LaTeX的一些特殊字符总结
+
+
+MacTex的安装Mactex官网进行安装即">
+<meta property="og:image" content="http://www.macupdate.com/images/icons256/12104.png">
+<meta property="og:image" content="http://alexjiangzy.com/images/skimsync.png">
+<meta property="og:updated_time" content="2015-12-17T02:42:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="atom的强力plugin:activate-power-mode">
-<meta name="twitter:description" content="最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。
-工具
-mac osx
-atom, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。
+<meta name="twitter:title" content="Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令">
+<meta name="twitter:description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了MacTex+Sublime3+Skim的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：
 
-安装atom1$ brew install Caskroom/cask/atom #在安装homebrew的前提下
-安装plugin:activa">
+MacTex+Sublime3+Skim安装
+MacTex中文支持
+LaTeX的一些特殊字符总结
+
+
+MacTex的安装Mactex官网进行安装即">
 
 
 
@@ -94,7 +97,7 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
   };
 </script>
 
-  <title> atom的强力plugin:activate-power-mode | 科学SciArt生活 </title>
+  <title> Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令 | 科学SciArt生活 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +237,7 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
             
             
               
-                atom的强力plugin:activate-power-mode
+                Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令
               
             
           </h1>
@@ -243,8 +246,8 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-14T23:02:56+08:00" content="2015-12-14">
-              2015-12-14
+            <time itemprop="dateCreated" datetime="2015-12-16T21:38:48+08:00" content="2015-12-16">
+              2015-12-16
             </time>
           </span>
 
@@ -269,8 +272,8 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/12/14/atomPlugin/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/14/atomPlugin/" itemprop="commentsCount"></span>
+              <a href="/2015/12/16/MactexTool/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/16/MactexTool/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -289,16 +292,36 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
       
 
       
-        <span itemprop="articleBody"><p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
-<h2 id="工具">工具</h2><ul>
-<li>mac osx</li>
-<li><a href="atom.io">atom</a>, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。</li>
+        <span itemprop="articleBody"><p><img src="http://www.macupdate.com/images/icons256/12104.png" alt=""></p>
+<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：</p>
+<ul>
+<li>MacTex+Sublime3+Skim安装</li>
+<li>MacTex中文支持</li>
+<li>LaTeX的一些特殊字符总结</li>
 </ul>
-<h2 id="安装atom">安装atom</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install Caskroom/cask/atom <span class="comment">#在安装homebrew的前提下</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装plugin:activate-power-mode">安装plugin:activate-power-mode</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.atom/packages</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/JoelBesada/activate-power-mode.git</span><br><span class="line">$ <span class="built_in">cd</span> activate-power-mode</span><br><span class="line">$ apm install</span><br></pre></td></tr></table></figure>
-<h2 id="打开atom编辑器右键点击激活">打开atom编辑器右键点击激活</h2><p>进入atom，随便打开一个页面，右键点击Toggle activate-power-mode<br><img src="/images/pluginToggle.jpg" alt=""></p>
-<h2 id="效果">效果</h2><p>在最终效果之前，可以先点击下面的播放键，是不是感觉像在开高达，双脚抖起来打小怪兽喽～</p>
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26625301&auto=0&height=66"></iframe><br><img src="http://www.dvel.cc/upload/2015/12/b8f249ec-9605-11e5-978c-eb3bb21eecd8.gif" alt=""></p>
+<hr>
+<h3 id="MacTex的安装">MacTex的安装</h3><p><a href="https://tug.org/mactex/" target="_blank" rel="external">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p>
+<h3 id="Sublime3(LaTeXTools)的安装">Sublime3(LaTeXTools)的安装</h3><p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="external"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<code>LaTeXTools</code>，确认后安装就OK了。</p>
+<h3 id="Skim的安装">Skim的安装</h3><p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="external">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，需要在Skim中进行配置同步选项如下，见下图。<br>这样做的目的是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。</p>
+<table>
+<thead>
+<tr>
+<th>预设</th>
+<th>自定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命令</td>
+<td>/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl</td>
+</tr>
+<tr>
+<td>参数</td>
+<td>“%file”:%line</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/skimsync.png" alt=""></p>
 </span>
       
     </div>
@@ -307,7 +330,7 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag">#前端</a>
+            <a href="/tags/mactex/" rel="tag">#mactex</a>
           
         </div>
       
@@ -316,17 +339,13 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/29/helloWorld/" rel="next" title="第一篇博文，姑且就叫Hello World">
-                <i class="fa fa-chevron-left"></i> 第一篇博文，姑且就叫Hello World
+              <a href="/2015/12/14/atomPlugin/" rel="next" title="atom的强力plugin:activate-power-mode">
+                <i class="fa fa-chevron-left"></i> atom的强力plugin:activate-power-mode
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/16/MactexTool/" rel="prev" title="Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令">
-                Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -508,7 +527,7 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">1.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装atom"><span class="nav-number">2.</span> <span class="nav-text">安装atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装plugin:activate-power-mode"><span class="nav-number">3.</span> <span class="nav-text">安装plugin:activate-power-mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开atom编辑器右键点击激活"><span class="nav-number">4.</span> <span class="nav-text">打开atom编辑器右键点击激活</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-number">5.</span> <span class="nav-text">效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MacTex的安装"><span class="nav-number">1.</span> <span class="nav-text">MacTex的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime3(LaTeXTools)的安装"><span class="nav-number">2.</span> <span class="nav-text">Sublime3(LaTeXTools)的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Skim的安装"><span class="nav-number">3.</span> <span class="nav-text">Skim的安装</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -568,9 +587,9 @@ atom, 值得一提的是atom是github主推的下一代编辑器，未来还是�
 
     <script type="text/javascript">
       var disqus_shortname = 'alex44jzy';
-      var disqus_identifier = '2015/12/14/atomPlugin/';
-      var disqus_title = 'atom的强力plugin:activate-power-mode';
-      var disqus_url = 'http://alexjiangzy.com/2015/12/14/atomPlugin/';
+      var disqus_identifier = '2015/12/16/MactexTool/';
+      var disqus_title = 'Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令';
+      var disqus_url = 'http://alexjiangzy.com/2015/12/16/MactexTool/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
