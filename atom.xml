@@ -4,7 +4,7 @@
   <subtitle><![CDATA[My Blog]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://alexjiangzy.com/"/>
-  <updated>2015-12-17T02:42:34.000Z</updated>
+  <updated>2015-12-17T02:53:31.000Z</updated>
   <id>http://alexjiangzy.com/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://alexjiangzy.com/2015/12/16/MactexTool/"/>
     <id>http://alexjiangzy.com/2015/12/16/MactexTool/</id>
     <published>2015-12-16T13:38:48.000Z</published>
-    <updated>2015-12-17T02:42:34.000Z</updated>
+    <updated>2015-12-17T02:53:31.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://www.macupdate.com/images/icons256/12104.png" alt=""></p>
-<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：</p>
+<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br><a id="more"></a></p>
 <ul>
 <li>MacTex+Sublime3+Skim安装</li>
 <li>MacTex中文支持</li>
@@ -53,7 +53,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p><img src="http://www.macupdate.com/images/icons256/12104.png" alt=""></p>
-<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好]]>
+<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br>]]>
+    
     </summary>
     
       <category term="mactex" scheme="http://alexjiangzy.com/tags/mactex/"/>
@@ -67,12 +68,13 @@
     <link href="http://alexjiangzy.com/2015/12/14/atomPlugin/"/>
     <id>http://alexjiangzy.com/2015/12/14/atomPlugin/</id>
     <published>2015-12-14T15:02:56.000Z</published>
-    <updated>2015-12-16T13:12:53.000Z</updated>
+    <updated>2015-12-17T02:54:52.000Z</updated>
     <content type="html"><![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
 <h2 id="工具">工具</h2><ul>
 <li>mac osx</li>
 <li><a href="atom.io">atom</a>, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。</li>
 </ul>
+<a id="more"></a>
 <h2 id="安装atom">安装atom</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install Caskroom/cask/atom <span class="comment">#在安装homebrew的前提下</span></span><br></pre></td></tr></table></figure>
 <h2 id="安装plugin:activate-power-mode">安装plugin:activate-power-mode</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.atom/packages</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/JoelBesada/activate-power-mode.git</span><br><span class="line">$ <span class="built_in">cd</span> activate-power-mode</span><br><span class="line">$ apm install</span><br></pre></td></tr></table></figure>
 <h2 id="打开atom编辑器右键点击激活">打开atom编辑器右键点击激活</h2><p>进入atom，随便打开一个页面，右键点击Toggle activate-power-mode<br><img src="/images/pluginToggle.jpg" alt=""></p>
@@ -83,7 +85,9 @@
     <![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
 <h2 id="工具">工具</h2><ul>
 <li>mac osx</li>
-<li><a href="atom.io]]>
+<li><a href="atom.io">atom</a>, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。</li>
+</ul>]]>
+    
     </summary>
     
       <category term="前端" scheme="http://alexjiangzy.com/tags/%E5%89%8D%E7%AB%AF/"/>
@@ -97,9 +101,9 @@
     <link href="http://alexjiangzy.com/2015/11/29/helloWorld/"/>
     <id>http://alexjiangzy.com/2015/11/29/helloWorld/</id>
     <published>2015-11-29T15:02:56.000Z</published>
-    <updated>2015-12-16T12:51:05.000Z</updated>
+    <updated>2015-12-17T02:54:31.000Z</updated>
     <content type="html"><![CDATA[<p>Welcome to my own WebSite~~，试打两个中文<code>嘿嘿字体一般般</code>，本想改个洋气的名字，盯着这个<code>hello world</code>看了好一会儿，好吧，一切的孽缘可能都是源于这两个贱比单词。</p>
-<h3 id="关于博客">关于博客</h3><p>本博客其实已经拖了整整两个星期，鉴于本人只是一只菜狗，基础知识无比拙计，所以好多东西都还是TM没搞定，先写点搞定的吧。</p>
+<h3 id="关于博客">关于博客</h3><p>本博客其实已经拖了整整两个星期，鉴于本人只是一只菜狗，基础知识无比拙计，所以好多东西都还是TM没搞定，先写点搞定的吧。<br><a id="more"></a></p>
 <ul>
 <li>本博基于hexo，托管于github，完全废话。</li>
 <li>本博theme采用的是<a href="https://github.com/someus/huno" target="_blank" rel="external">huno</a>，源于Uno。</li>
@@ -116,7 +120,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Welcome to my own WebSite~~，试打两个中文<code>嘿嘿字体一般般</code>，本想改个洋气的名字，盯着这个<code>hello world</code>看了好一会儿，好吧，一切的孽缘可能都是源于这两个贱比单词。</p>
-<h3 id="关于]]>
+<h3 id="关于博客">关于博客</h3><p>本博客其实已经拖了整整两个星期，鉴于本人只是一只菜狗，基础知识无比拙计，所以好多东西都还是TM没搞定，先写点搞定的吧。<br>]]>
+    
     </summary>
     
       <category term="小介绍" scheme="http://alexjiangzy.com/tags/%E5%B0%8F%E4%BB%8B%E7%BB%8D/"/>
