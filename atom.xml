@@ -4,7 +4,7 @@
   <subtitle><![CDATA[My Blog]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://alexjiangzy.com/"/>
-  <updated>2015-12-21T08:32:11.000Z</updated>
+  <updated>2015-12-23T10:30:49.000Z</updated>
   <id>http://alexjiangzy.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://alexjiangzy.com/2015/12/16/MactexTool/"/>
     <id>http://alexjiangzy.com/2015/12/16/MactexTool/</id>
     <published>2015-12-16T13:38:48.000Z</published>
-    <updated>2015-12-21T08:32:11.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://www.macupdate.com/images/icons256/12104.png" alt=""></p>
+    <updated>2015-12-23T10:30:49.000Z</updated>
+    <content type="html"><![CDATA[<!-- ![](http://www.macupdate.com/images/icons256/12104.png) -->
 <p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br><a id="more"></a></p>
 <ul>
 <li>MacTex+Sublime3+Skim安装</li>
@@ -149,7 +149,7 @@
 <p>$$ i\hbar\frac{\partial \psi}{\partial t}<br>= \frac{-\hbar^2}{2m} \left(<br>\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}<br>\right) \psi + V \psi.$$</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="http://www.macupdate.com/images/icons256/12104.png" alt=""></p>
+    <![CDATA[<!-- ![](http://www.macupdate.com/images/icons256/12104.png) -->
 <p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br>]]>
     
     </summary>

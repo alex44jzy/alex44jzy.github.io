@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alexjiangzy.com/about/index.html</loc>
+    <lastmod>2015-12-23T11:22:12.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://alexjiangzy.com/2015/12/16/MactexTool/</loc>
-    <lastmod>2015-12-21T08:32:11.000Z</lastmod>
+    <lastmod>2015-12-23T10:30:49.000Z</lastmod>
   </url>
   
   <url>
@@ -14,11 +19,6 @@
   <url>
     <loc>http://alexjiangzy.com/2015/11/29/helloWorld/</loc>
     <lastmod>2015-12-17T02:54:31.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://alexjiangzy.com/about/index.html</loc>
-    <lastmod>2015-12-16T12:46:06.000Z</lastmod>
   </url>
   
   <url>
