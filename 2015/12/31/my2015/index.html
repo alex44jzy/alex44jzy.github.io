@@ -55,13 +55,13 @@
 
 <meta name="description" content="总体2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了差距，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的2015总结">
+<meta property="og:title" content="我的2015总结和2016的Todo">
 <meta property="og:url" content="http://alexjiangzy.com/2015/12/31/my2015/index.html">
 <meta property="og:site_name" content="科学SciArt生活">
 <meta property="og:description" content="总体2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了差距，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自">
-<meta property="og:updated_time" content="2016-01-03T15:34:12.000Z">
+<meta property="og:updated_time" content="2016-01-04T07:26:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的2015总结">
+<meta name="twitter:title" content="我的2015总结和2016的Todo">
 <meta name="twitter:description" content="总体2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了差距，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自">
 
 
@@ -74,7 +74,7 @@
   };
 </script>
 
-  <title> 我的2015总结 | 科学SciArt生活 </title>
+  <title> 我的2015总结和2016的Todo | 科学SciArt生活 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -214,7 +214,7 @@
             
             
               
-                我的2015总结
+                我的2015总结和2016的Todo
               
             
           </h1>
@@ -286,10 +286,30 @@
 <h4 id="我做的事儿">我做的事儿</h4><p>在这个满是神的世界，我自然也是要工作的。先总结一下我点亮的技能：scala函数式programme、python、zeppelin可视化工具、Spark、Bash。</p>
 <p>前期第一个任务主要是折腾一个可视化环境能将大批量的打分数据可视化，看到每次调整映射后的分数分布。因为考虑到打分的数据量实在太大，传统浏览器是无法承载的，所以放弃了裸前端的做法，考虑到想要串起spark打分的自动化流程，所以用到了zeppelin这个开源平台，用集成好的D3做二次开发，因为类似于IDE online，所以可以轻松的写scala代码，但是搭不上我们自己的spark集群，这个事儿耽误了至少两周，那两周感觉做不出了，丢人到想悄悄背着包一走了之。后来我还是没有这么怂，发现了z-manager这个小插件，勉强搭上了自己的HDFS终于实现了第一个打分自动化图像，也最终搭建了流利说的zeppelin scorer可视化系统平台。</p>
 <p>接下来做的第二件大事儿就是，<strong>写Scala</strong>，函数式编程真的很吸引人，代码量很少，只是很多时候理解起来有点吃力，主要写了将音频，文本序列化的一个脚本，因为数据量很大，所以需要搭spark跑整个task，发现自己写的实在太傻，在ouyang指导下，理解了executor和worker的关系，用了很多优秀模式，比如广播变量，封装了很多方法，使得代码运行效率从之前40多分钟提到10分钟，整个序列化任务可用于流利说之前所有英日韩德法的算法验证。中间还写了个从七牛上批量下载所有音频的小脚本。</p>
-<p>第三件事儿，是将feiteng整个流利说打分验证对比可视化，从这里我才看到了流利说整个打分的严谨性，因为已经对整个搭建的环境很熟悉，所以这部分只需要做到整个流程上的逻辑连贯就可以了，最后在zppelin上用angularjs将整个对比呈现，也是基本满意了。</p>
+<p>第三件事儿，是将feiteng整个流利说打分验证对比可视化，从这里我才看到了流利说整个打分的严谨性，因为已经对整个搭建的环境很熟悉，所以这部分只需要做到整个流程上的逻辑连贯就可以了，最后在zeppelin上用angularjs将整个对比呈现，也是基本满意了。</p>
 <p>期间还入门了python爬虫的基础，是为了批量抓取韩语发音网站上的音标，阅读了ouyang大量pipeline的代码，有很多工程上的写法，一直受用到我现在。每周的算法分享，也让我了解了大概的语音这块的形势。</p>
-<p> 可能我永远都写不完流利说的好，写不完备流利说的三个月实习让我开了多少眼，但是我知道，人还是要向前看，学到的工匠精神也好，大局观也好都会在日后的工作中起到很大的作用，但是真心感谢流利说让我这只菜鸡开了眼，我还是会继续坚持走好技术人这条路。</p>
-</span>
+<p> 可能我永远都写不完流利说的好，写不完备流利说的三个月实习让我开了多少眼，但是我知道，人还是要向前看，学到的工匠精神也好，大局观也好，编程的优秀模式也好，对待新技术的态度也好，还是需要一个真正的平台才能好好实战，感谢流利所和流利说的小伙伴给我的各种帮助，我也坚定了自己好好做技术的信念，就当一切都刚刚开始。</p>
+<h3 id="关键词四：戒烟">关键词四：戒烟</h3><p>这块内容我其实也是最近才想到写的，一来是想让自己继续坚持下去，二来也是给想戒烟的人一点启示，或者是对待戒断综合症的一点见解。</p>
+<p>首先是戒烟的动机，我烟龄没有很长，也就3年左右吧，但是瘾还是很大的。长远动机主要是明显觉得身体没有以前好了，有时候早上咳嗦很厉害，肺部也有时候不适，想恢复以前的好身体。近期的动机是觉得太花钱，而且很耽误时间，抽完烟就晕晕的想找个地儿躺着，感觉人的精神状态也变的慵懒了。很多人会觉得抽烟酷酷的，最近也在想这个事儿，我个人觉得是价值观的问题，从前的观念感觉抽根烟酷酷的，以至于好像不会抽烟有时是件有点丢脸的事儿，然而我们现在当下这个年代，做什么事儿是酷的呢，良好的健身习惯，良好的饮食习惯或许是完全的素食主义，晒今天消耗了多少卡路里，走了多少里程。这是当下越来越多的人在传递的东西，不管是你的周遭生活还是意识形态，因此是不是该是时候刷新一下自己的价值观了。</p>
+<p>其实等你想清楚了这一切之后，戒烟就只是个坚持的事儿，其实每个人都一样，要想突破之前已经成型的习惯都会有阵痛，就像所有人都是懒的一样，所有人冬天也都不想起床，但是总有人可以打破这一切，那你为什么不可以。另外不要相信什么减量戒烟法，减量法只是给你想戒烟的一时冲动提供暂时的温床，等时间一长，这个想法不再一直激励你的时候也就没什么大用了。特别想抽烟的时候注意分散下注意力，有时候也可以给自己稍微强烈一点的心理暗示，比如再忍一忍之类的。我戒烟有个得天独厚的好处，就是周围没有人抽烟，也就没有人在那儿得得嗖嗖的诱惑你。</p>
+<p>关于戒断后的一些不适应，我就非常强烈，比如胸闷，比抽烟时候更加胸闷，比如头晕，可以去适当看看中医。但是我觉得记住两句话就好了：</p>
+<blockquote>
+<p><strong>戒烟时的不适应都是暂时的，戒烟后的益处是永恒的。</strong></p>
+</blockquote>
+<p>我也才戒了两个月，最近已经基本回到以前那个不会抽烟的状态了，希望能保持吧。</p>
+<h3 id="关于2016的Todo">关于2016的Todo</h3><p>今年有几件大事儿，第一就是毕业，我六月份要毕业答辩，所以这是一定会认真对待的。另外就是去工作，这也是我今年最为未知的事儿。主要的Todo List还是会列一下：</p>
+<ul>
+<li>规律作息和生活，这个也说了很久了，是时候来实践一下了。</li>
+<li>减肥健身管住嘴，控制体重150以内，现在超标太多。</li>
+<li>写一篇高质量的SCI，然后毕业答辩。</li>
+<li>mooc坚持看，不管是慕课网还是coursera，坚持下去。</li>
+<li>前端的基础打牢，学node，学点新框架reactjs，vuejs，redux，koa。</li>
+<li>今年计划好好学一门英语以外的外语，暂定韩语或者日语吧。</li>
+</ul>
+<blockquote>
+<p>有時，換個思考方式，事情就容易做很多。例如健身，一次一小時，一週四次，一個月16小時，一年才做總共8天。為什麼，不好好的把握每一次做的機會？學習、工作⋯亦然。</p>
+</blockquote>
+<h3 id="2016，共勉！">2016，共勉！</h3></span>
       
     </div>
 
@@ -494,7 +514,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体"><span class="nav-number">1.</span> <span class="nav-text">总体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键词一：说走就走"><span class="nav-number">2.</span> <span class="nav-text">关键词一：说走就走</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键词二：带队伍"><span class="nav-number">3.</span> <span class="nav-text">关键词二：带队伍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键词三：上海滩"><span class="nav-number">4.</span> <span class="nav-text">关键词三：上海滩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公司"><span class="nav-number">4.1.</span> <span class="nav-text">公司</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#人"><span class="nav-number">4.2.</span> <span class="nav-text">人</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我做的事儿"><span class="nav-number">4.3.</span> <span class="nav-text">我做的事儿</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体"><span class="nav-number">1.</span> <span class="nav-text">总体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键词一：说走就走"><span class="nav-number">2.</span> <span class="nav-text">关键词一：说走就走</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键词二：带队伍"><span class="nav-number">3.</span> <span class="nav-text">关键词二：带队伍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键词三：上海滩"><span class="nav-number">4.</span> <span class="nav-text">关键词三：上海滩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公司"><span class="nav-number">4.1.</span> <span class="nav-text">公司</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#人"><span class="nav-number">4.2.</span> <span class="nav-text">人</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我做的事儿"><span class="nav-number">4.3.</span> <span class="nav-text">我做的事儿</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键词四：戒烟"><span class="nav-number">5.</span> <span class="nav-text">关键词四：戒烟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于2016的Todo"><span class="nav-number">6.</span> <span class="nav-text">关于2016的Todo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2016，共勉！"><span class="nav-number">7.</span> <span class="nav-text">2016，共勉！</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -555,7 +575,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'alex44jzy';
       var disqus_identifier = '2015/12/31/my2015/';
-      var disqus_title = '我的2015总结';
+      var disqus_title = '我的2015总结和2016的Todo';
       var disqus_url = 'http://alexjiangzy.com/2015/12/31/my2015/';
 
       function run_disqus_script(disqus_script){
