@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[科学SciArt生活]]></title>
+  <title><![CDATA[SciAes]]></title>
   <subtitle><![CDATA[My Blog]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://alexjiangzy.com/"/>
@@ -8,7 +8,7 @@
   <id>http://alexjiangzy.com/</id>
   
   <author>
-    <name><![CDATA[江之源Alex]]></name>
+    <name><![CDATA[Alex Jiang]]></name>
     
   </author>
   
@@ -80,7 +80,7 @@
     <link href="http://alexjiangzy.com/2015/12/16/MactexTool/"/>
     <id>http://alexjiangzy.com/2015/12/16/MactexTool/</id>
     <published>2015-12-16T13:38:48.000Z</published>
-    <updated>2015-12-29T14:51:30.000Z</updated>
+    <updated>2018-03-19T14:48:46.000Z</updated>
     <content type="html"><![CDATA[<!-- ![](http://www.macupdate.com/images/icons256/12104.png) -->
 <p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br><a id="more"></a></p>
 <ul>
@@ -251,40 +251,6 @@
       <category term="前端" scheme="http://alexjiangzy.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="工具Tools" scheme="http://alexjiangzy.com/categories/%E5%B7%A5%E5%85%B7Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[第一篇博文，姑且就叫Hello World]]></title>
-    <link href="http://alexjiangzy.com/2015/11/29/helloWorld/"/>
-    <id>http://alexjiangzy.com/2015/11/29/helloWorld/</id>
-    <published>2015-11-29T15:02:56.000Z</published>
-    <updated>2015-12-17T02:54:31.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to my own WebSite~~，试打两个中文<code>嘿嘿字体一般般</code>，本想改个洋气的名字，盯着这个<code>hello world</code>看了好一会儿，好吧，一切的孽缘可能都是源于这两个贱比单词。</p>
-<h3 id="关于博客">关于博客</h3><p>本博客其实已经拖了整整两个星期，鉴于本人只是一只菜狗，基础知识无比拙计，所以好多东西都还是TM没搞定，先写点搞定的吧。<br><a id="more"></a></p>
-<ul>
-<li>本博基于hexo，托管于github，完全废话。</li>
-<li>本博theme采用的是<a href="https://github.com/someus/huno" target="_blank" rel="external">huno</a>，源于Uno。</li>
-<li>本博后期会转向域名alexjiangzy.com，现在这个也就几天寿命。</li>
-<li>本博主要用于记录自己一些学习心得(哎呀)，可能会包括：前端，后端，算法，科研，艺术鉴赏，历史长廊……还可能包括自己的生活感悟和记录，可能还是会以生活小随笔为主嗯嗯，because我懒。</li>
-</ul>
-<h4 id="顺便列个明天的Todolist：">顺便列个明天的Todolist：</h4><ul>
-<li>要折腾主页的Logo。</li>
-<li>要折腾评论区功能，以后不要发反共反党言论哟。</li>
-<li>提交导师项目的中期报告，呵呵呵呵哒～</li>
-<li>看文章看文章看文章。</li>
-</ul>
-<h3 id="感谢">感谢</h3><p>感谢mushroom同学对于我生活上的无私关怀和对灵魂上的关照，感谢超哥对于我的敦促和悉心帮助。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to my own WebSite~~，试打两个中文<code>嘿嘿字体一般般</code>，本想改个洋气的名字，盯着这个<code>hello world</code>看了好一会儿，好吧，一切的孽缘可能都是源于这两个贱比单词。</p>
-<h3 id="关于博客">关于博客</h3><p>本博客其实已经拖了整整两个星期，鉴于本人只是一只菜狗，基础知识无比拙计，所以好多东西都还是TM没搞定，先写点搞定的吧。<br>]]>
-    
-    </summary>
-    
-      <category term="小介绍" scheme="http://alexjiangzy.com/tags/%E5%B0%8F%E4%BB%8B%E7%BB%8D/"/>
-    
-      <category term="生活感悟" scheme="http://alexjiangzy.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
     
   </entry>
   
