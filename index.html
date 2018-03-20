@@ -107,7 +107,7 @@
                   
                     <div class="item">
                   
-                    <img id="carousel-img1" src="https://source.unsplash.com/random/1920x1080">
+                    <img id="carousel-img1" src="/css/images/sg-banner.jpg">
                   </div>
 
                   <!-- 自适应大图 -->
@@ -128,7 +128,7 @@
                   
                     <div class="item">
                   
-                    <img id="carousel-img2" src="https://source.unsplash.com/collection/954550/1920x1080">
+                    <img id="carousel-img2" src="/css/images/marina-banner.jpg">
                   </div>
 
                   <!-- 自适应大图 -->
@@ -142,6 +142,69 @@
                         } else {
                           imageTag2.style.height = document.body.clientHeight + "px";
                           imageTag2.style.marginLeft = -(document.body.clientHeight * img2.width / img2.height - document.body.clientWidth) / 2 + "px";
+                        }
+                      };
+                  </script>
+                
+                  
+                    <div class="item">
+                  
+                    <img id="carousel-img3" src="/css/images/fireworks-banner.jpg">
+                  </div>
+
+                  <!-- 自适应大图 -->
+                  <script>
+                      var img3 = new Image();
+                      var imageTag3 = document.getElementById("carousel-img3");
+                      img3.src = imageTag3.src;
+                      img3.onload=function(){
+                        if (img3.width / img3.height <= document.body.clientWidth / document.body.clientHeight) {
+                          imageTag3.style.width = document.body.clientWidth + "px";
+                        } else {
+                          imageTag3.style.height = document.body.clientHeight + "px";
+                          imageTag3.style.marginLeft = -(document.body.clientHeight * img3.width / img3.height - document.body.clientWidth) / 2 + "px";
+                        }
+                      };
+                  </script>
+                
+                  
+                    <div class="item">
+                  
+                    <img id="carousel-img4" src="https://source.unsplash.com/random/1920x1080">
+                  </div>
+
+                  <!-- 自适应大图 -->
+                  <script>
+                      var img4 = new Image();
+                      var imageTag4 = document.getElementById("carousel-img4");
+                      img4.src = imageTag4.src;
+                      img4.onload=function(){
+                        if (img4.width / img4.height <= document.body.clientWidth / document.body.clientHeight) {
+                          imageTag4.style.width = document.body.clientWidth + "px";
+                        } else {
+                          imageTag4.style.height = document.body.clientHeight + "px";
+                          imageTag4.style.marginLeft = -(document.body.clientHeight * img4.width / img4.height - document.body.clientWidth) / 2 + "px";
+                        }
+                      };
+                  </script>
+                
+                  
+                    <div class="item">
+                  
+                    <img id="carousel-img5" src="https://source.unsplash.com/collection/954550/1920x1080">
+                  </div>
+
+                  <!-- 自适应大图 -->
+                  <script>
+                      var img5 = new Image();
+                      var imageTag5 = document.getElementById("carousel-img5");
+                      img5.src = imageTag5.src;
+                      img5.onload=function(){
+                        if (img5.width / img5.height <= document.body.clientWidth / document.body.clientHeight) {
+                          imageTag5.style.width = document.body.clientWidth + "px";
+                        } else {
+                          imageTag5.style.height = document.body.clientHeight + "px";
+                          imageTag5.style.marginLeft = -(document.body.clientHeight * img5.width / img5.height - document.body.clientWidth) / 2 + "px";
                         }
                       };
                   </script>
