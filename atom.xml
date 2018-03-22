@@ -1,256 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[SciAes]]></title>
-  <subtitle><![CDATA[My Blog]]></subtitle>
+  <title>SciAes</title>
+  
+  <subtitle>My Blog</subtitle>
   <link href="/atom.xml" rel="self"/>
+  
   <link href="http://alexjiangzy.com/"/>
-  <updated>2016-05-17T07:29:04.000Z</updated>
+  <updated>2018-03-22T04:59:29.000Z</updated>
   <id>http://alexjiangzy.com/</id>
   
   <author>
-    <name><![CDATA[Alex Jiang]]></name>
+    <name>Alex Jiang</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[我的2015总结和2016的Todo]]></title>
+    <title>来新杂感</title>
+    <link href="http://alexjiangzy.com/2018/03/21/sgFeeling/"/>
+    <id>http://alexjiangzy.com/2018/03/21/sgFeeling/</id>
+    <published>2018-03-21T15:31:08.000Z</published>
+    <updated>2018-03-22T04:59:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/sgMarina.jpg" alt=""></p><h2 id="交代"><a href="#交代" class="headerlink" title="交代"></a>交代</h2><p>距离上一次写博客已经过去2年多了，期间有过好几次想重新开启的时刻，也都随着自己角色的转变以及没救的拖延和懈怠中流逝了。2年前的现在，我还在重庆忙着自己的毕业论文答辩，在一场一场的火锅和KTV中肆意挥洒最后的青春。研究生毕业之后，一个人来到魔都张江，开始了一个真正意义上的程序员的生活，并且也算以此为自己的职业，能在上海养活自己，并且还养的不错，从体重不断的飙升中可见一斑，期间有机会去韩国出差，算是第一次踏出国门。2018年年初又一次下南洋，开始了在国大的另一段求学的生涯，如今坐在NUS的自习室里，云淡风轻的回忆这两年发生的不多不少的种种，有些值得骄傲，有些也感到无力。但这2年总体而言，都是向着好的方向在前进，尤其完成了自己多年以来的出国梦，可能我这一辈子余下的时光都庸庸碌碌，唯有这件事能称之为闪光点吧。<br><a id="more"></a></p><blockquote><p>人要多打碎自己，要跳出自己的舒适圈</p></blockquote><p>这句话说出来很容易，而且似乎说出口能让人对你高看好多眼。但是真正要去实践这句话，以及说服自己，实则没有那么的简单，尤其是在外人看来，你似乎学历足矣，年纪不小，工作尚可，实在是找不到一个完美的动机去重新读书，毕竟留学回来，可能也还是依旧的写屌丝代码，依旧买不起房，已经突破不了阶层的天花板。拿着一张国内研究生学位，招摇撞骗也差强人意，国内研究生本来就水，更何况自己又心安理得的在一个很一般的学校里度过了3年研究生生活，出来被很多科班计算机本科生吊打也是常事了，一把年纪了，真是又老又挫。</p><p>但是，这些年的很多经历，却让我能更加正面的去认识自己，特别在工作后，自己对于<strong>经历</strong>和<strong>积累</strong>更加看重。我也慢慢意识到，如果能去经历一下，不管结局如何一定都是值得的 (Hypothesis)。过往的经历告诉我，凡是能跳出现有的状况去获得的经历，都能够给予自己很大的加成 (Validation)。何况现在这个时间点不去做这件事，过了30岁似乎只会更加困难 (Condition)。</p><p>笃定了自己的目标，明了了得失，似乎心态也平衡了不少，既没有很强的得失心，也没有很强硬的目的性，结果也就没有太多意外。过程的话，除了准备雅思那段时间，白天工作，晚上复习，也没有太累的时候了，谢谢女朋友在雅思准备上给予了巨大的帮助，谢谢同事和领导的理解和肯定。</p><h2 id="落地"><a href="#落地" class="headerlink" title="落地"></a>落地</h2><p>新加坡，北纬1度的花园国家，一个常年夏天的国家，一个东西跨度不过50公里的国家（和国内一个县城差不多大），一个七成是华人的国家，一个靠左行驶的国家，一个被英国，日本，马来西亚轮番殖民的国家，一个说着一口Singlish的国家，生活成本全世界第一的国家，政府高压政策下的国家，从前的亚洲四小龙现在经济也不太稳定的国家，东西很好吃的国家，一个多种文化杂糅一起的国家。算是满足了之前对它的各种幻想，没有特别失望的点。<br>一个地方怎么样，很大程度上也取决于人怎么样，有几点可能特别值得称道：</p><ul><li><p>不争不抢<br>可能是真的国内人太多，在上海的体验也真心很不好，尤其是周末的地铁完全地狱列车。新加坡大家都墨守成规的保有这个秩序，地铁公交点餐各种排队都很自觉很礼让，就算是地铁故障热到崩溃也一样平静。有一次在utown买饭一个妹子无意插到我前面点餐了，意识到之后和我道歉了很久，我看着她也有点发懵。全民素质都维持在高位，真的会让你的生活轻松很多，毕竟大家都不会不怀好意或者让你吃个暗亏之类的。</p></li><li><p>懂得感恩<br>奇葩说陈铭说过，”应该的“这三个字是所有施予善意最大的天敌。所幸在新加坡不会有这个问题，不管是帮人按住电梯，还是给人让个路，都会听到一句高声的“Thank you”，冒犯或打扰到别人，也自然有一句“Sorry”。很简单的不起眼的习惯，给了陌生人最大程度上的好感，却真的能推己及人，让我也深受感染。懂得感恩，就算是陌生人，也要让他知道他的善举有被你接收到。</p></li><li><p>尊重一切<br>做assignment的时候，新加坡同学一定会照顾到团队里每一个人的感想，每一个人都有平等发表意见的权利，可能有时候觉得有点傻没必要，但是换位思考的话，没有尊重也很难体会到他人的情绪，矛盾也就在无形中积累了。刚来新加坡会看到很多残障人士坐着电动轮椅出行，公交司机会下车推行他们上巴士，一般HDB都配有给轮椅用的斜坡，残障人士出行无碍，盲道铺设一丝不苟，真正惠及全民每一个人，没有任何表面工程。</p></li><li><p>保有传统<br>我住在Clementi的老HDB里，经常感觉像是回到了2000年左右的样子，新加坡人习惯在食阁吃东西，食阁感觉就像是以前家乐福底下员工食堂那种感觉。楼下会有很多国内小区住宅里见不到的，关公或者观音烛台贡位，很多裁缝店改衣店，楼下甚至还有个服装学院，小区里很诡异的开了4家卖观赏鱼店，生意还都不错，风水店也是遍地。还有一个我无法理解的，新加坡人喜欢买彩票，并且排队长到一个夸张。</p></li></ul><p>其实还有很多好玩的感悟，相比国内，这里没有遍地的移动支付，大家还是现金加信用卡，没有高铁，聊天软件WhatsApp也经常被我们吐槽性能和微信差远了，但是也没有雾霾，没有转基因，没有很多食品安全问题。</p><p>没有冬天。。。</p><p><img src="/images/nusLogo.jpg" alt=""></p><h2 id="留学"><a href="#留学" class="headerlink" title="留学"></a>留学</h2><p>关于留学，我只想说比我想象的要累，赶assignment的时候，基本天天半夜2点以后回家的节奏，不免担心自己会不会就这么挂了。自己还有一点language barrier，总之好像英文也没有进步太多，毕竟都是华人说的机会也不是很多。感恩身边不少nice的local给了我很多帮助。</p><p>不过，这段时间算是真的意识到了，学习还真是要靠自己，一个人面对问题时思考的量和深度直接决定了解决问题到什么程度，感恩以前在公司经常和大家讨论和设计，对于逻辑的分析有了很多的训练。另一个，就是想清楚了自己想要从事的领域和努力的方向，明确了自己还是想做技术相关的工种，会去往data scientist的方向努力。剩下的就要看老天指路啦。</p><blockquote><p>向前跑 迎着冷眼和嘲笑<br>生命的广阔不历经磨难怎能感到<br>命运它无法让我们跪地求饶<br>就算鲜血洒满了怀抱<br>继续跑 带着赤子的骄傲<br>生命的闪耀不坚持到底怎能看到<br>与其苟延残喘不如纵情燃烧吧<br>为了心中的美好<br>不妥协直到变老 – GALA《追梦赤子心》</p></blockquote><p>先写这么多吧 以后有新的心得再写吧。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/sgMarina.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;交代&quot;&gt;&lt;a href=&quot;#交代&quot; class=&quot;headerlink&quot; title=&quot;交代&quot;&gt;&lt;/a&gt;交代&lt;/h2&gt;&lt;p&gt;距离上一次写博客已经过去2年多了，期间有过好几次想重新开启的时刻，也都随着自己角色的转变以及没救的拖延和懈怠中流逝了。2年前的现在，我还在重庆忙着自己的毕业论文答辩，在一场一场的火锅和KTV中肆意挥洒最后的青春。研究生毕业之后，一个人来到魔都张江，开始了一个真正意义上的程序员的生活，并且也算以此为自己的职业，能在上海养活自己，并且还养的不错，从体重不断的飙升中可见一斑，期间有机会去韩国出差，算是第一次踏出国门。2018年年初又一次下南洋，开始了在国大的另一段求学的生涯，如今坐在NUS的自习室里，云淡风轻的回忆这两年发生的不多不少的种种，有些值得骄傲，有些也感到无力。但这2年总体而言，都是向着好的方向在前进，尤其完成了自己多年以来的出国梦，可能我这一辈子余下的时光都庸庸碌碌，唯有这件事能称之为闪光点吧。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活感悟" scheme="http://alexjiangzy.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我的2015总结和2016的Todo</title>
     <link href="http://alexjiangzy.com/2015/12/31/my2015/"/>
     <id>http://alexjiangzy.com/2015/12/31/my2015/</id>
     <published>2015-12-30T16:26:59.000Z</published>
     <updated>2016-05-17T07:29:04.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/2016pic.jpg" alt=""></p>
-<h3 id="总体">总体</h3><p>2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了<em><strong>差距</strong></em>，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自我认识的过程。<br><strong>2015年足迹经过了无锡，上海，杭州，重庆，成都，哈尔滨。</strong><br>过去的旧时光我都记得，但是更重要的还是向前看。我还是要对自己的2015做一些总结。<br>2015对我而言的年度词语我觉得应该是——<strong>开眼</strong>。<br><a id="more"></a></p>
-<h3 id="关键词一：说走就走">关键词一：说走就走</h3><p>2015年初，我说走就走去了趟哈尔滨，拿着在松哥那里实习赚的钱去了那个我一直梦寐以求的冰雪世界。我一直都向往北方那种飒爽，冬日漫天白雪的万丈豪情我懂，冬日漫天白雪的安详静谧我也懂。庄严精致的索非亚大教堂，松花江上的狗拉爬犁，精美的冰雪大世界，风刮的扎脸的亚布力，哈工大里的锅包肉白肉粉条，零下20度泡着热水澡等等等，这些个景致杂揉在一起，要我形容，我也只能对着天大吼一句：<strong>爽！</strong>。这里也要谢谢大鑫哥。<br><img src="/images/harbin.jpg" alt=""><br>2015年末，我再次说走就走去了趟成都，成都我觉得简直不能再赞了。虽说是在重庆上学，但是成都给我的感觉完全不一样。成都有我没有料想到的繁华和现代，不管是IFS还是世纪城金融城，完全可以比肩上海，这个城市早就不是我料想中的崛起之势了，俨然是发达了。另外成都是真的安逸（虽然重庆也安逸，但是tm重庆天气实在不好，心情也就不好了），阳光下去人民公园喝喝茶，再去宽窄巷子听个变脸，晚上整个串串猪脚汤，再泡个澡也是嗨到不行（好像两段经历我都要在泡澡后才觉得爽，哈哈）。这里要谢谢李鑫和小平。<br><img src="/images/chengduIFS.jpg" alt=""><br>可能是从江南小镇走出来的缘故，总觉得无锡这个地方总是差点意思，特别对比上述两个城市之后，现在想来可能还是少了一些霸气，缺了一点大气吧。</p>
-<h3 id="关键词二：带队伍">关键词二：带队伍</h3><p>这部分其实也算是对我在学校的小总结。因为我现在也到了研三这个阶段，说实话我觉得我科研搞的真心一般，也可能导师对我的定位不是那种静下来搞科研的，因此我得到了很多带队伍的机会。因为我还算是比较有责任心吧，所以对待带队伍这个事儿还是蛮当回事儿的。年初哈尔滨回来，立马带着师弟一起去到清华大学物联网中心，合作撰写了一个国家自然科学基金。这也是我第一次能按照自己的想法来规划一个项目，有点产品经理的味道，从前期和清华老师的讨论，到制定本子的大框架，看大量的paper，将技术环节分模块、分流程、分阶段，再到分工总结，画好每一个流程图，最后多轮次的修改。其实现在想想也没什么，后期也有点乏力，但是作为一个制定者，进度安排者，还是需要锻炼下大局观的。同时，清华这个平台也让我结交了几个朋友，也看到了什么叫实力，什么叫牛逼的气场，什么叫正经的坚持（举个小例子，大家都会下几个背单词的软件吧，坐我旁边的伯元也一样，我看到了他扇贝签到是1000多天，背三年多了没断过）。然而最后这个本子没中，但是我看到评审意见还是值得肯定。努力就行了，结果听天命吧。</p>
-<p>研二下学期，导师给了我几个含弘学院和电信院的学生，让我带着她们做项目，然后我又开始扮演了带队伍的角色，然后上的居然是安卓。于是乎我也只能现学现卖，而且是彻底的现学先卖，因为我之前java也没怎么写过。于是我开始着手规划，跟着<a href="www.imooc.com">慕课网</a>闷头看了一段时间java，理解了继承、多态、接口、封装，发现也都差不多，然后买了本Bignerd的<a href="http://www.amazon.cn/Android%E7%BC%96%E7%A8%8B%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E8%8F%B2%E5%88%A9%E6%99%AE%E6%96%AF/dp/B00J4DXWDG/ref=sr_1_4?ie=UTF8&amp;qid=1451640139&amp;sr=8-4&amp;keywords=%E5%AE%89%E5%8D%93" target="_blank" rel="external">Android编程权威指南</a>。一节一节看，一章一章讲，一周一次，一边实践，一边也看paper跟上。于是乎，我理解了android的MVC，理解了list-view，理解了多页面通信，理解了传感器调用。因为是带队伍，也带着同学们搭了git环境，手把手讲解了书上的例子，及时做了答疑share了很多我的理解，带着做了高德和调用了sdk实现了定位，也重构了一个别人的app。但是后期却感觉提不起什么精神，因为了解下来大家都有着自己的打算，有的不是纯粹的来学习实践，是盯着能有好方向写paper，出国年master或者docter，有些可能只是应付老师。作为我个人来说，我当然理解这种行为，人不为己，天诛地灭，再者说又有多少人真心喜欢写这屌丝破代码。只能说我喜欢纯粹的学习，纯粹的坚持，当然也有点羡慕他们对未来的规划，我像他们这么大的时候真的毛都不知道。<br>带队伍是辛苦的，但是也是值得的，怎么说呢，每个人要的和选择的不一样，我也不能妄做评断，重新认识自己吧。另外我们组的一个女生也顺利得到了清华的直博，可喜。<br><img src="/images/teacherTime.jpg" alt=""><br>除了带队伍，也中了一篇EI的水文，也算是在研究生阶段有个交代了。其他好像真没啥了。</p>
-<h3 id="关键词三：上海滩">关键词三：上海滩</h3><p>今年收获最大的地方，未来事业开始的地方，也是未来即将为之努力奋斗的地方。</p>
-<p>15年暑假在英语流利说找了一个很给力点实习，这一部分内容拖了很久，因为总是不知道怎么完备的去描述。大概分三块来说吧，公司，人和我做的事儿。</p>
-<h4 id="公司">公司</h4><p>我最早是在拉勾上找的实习，说实话当时没抱多大的希望，觉着自己也没啥干货，找个差不多的公司水一水就差不多了。也许是老天不忍心让我就这么水一水吧，无意间看到个牛叉流利说，谷歌算法团队，湾区办公环境，各种健身房、免费三餐、水果，相当满意的salary。还和赵兴骢吹逼，这谷歌科学家要我我还不起飞了。然后就开始了三次极其相当顺利的电面（虽然中间有点小意外），后来想来也并不是很偶然，因为我之前有写前端的经验，而流利说正好需要一个可视化的平台，所以技能树总体还是比较match的，然后6月底就背着包去了。</p>
-<p>到了流利说，我才知道拉勾上的jd都是事实，公司不大，但是极尽小资，从人员到boss们到公司制度都是完全的逼格满格，典型的小而美的公司。各种人性化的规定，比如实习生免费有屋子住，杨浦这个地价给套免费的房子住，并且还有完全给力的床上用品，奢侈的一比；整个公司的上班时间不打卡，真正做到了完全的弹性工作制，弹的不要不要的，弹的我一般是上午10点到公司都算有点早的；三餐供应，阿姨送饭，说实话，没吃到这么良心的饭菜；去的第一天直接给了我一台mac pro办公，上班期间可以去楼下健身房。都是免费！我们算法的小团建还去攀岩了，今年流利说的大团建还是去的日本，简直不能更赞了。</p>
-<p><img src="/images/liulishuoenv.jpg" alt=""></p>
-<h4 id="人">人</h4><p>再好的公司，再牛的技术，再人性化的制度也都是由人来完成的，流利说也真的让我看到一个有前途的创业公司是由什么人组成的。CEOyi是正经普林斯顿Doctor毕业，杭州市理科高科状元（这事儿我在和ceo吃饭的时候就已经求证过了），CEO这人正能量满分，气场爆炸。CTOBen是Arizona回来，在Quantcast从事数据分析，Ben口齿伶俐的一比，乐趣满分，四点准时健身房，肌肉满分。首席科学家hui，也是我的boss，谷歌NLP工程师，华盛顿cs Doctor毕业，完全的硅谷装束，大拖鞋，大polo衫，根本没什么特别的，但是却是最能将时下流行的算法运用到现实产品中去的实践者，nice到不行，只是一半时间在美国。</p>
-<p>除了创始人之外，每个人都比我不知道高到哪里去了。我们有阿里的架构师和云后台架构，android端几乎是完全微信团队，后端都是得力的工匠，ios都是资深手艺人，教研几乎都是语言学大牛，会好几门语言，产品设计运营ui了解不多。而算法团队，ouyang是带我的大哥，神，上交本硕，人炒鸡好，写scala像写诗一样，看到就是满眼的阳光和活力。金神同济小伙，小极客一枚，认真细致到不行，吃过不少苦，教了我很多，事无巨细，没事还一起去同济游个泳。chuan是一个智商及其高的人，一个人几乎自学了这个口上的所有知识，没事coursera上刷大牛的课，人炒鸡nice。还有feiteng，大工硕士，算法支柱，从hmm把玩到cnn，神。小飞中科院，神。ruobin，南大cs，神。当然还有很多别的神们。</p>
-<p>这次实习更有幸接触了国外好学校的小伙子。hunter，室友，常青藤，普林斯顿统计大三，abc，也能称为神了，我经常恬不知耻的拿我的三脚猫口语去和他的三角猫中文碰撞，做过NASA的数据分析，浑身都是名校出身的光环，晃眼。tony，室友，michigan本科，penn master，常青藤，在全球top的boston consalting Intern过，想法真的很新颖而且背后都带有商业的考量，聊了很多流利说的问题。ivision，室友，同济cs的第一名，放弃了读研，追求前端新高度，把我秒成渣的本科生，已进阿里。xh，室友，南大水文大四，运营小伙，也是初入互联网，但是玩的一手好游戏，从war3到wow到炉石传说，都玩秒我这个老年人，也被我成功唆使买了个mac，老实的好小伙，难忘一起抽烟吹逼的日子，快她么找个好工作！</p>
-<p><img src="/images/lingoall2.jpg" alt=""></p>
-<h4 id="我做的事儿">我做的事儿</h4><p>在这个满是神的世界，我自然也是要工作的。先总结一下我点亮的技能：scala函数式programme、python、zeppelin可视化工具、Spark、Bash。</p>
-<p>前期第一个任务主要是折腾一个可视化环境能将大批量的打分数据可视化，看到每次调整映射后的分数分布。因为考虑到打分的数据量实在太大，传统浏览器是无法承载的，所以放弃了裸前端的做法，考虑到想要串起spark打分的自动化流程，所以用到了zeppelin这个开源平台，用集成好的D3做二次开发，因为类似于IDE online，所以可以轻松的写scala代码，但是搭不上我们自己的spark集群，这个事儿耽误了至少两周，那两周感觉做不出了，丢人到想悄悄背着包一走了之。后来我还是没有这么怂，发现了z-manager这个小插件，勉强搭上了自己的HDFS终于实现了第一个打分自动化图像，也最终搭建了流利说的zeppelin scorer可视化系统平台。</p>
-<p>接下来做的第二件大事儿就是，<strong>写Scala</strong>，函数式编程真的很吸引人，代码量很少，只是很多时候理解起来有点吃力，主要写了将音频，文本序列化的一个脚本，因为数据量很大，所以需要搭spark跑整个task，发现自己写的实在太傻，在ouyang指导下，理解了executor和worker的关系，用了很多优秀模式，比如广播变量，封装了很多方法，使得代码运行效率从之前40多分钟提到10分钟，整个序列化任务可用于流利说之前所有英日韩德法的算法验证。中间还写了个从七牛上批量下载所有音频的小脚本。</p>
-<p>第三件事儿，是将feiteng整个流利说打分验证对比可视化，从这里我才看到了流利说整个打分的严谨性，因为已经对整个搭建的环境很熟悉，所以这部分只需要做到整个流程上的逻辑连贯就可以了，最后在zeppelin上用angularjs将整个对比呈现，也是基本满意了。</p>
-<p>期间还入门了python爬虫的基础，是为了批量抓取韩语发音网站上的音标，阅读了ouyang大量pipeline的代码，有很多工程上的写法，一直受用到我现在。每周的算法分享，也让我了解了大概的语音这块的形势。</p>
-<p>值得欣慰的是，搭建的这个流利说的打分zeppelin平台，还被NFLabs fork到了zeppelinhub里作为visulization的tutorial。也算是对我这只小菜鸡的鼓励了吧，中间一个小系统可以<a href="https://www.zeppelinhub.com/viewer/notebooks/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FsZXg0NGp6eS9ub3RlYm9vay16ZXBwZWxpbi9tYXN0ZXIvMkFWQlhaOVJXL25vdGUuanNvbg" target="_blank" rel="external">看下</a>。</p>
-<p> 可能我永远都写不完流利说的好，写不完备流利说的三个月实习让我开了多少眼，但是我知道，人还是要向前看，学到的工匠精神也好，大局观也好，编程的优秀模式也好，对待新技术的态度也好，还是需要一个真正的平台才能好好实战，感谢流利所和流利说的小伙伴给我的各种帮助，我也坚定了自己好好做技术的信念，就当一切都刚刚开始。</p>
-<h3 id="关键词四：戒烟">关键词四：戒烟</h3><p>这块内容我其实也是最近才想到写的，一来是想让自己继续坚持下去，二来也是给想戒烟的人一点启示，或者是对待戒断综合症的一点见解。</p>
-<p>首先是戒烟的动机，我烟龄没有很长，也就3年左右吧，但是瘾还是很大的。长远动机主要是明显觉得身体没有以前好了，有时候早上咳嗦很厉害，肺部也有时候不适，想恢复以前的好身体。近期的动机是觉得太花钱，而且很耽误时间，抽完烟就晕晕的想找个地儿躺着，感觉人的精神状态也变的慵懒了。很多人会觉得抽烟酷酷的，最近也在想这个事儿，我个人觉得是价值观的问题，从前的观念感觉抽根烟酷酷的，以至于好像不会抽烟有时是件有点丢脸的事儿，然而我们现在当下这个年代，做什么事儿是酷的呢，良好的健身习惯，良好的饮食习惯或许是完全的素食主义，晒今天消耗了多少卡路里，走了多少里程。这是当下越来越多的人在传递的东西，不管是你的周遭生活还是意识形态，因此是不是该是时候刷新一下自己的价值观了。</p>
-<p><img src="/images/quit_smoking.jpg" alt=""></p>
-<p>其实等你想清楚了这一切之后，戒烟就只是个坚持的事儿，其实每个人都一样，要想突破之前已经成型的习惯都会有阵痛，就像所有人都是懒的一样，所有人冬天也都不想起床，但是总有人可以打破这一切，那你为什么不可以。另外不要相信什么减量戒烟法，减量法只是给你想戒烟的一时冲动提供暂时的温床，等时间一长，这个想法不再一直激励你的时候也就没什么大用了。特别想抽烟的时候注意分散下注意力，有时候也可以给自己稍微强烈一点的心理暗示，比如再忍一忍之类的。我戒烟有个得天独厚的好处，就是周围没有人抽烟，也就没有人在那儿得得嗖嗖的诱惑你。</p>
-<p>关于戒断后的一些不适应，我就非常强烈，比如胸闷，比抽烟时候更加胸闷，比如头晕，可以去适当看看中医。但是我觉得记住两句话就好了：</p>
-<blockquote>
-<p><strong>戒烟时的不适应都是暂时的，戒烟后的益处是永恒的。</strong></p>
-</blockquote>
-<p>我也才戒了两个月，最近已经基本回到以前那个不会抽烟的状态了，希望能保持吧。</p>
-<h3 id="关于2016的Todo">关于2016的Todo</h3><p>今年有几件大事儿，第一就是毕业，我六月份要毕业答辩，所以这是一定会认真对待的。另外就是去工作，这也是我今年最为未知的事儿。主要的Todo List还是会列一下：</p>
-<ul>
-<li>规律作息和生活，这个也说了很久了，是时候来实践一下了。</li>
-<li>减肥健身管住嘴，控制体重150以内，现在超标太多。</li>
-<li>写一篇高质量的SCI，然后毕业答辩。</li>
-<li>mooc坚持看，不管是慕课网还是coursera，坚持下去。</li>
-<li>前端的基础打牢，学node，学点新框架reactjs，vuejs，redux，koa。</li>
-<li>今年计划好好学一门英语以外的外语，暂定韩语或者日语吧。</li>
-</ul>
-<blockquote>
-<p><strong>有時，換個思考方式，事情就容易做很多。例如健身，一次一小時，一週四次，一個月16小時，一年才做總共8天。為什麼，不好好的把握每一次做的機會？學習、工作⋯亦然。</strong></p>
-</blockquote>
-<h3 id="2016，共勉！">2016，共勉！</h3>]]></content>
+    
+    <content type="html"><![CDATA[<p><img src="/images/2016pic.jpg" alt=""></p><h3 id="总体"><a href="#总体" class="headerlink" title="总体"></a>总体</h3><p>2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了<em><strong>差距</strong></em>，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自我认识的过程。<br><strong>2015年足迹经过了无锡，上海，杭州，重庆，成都，哈尔滨。</strong><br>过去的旧时光我都记得，但是更重要的还是向前看。我还是要对自己的2015做一些总结。<br>2015对我而言的年度词语我觉得应该是——<strong>开眼</strong>。<br><a id="more"></a></p><h3 id="关键词一：说走就走"><a href="#关键词一：说走就走" class="headerlink" title="关键词一：说走就走"></a>关键词一：说走就走</h3><p>2015年初，我说走就走去了趟哈尔滨，拿着在松哥那里实习赚的钱去了那个我一直梦寐以求的冰雪世界。我一直都向往北方那种飒爽，冬日漫天白雪的万丈豪情我懂，冬日漫天白雪的安详静谧我也懂。庄严精致的索非亚大教堂，松花江上的狗拉爬犁，精美的冰雪大世界，风刮的扎脸的亚布力，哈工大里的锅包肉白肉粉条，零下20度泡着热水澡等等等，这些个景致杂揉在一起，要我形容，我也只能对着天大吼一句：<strong>爽！</strong>。这里也要谢谢大鑫哥。<br><img src="/images/harbin.jpg" alt=""><br>2015年末，我再次说走就走去了趟成都，成都我觉得简直不能再赞了。虽说是在重庆上学，但是成都给我的感觉完全不一样。成都有我没有料想到的繁华和现代，不管是IFS还是世纪城金融城，完全可以比肩上海，这个城市早就不是我料想中的崛起之势了，俨然是发达了。另外成都是真的安逸（虽然重庆也安逸，但是tm重庆天气实在不好，心情也就不好了），阳光下去人民公园喝喝茶，再去宽窄巷子听个变脸，晚上整个串串猪脚汤，再泡个澡也是嗨到不行（好像两段经历我都要在泡澡后才觉得爽，哈哈）。这里要谢谢李鑫和小平。<br><img src="/images/chengduIFS.jpg" alt=""><br>可能是从江南小镇走出来的缘故，总觉得无锡这个地方总是差点意思，特别对比上述两个城市之后，现在想来可能还是少了一些霸气，缺了一点大气吧。</p><h3 id="关键词二：带队伍"><a href="#关键词二：带队伍" class="headerlink" title="关键词二：带队伍"></a>关键词二：带队伍</h3><p>这部分其实也算是对我在学校的小总结。因为我现在也到了研三这个阶段，说实话我觉得我科研搞的真心一般，也可能导师对我的定位不是那种静下来搞科研的，因此我得到了很多带队伍的机会。因为我还算是比较有责任心吧，所以对待带队伍这个事儿还是蛮当回事儿的。年初哈尔滨回来，立马带着师弟一起去到清华大学物联网中心，合作撰写了一个国家自然科学基金。这也是我第一次能按照自己的想法来规划一个项目，有点产品经理的味道，从前期和清华老师的讨论，到制定本子的大框架，看大量的paper，将技术环节分模块、分流程、分阶段，再到分工总结，画好每一个流程图，最后多轮次的修改。其实现在想想也没什么，后期也有点乏力，但是作为一个制定者，进度安排者，还是需要锻炼下大局观的。同时，清华这个平台也让我结交了几个朋友，也看到了什么叫实力，什么叫牛逼的气场，什么叫正经的坚持（举个小例子，大家都会下几个背单词的软件吧，坐我旁边的伯元也一样，我看到了他扇贝签到是1000多天，背三年多了没断过）。然而最后这个本子没中，但是我看到评审意见还是值得肯定。努力就行了，结果听天命吧。</p><p>研二下学期，导师给了我几个含弘学院和电信院的学生，让我带着她们做项目，然后我又开始扮演了带队伍的角色，然后上的居然是安卓。于是乎我也只能现学现卖，而且是彻底的现学先卖，因为我之前java也没怎么写过。于是我开始着手规划，跟着<a href="www.imooc.com">慕课网</a>闷头看了一段时间java，理解了继承、多态、接口、封装，发现也都差不多，然后买了本Bignerd的<a href="http://www.amazon.cn/Android%E7%BC%96%E7%A8%8B%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E8%8F%B2%E5%88%A9%E6%99%AE%E6%96%AF/dp/B00J4DXWDG/ref=sr_1_4?ie=UTF8&amp;qid=1451640139&amp;sr=8-4&amp;keywords=%E5%AE%89%E5%8D%93" target="_blank" rel="noopener">Android编程权威指南</a>。一节一节看，一章一章讲，一周一次，一边实践，一边也看paper跟上。于是乎，我理解了android的MVC，理解了list-view，理解了多页面通信，理解了传感器调用。因为是带队伍，也带着同学们搭了git环境，手把手讲解了书上的例子，及时做了答疑share了很多我的理解，带着做了高德和调用了sdk实现了定位，也重构了一个别人的app。但是后期却感觉提不起什么精神，因为了解下来大家都有着自己的打算，有的不是纯粹的来学习实践，是盯着能有好方向写paper，出国年master或者docter，有些可能只是应付老师。作为我个人来说，我当然理解这种行为，人不为己，天诛地灭，再者说又有多少人真心喜欢写这屌丝破代码。只能说我喜欢纯粹的学习，纯粹的坚持，当然也有点羡慕他们对未来的规划，我像他们这么大的时候真的毛都不知道。<br>带队伍是辛苦的，但是也是值得的，怎么说呢，每个人要的和选择的不一样，我也不能妄做评断，重新认识自己吧。另外我们组的一个女生也顺利得到了清华的直博，可喜。<br><img src="/images/teacherTime.jpg" alt=""><br>除了带队伍，也中了一篇EI的水文，也算是在研究生阶段有个交代了。其他好像真没啥了。</p><h3 id="关键词三：上海滩"><a href="#关键词三：上海滩" class="headerlink" title="关键词三：上海滩"></a>关键词三：上海滩</h3><p>今年收获最大的地方，未来事业开始的地方，也是未来即将为之努力奋斗的地方。</p><p>15年暑假在英语流利说找了一个很给力点实习，这一部分内容拖了很久，因为总是不知道怎么完备的去描述。大概分三块来说吧，公司，人和我做的事儿。</p><h4 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h4><p>我最早是在拉勾上找的实习，说实话当时没抱多大的希望，觉着自己也没啥干货，找个差不多的公司水一水就差不多了。也许是老天不忍心让我就这么水一水吧，无意间看到个牛叉流利说，谷歌算法团队，湾区办公环境，各种健身房、免费三餐、水果，相当满意的salary。还和赵兴骢吹逼，这谷歌科学家要我我还不起飞了。然后就开始了三次极其相当顺利的电面（虽然中间有点小意外），后来想来也并不是很偶然，因为我之前有写前端的经验，而流利说正好需要一个可视化的平台，所以技能树总体还是比较match的，然后6月底就背着包去了。</p><p>到了流利说，我才知道拉勾上的jd都是事实，公司不大，但是极尽小资，从人员到boss们到公司制度都是完全的逼格满格，典型的小而美的公司。各种人性化的规定，比如实习生免费有屋子住，杨浦这个地价给套免费的房子住，并且还有完全给力的床上用品，奢侈的一比；整个公司的上班时间不打卡，真正做到了完全的弹性工作制，弹的不要不要的，弹的我一般是上午10点到公司都算有点早的；三餐供应，阿姨送饭，说实话，没吃到这么良心的饭菜；去的第一天直接给了我一台mac pro办公，上班期间可以去楼下健身房。都是免费！我们算法的小团建还去攀岩了，今年流利说的大团建还是去的日本，简直不能更赞了。</p><p><img src="/images/liulishuoenv.jpg" alt=""></p><h4 id="人"><a href="#人" class="headerlink" title="人"></a>人</h4><p>再好的公司，再牛的技术，再人性化的制度也都是由人来完成的，流利说也真的让我看到一个有前途的创业公司是由什么人组成的。CEOyi是正经普林斯顿Doctor毕业，杭州市理科高科状元（这事儿我在和ceo吃饭的时候就已经求证过了），CEO这人正能量满分，气场爆炸。CTOBen是Arizona回来，在Quantcast从事数据分析，Ben口齿伶俐的一比，乐趣满分，四点准时健身房，肌肉满分。首席科学家hui，也是我的boss，谷歌NLP工程师，华盛顿cs Doctor毕业，完全的硅谷装束，大拖鞋，大polo衫，根本没什么特别的，但是却是最能将时下流行的算法运用到现实产品中去的实践者，nice到不行，只是一半时间在美国。</p><p>除了创始人之外，每个人都比我不知道高到哪里去了。我们有阿里的架构师和云后台架构，android端几乎是完全微信团队，后端都是得力的工匠，ios都是资深手艺人，教研几乎都是语言学大牛，会好几门语言，产品设计运营ui了解不多。而算法团队，ouyang是带我的大哥，神，上交本硕，人炒鸡好，写scala像写诗一样，看到就是满眼的阳光和活力。金神同济小伙，小极客一枚，认真细致到不行，吃过不少苦，教了我很多，事无巨细，没事还一起去同济游个泳。chuan是一个智商及其高的人，一个人几乎自学了这个口上的所有知识，没事coursera上刷大牛的课，人炒鸡nice。还有feiteng，大工硕士，算法支柱，从hmm把玩到cnn，神。小飞中科院，神。ruobin，南大cs，神。当然还有很多别的神们。</p><p>这次实习更有幸接触了国外好学校的小伙子。hunter，室友，常青藤，普林斯顿统计大三，abc，也能称为神了，我经常恬不知耻的拿我的三脚猫口语去和他的三角猫中文碰撞，做过NASA的数据分析，浑身都是名校出身的光环，晃眼。tony，室友，michigan本科，penn master，常青藤，在全球top的boston consalting Intern过，想法真的很新颖而且背后都带有商业的考量，聊了很多流利说的问题。ivision，室友，同济cs的第一名，放弃了读研，追求前端新高度，把我秒成渣的本科生，已进阿里。xh，室友，南大水文大四，运营小伙，也是初入互联网，但是玩的一手好游戏，从war3到wow到炉石传说，都玩秒我这个老年人，也被我成功唆使买了个mac，老实的好小伙，难忘一起抽烟吹逼的日子，快她么找个好工作！</p><p><img src="/images/lingoall2.jpg" alt=""></p><h4 id="我做的事儿"><a href="#我做的事儿" class="headerlink" title="我做的事儿"></a>我做的事儿</h4><p>在这个满是神的世界，我自然也是要工作的。先总结一下我点亮的技能：scala函数式programme、python、zeppelin可视化工具、Spark、Bash。</p><p>前期第一个任务主要是折腾一个可视化环境能将大批量的打分数据可视化，看到每次调整映射后的分数分布。因为考虑到打分的数据量实在太大，传统浏览器是无法承载的，所以放弃了裸前端的做法，考虑到想要串起spark打分的自动化流程，所以用到了zeppelin这个开源平台，用集成好的D3做二次开发，因为类似于IDE online，所以可以轻松的写scala代码，但是搭不上我们自己的spark集群，这个事儿耽误了至少两周，那两周感觉做不出了，丢人到想悄悄背着包一走了之。后来我还是没有这么怂，发现了z-manager这个小插件，勉强搭上了自己的HDFS终于实现了第一个打分自动化图像，也最终搭建了流利说的zeppelin scorer可视化系统平台。</p><p>接下来做的第二件大事儿就是，<strong>写Scala</strong>，函数式编程真的很吸引人，代码量很少，只是很多时候理解起来有点吃力，主要写了将音频，文本序列化的一个脚本，因为数据量很大，所以需要搭spark跑整个task，发现自己写的实在太傻，在ouyang指导下，理解了executor和worker的关系，用了很多优秀模式，比如广播变量，封装了很多方法，使得代码运行效率从之前40多分钟提到10分钟，整个序列化任务可用于流利说之前所有英日韩德法的算法验证。中间还写了个从七牛上批量下载所有音频的小脚本。</p><p>第三件事儿，是将feiteng整个流利说打分验证对比可视化，从这里我才看到了流利说整个打分的严谨性，因为已经对整个搭建的环境很熟悉，所以这部分只需要做到整个流程上的逻辑连贯就可以了，最后在zeppelin上用angularjs将整个对比呈现，也是基本满意了。</p><p>期间还入门了python爬虫的基础，是为了批量抓取韩语发音网站上的音标，阅读了ouyang大量pipeline的代码，有很多工程上的写法，一直受用到我现在。每周的算法分享，也让我了解了大概的语音这块的形势。</p><p>值得欣慰的是，搭建的这个流利说的打分zeppelin平台，还被NFLabs fork到了zeppelinhub里作为visulization的tutorial。也算是对我这只小菜鸡的鼓励了吧，中间一个小系统可以<a href="https://www.zeppelinhub.com/viewer/notebooks/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FsZXg0NGp6eS9ub3RlYm9vay16ZXBwZWxpbi9tYXN0ZXIvMkFWQlhaOVJXL25vdGUuanNvbg" target="_blank" rel="noopener">看下</a>。</p><p> 可能我永远都写不完流利说的好，写不完备流利说的三个月实习让我开了多少眼，但是我知道，人还是要向前看，学到的工匠精神也好，大局观也好，编程的优秀模式也好，对待新技术的态度也好，还是需要一个真正的平台才能好好实战，感谢流利所和流利说的小伙伴给我的各种帮助，我也坚定了自己好好做技术的信念，就当一切都刚刚开始。</p><h3 id="关键词四：戒烟"><a href="#关键词四：戒烟" class="headerlink" title="关键词四：戒烟"></a>关键词四：戒烟</h3><p>这块内容我其实也是最近才想到写的，一来是想让自己继续坚持下去，二来也是给想戒烟的人一点启示，或者是对待戒断综合症的一点见解。</p><p>首先是戒烟的动机，我烟龄没有很长，也就3年左右吧，但是瘾还是很大的。长远动机主要是明显觉得身体没有以前好了，有时候早上咳嗦很厉害，肺部也有时候不适，想恢复以前的好身体。近期的动机是觉得太花钱，而且很耽误时间，抽完烟就晕晕的想找个地儿躺着，感觉人的精神状态也变的慵懒了。很多人会觉得抽烟酷酷的，最近也在想这个事儿，我个人觉得是价值观的问题，从前的观念感觉抽根烟酷酷的，以至于好像不会抽烟有时是件有点丢脸的事儿，然而我们现在当下这个年代，做什么事儿是酷的呢，良好的健身习惯，良好的饮食习惯或许是完全的素食主义，晒今天消耗了多少卡路里，走了多少里程。这是当下越来越多的人在传递的东西，不管是你的周遭生活还是意识形态，因此是不是该是时候刷新一下自己的价值观了。</p><p><img src="/images/quit_smoking.jpg" alt=""></p><p>其实等你想清楚了这一切之后，戒烟就只是个坚持的事儿，其实每个人都一样，要想突破之前已经成型的习惯都会有阵痛，就像所有人都是懒的一样，所有人冬天也都不想起床，但是总有人可以打破这一切，那你为什么不可以。另外不要相信什么减量戒烟法，减量法只是给你想戒烟的一时冲动提供暂时的温床，等时间一长，这个想法不再一直激励你的时候也就没什么大用了。特别想抽烟的时候注意分散下注意力，有时候也可以给自己稍微强烈一点的心理暗示，比如再忍一忍之类的。我戒烟有个得天独厚的好处，就是周围没有人抽烟，也就没有人在那儿得得嗖嗖的诱惑你。</p><p>关于戒断后的一些不适应，我就非常强烈，比如胸闷，比抽烟时候更加胸闷，比如头晕，可以去适当看看中医。但是我觉得记住两句话就好了：</p><blockquote><p><strong>戒烟时的不适应都是暂时的，戒烟后的益处是永恒的。</strong></p></blockquote><p>我也才戒了两个月，最近已经基本回到以前那个不会抽烟的状态了，希望能保持吧。</p><h3 id="关于2016的Todo"><a href="#关于2016的Todo" class="headerlink" title="关于2016的Todo"></a>关于2016的Todo</h3><p>今年有几件大事儿，第一就是毕业，我六月份要毕业答辩，所以这是一定会认真对待的。另外就是去工作，这也是我今年最为未知的事儿。主要的Todo List还是会列一下：</p><ul><li>规律作息和生活，这个也说了很久了，是时候来实践一下了。</li><li>减肥健身管住嘴，控制体重150以内，现在超标太多。</li><li>写一篇高质量的SCI，然后毕业答辩。</li><li>mooc坚持看，不管是慕课网还是coursera，坚持下去。</li><li>前端的基础打牢，学node，学点新框架reactjs，vuejs，redux，koa。</li><li>今年计划好好学一门英语以外的外语，暂定韩语或者日语吧。</li></ul><blockquote><p><strong>有時，換個思考方式，事情就容易做很多。例如健身，一次一小時，一週四次，一個月16小時，一年才做總共8天。為什麼，不好好的把握每一次做的機會？學習、工作⋯亦然。</strong></p></blockquote><h3 id="2016，共勉！"><a href="#2016，共勉！" class="headerlink" title="2016，共勉！"></a>2016，共勉！</h3>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p><img src="/images/2016pic.jpg" alt=""></p>
-<h3 id="总体">总体</h3><p>2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了<em><strong>差距</strong></em>，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自我认识的过程。<br><strong>2015年足迹经过了无锡，上海，杭州，重庆，成都，哈尔滨。</strong><br>过去的旧时光我都记得，但是更重要的还是向前看。我还是要对自己的2015做一些总结。<br>2015对我而言的年度词语我觉得应该是——<strong>开眼</strong>。<br>]]>
+    
+      &lt;p&gt;&lt;img src=&quot;/images/2016pic.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;总体&quot;&gt;&lt;a href=&quot;#总体&quot; class=&quot;headerlink&quot; title=&quot;总体&quot;&gt;&lt;/a&gt;总体&lt;/h3&gt;&lt;p&gt;2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了&lt;em&gt;&lt;strong&gt;差距&lt;/strong&gt;&lt;/em&gt;，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自我认识的过程。&lt;br&gt;&lt;strong&gt;2015年足迹经过了无锡，上海，杭州，重庆，成都，哈尔滨。&lt;/strong&gt;&lt;br&gt;过去的旧时光我都记得，但是更重要的还是向前看。我还是要对自己的2015做一些总结。&lt;br&gt;2015对我而言的年度词语我觉得应该是——&lt;strong&gt;开眼&lt;/strong&gt;。&lt;br&gt;
     
     </summary>
     
-      <category term="年终总结" scheme="http://alexjiangzy.com/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    
       <category term="生活感悟" scheme="http://alexjiangzy.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="年终总结" scheme="http://alexjiangzy.com/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令]]></title>
+    <title>Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令</title>
     <link href="http://alexjiangzy.com/2015/12/16/MactexTool/"/>
     <id>http://alexjiangzy.com/2015/12/16/MactexTool/</id>
     <published>2015-12-16T13:38:48.000Z</published>
     <updated>2018-03-19T14:48:46.000Z</updated>
-    <content type="html"><![CDATA[<!-- ![](http://www.macupdate.com/images/icons256/12104.png) -->
-<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br><a id="more"></a></p>
-<ul>
-<li>MacTex+Sublime3+Skim安装</li>
-<li>MacTex中文支持</li>
-<li>LaTeX的一些特殊字符总结</li>
-</ul>
-<hr>
-<h3 id="MacTex的安装">MacTex的安装</h3><p><a href="https://tug.org/mactex/" target="_blank" rel="external">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p>
-<h3 id="Sublime3(LaTeXTools)的安装">Sublime3(LaTeXTools)的安装</h3><p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="external"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<br><code>LaTeXTools</code>，确认后安装就OK了。</p>
-<h3 id="Skim的安装">Skim的安装</h3><p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="external">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，同步配置是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。<br><strong><code>打开skim&gt;点击Skim选项&gt;选择同步&gt;改写一些配置</code></strong></p>
-<table>
-<thead>
-<tr>
-<th>预设</th>
-<th>自定义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>命令</td>
-<td>/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl</td>
-</tr>
-<tr>
-<td>参数</td>
-<td>“%file”:%line</td>
-</tr>
-</tbody>
-</table>
-<p><img src="/images/skimsync.png" alt=""></p>
-<h3 id="MacTex的中文支持">MacTex的中文支持</h3><p>中文支持是我很恼火的一个问题，因为早两年我在windows上用LaTeX的时候就发觉中文的支持贼差，但是现在国内一些较好的杂志(如<em>《中国科学》</em>、<em>《物理学报》</em>)又纷纷推出了LaTeX的模版，好比硬要给拖拉机装上12缸😊，在mac上折腾发现也没有那么轻松，在此我也说句良心话，用LaTeX还是尽量去敲英文吧。参考了一些人的博客，大致有三种方式可以实现。</p>
-<ul>
-<li>最简便的方法，只需要在tex文件的最上部加上<code>%!TEX program = xelatex</code>就可以了，参考下文的代码和最终结果，但是这里需要多注意两个问题：<ul>
-<li>一定要注意设定字体。参考下文中的 <code>\setmainfont{Hiragino Sans GB}</code>。</li>
-<li>中文一定要多加一句代码<code>\XeTeXlinebreaklocale &quot;zh&quot;</code>，这是为了中文可以正常换行。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">%!<span class="constant">TEX</span> program = xelatex</span><br><span class="line">%!<span class="constant">TEX</span> <span class="constant">TS</span>-program = xelatex</span><br><span class="line">%!<span class="constant">TEX</span> encoding = <span class="constant">UTF</span>-<span class="number">8</span> <span class="constant">Unicode</span></span><br><span class="line"></span><br><span class="line">\documentclass[<span class="number">12</span>pt]&#123;article&#125; %这个我就不多说了，头文件</span><br><span class="line">\usepackage&#123;url&#125; %这个我也不多说了</span><br><span class="line">\usepackage&#123;fontspec,xltxtra,xunicode&#125; %最新的mactex都有</span><br><span class="line"></span><br><span class="line">\defaultfontfeatures&#123;<span class="constant">Mapping</span>=tex-text&#125;</span><br><span class="line">\setromanfont&#123;<span class="constant">Heiti</span> <span class="constant">SC</span>&#125; %设置中文字体</span><br><span class="line">\<span class="constant">XeTeXlinebreaklocale</span> “zh”</span><br><span class="line">\<span class="constant">XeTeXlinebreakskip</span> = 0pt plus <span class="number">1</span>pt minus <span class="number">0</span>.<span class="number">1</span>pt %文章内中文自动换行，可以自行调节</span><br><span class="line"></span><br><span class="line">\newfontfamily&#123;\<span class="constant">H</span>&#125;&#123;<span class="constant">Songti</span> <span class="constant">SC</span>&#125; %设定新的字体快捷命令</span><br><span class="line">\newfontfamily&#123;\<span class="constant">E</span>&#125;&#123;<span class="constant">Weibei</span> <span class="constant">SC</span>&#125; %设定新的字体快捷命令</span><br><span class="line">\<span class="keyword">begin</span>&#123;document&#125;</span><br><span class="line">\thispagestyle&#123;empty&#125;</span><br><span class="line">\small&#123;给一个比较简单的方法，在mac上折腾<span class="constant">CJK</span>有点麻烦，其实<span class="constant">XeTeX</span>就可以解决中文的问题。编码的改动其实不需要在mactex的设置里面改，写在前面然后注释掉就好了。\\</span><br><span class="line">繁體字什麼的也是可以實現的。\\</span><br><span class="line">当你需要打不同字体的时候，就需要用到这个\url&#123;\newfontfamily&#125;，这样你可以在一行中显示多种字体。比如说：\\&#125;</span><br><span class="line">\<span class="constant">Huge</span>&#123;&#123;\<span class="constant">H</span> 宋体&#125; &#123;\<span class="constant">E</span> 魏碑&#125; 黑体&#125;</span><br><span class="line">\<span class="keyword">end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/latexPic.png" alt=""></p>
-<ul>
-<li>比较折腾的方法，就是去折腾这个<a href="http://cjk.ffii.org/" target="_blank" rel="external">CJK</a>。其实也没有很折腾，我下载的最新的mactex2015版，CJK已经集成在其中了，不用单独下载了，只要在文档开头加上<code>\usepackage[encapsulated]{CJK}</code>就可以了。具体参看下面的测试tex：</li>
-</ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[<span class="number">12</span>pt]&#123;article&#125;</span><br><span class="line">\usepackage[encapsulated]&#123;<span class="constant">CJK</span>&#125; % <span class="number">1</span>. <span class="constant">Dec</span>. <span class="number">2009</span>更新：使用[encapsulate]才是正確的用法</span><br><span class="line">\<span class="keyword">begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line">\<span class="keyword">begin</span>&#123;<span class="constant">CJK</span>&#125;&#123;<span class="constant">UTF8</span>&#125;&#123;bsmi&#125; % 開始 <span class="constant">CJK</span> 環境，設定編碼，設定字體</span><br><span class="line">“互联网能造空调吗？互联网永远都只是工具，不能替代实体经济。”在互联网是万能的甚至可以颠覆、通杀一切的说法在中国商界流行之时，董明珠仍然坚持自己观点。她给在场企业家鼓劲说，不信再等两年来看，实体经济一定会崛起。无论什么企业和公司，都要有自己的核心技术。实体店也会一直存在下去，但在互联网时代发生很大变化。实体店应该在便利性等方面下功夫，让顾客感觉跟自己更近。</span><br><span class="line"><span class="constant">This</span> is a test.</span><br><span class="line">\<span class="keyword">end</span>&#123;<span class="constant">CJK</span>&#125; % 結束 <span class="constant">CJK</span> 環境</span><br><span class="line">\<span class="keyword">end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>比较严谨的方法，安装latexmk，然后在LaTeXTools中更改设置，首先</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo tlmgr update --self</span><br><span class="line">sudo tlmgr install latexmk</span><br></pre></td></tr></table></figure>
-<p>然后在Sulime中打开<code>Preferences——Package Settings——LaTeXTools——Settings-User</code>，在builder－settings中进行如下设置（<strong>记住一定是在builder-settings这个选项下进行设置</strong>）：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"program" : "xelatex",</span><br><span class="line">"command" : ["latexmk", "-cd", "-e", "$pdflatex = 'xelatex -interaction=nonstopmode -synctex=1 %S %O'", "-f", "-pdf"],</span><br></pre></td></tr></table></figure>
-<p>更加具体的配置和一些问题，可以访问<a href="http://www.readern.com/sublime-text-latex-chinese-under-mac.html" target="_blank" rel="external">Readern博客</a>，特别是如果编译出现问题可以多follow下面的评论。</p>
-<h3 id="LaTeX的命令总结">LaTeX的命令总结</h3><p>这部分我会在具体一边做的时候一边补充，所以我先慢慢整理。</p>
-<h4 id="LaTeX对应的所有希腊字母：">LaTeX对应的所有希腊字母：</h4><p>这部分顺便测试这个Hexo里的MathJax。</p>
-<table>
-<thead>
-<tr>
-<th>\alpha</th>
-<th style="text-align:center">$\alpha$</th>
-<th>\beta</th>
-<th style="text-align:center">$\beta$</th>
-<th>\gamma</th>
-<th style="text-align:center">$\gamma$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\delta</td>
-<td style="text-align:center">$\delta$</td>
-<td>\epsilon</td>
-<td style="text-align:center">$\epsilon$</td>
-<td>\zeta</td>
-<td style="text-align:center">$\zeta$</td>
-</tr>
-<tr>
-<td>\eta</td>
-<td style="text-align:center">$\eta$</td>
-<td>\theta</td>
-<td style="text-align:center">$\theta$</td>
-<td>\iota</td>
-<td style="text-align:center">$\iota$</td>
-</tr>
-<tr>
-<td>\kappa</td>
-<td style="text-align:center">$\kappa$</td>
-<td>\lambda</td>
-<td style="text-align:center">$\lambda$</td>
-<td>\mu</td>
-<td style="text-align:center">$\mu$</td>
-</tr>
-<tr>
-<td>\nu</td>
-<td style="text-align:center">$\nu$</td>
-<td>\xi</td>
-<td style="text-align:center">$\xi$</td>
-<td>\omicron</td>
-<td style="text-align:center">$\omicron$</td>
-</tr>
-<tr>
-<td>\pi</td>
-<td style="text-align:center">$\pi$</td>
-<td>\rho</td>
-<td style="text-align:center">$\rho$</td>
-<td>\sigma</td>
-<td style="text-align:center">$\sigma$</td>
-</tr>
-<tr>
-<td>\tau</td>
-<td style="text-align:center">$\tau$</td>
-<td>\upsilon</td>
-<td style="text-align:center">$\upsilon$</td>
-<td>\phi</td>
-<td style="text-align:center">$\phi$</td>
-</tr>
-<tr>
-<td>\chi</td>
-<td style="text-align:center">$\chi$</td>
-<td>\psi</td>
-<td style="text-align:center">$\psi$</td>
-<td>\omega</td>
-<td style="text-align:center">$\omega$</td>
-</tr>
-</tbody>
-</table>
-<h4 id="公式：">公式：</h4><p>单行公式:<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$<span class="variable">$a</span> = b + c$$</span><br></pre></td></tr></table></figure></p>
-<p>$$a = b + c$$<br>稍复杂的公式：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$<span class="command">\frac</span><span class="special">&#123;</span><span class="command">\partial</span> u<span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\partial</span> t<span class="special">&#125;</span></span><br><span class="line">= h^2 <span class="command">\left</span>( <span class="command">\frac</span><span class="special">&#123;</span><span class="command">\partial</span>^2 u<span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\partial</span> x^2<span class="special">&#125;</span> +</span><br><span class="line"><span class="command">\frac</span><span class="special">&#123;</span><span class="command">\partial</span>^2 u<span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\partial</span> y^2<span class="special">&#125;</span> +</span><br><span class="line"><span class="command">\frac</span><span class="special">&#123;</span><span class="command">\partial</span>^2 u<span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\partial</span> z^2<span class="special">&#125;</span><span class="command">\right</span>)$$</span></span><br></pre></td></tr></table></figure></p>
-<p>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>薛定谔方程：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$ i<span class="command">\hbar</span><span class="command">\frac</span><span class="special">&#123;</span><span class="command">\partial</span> <span class="command">\psi</span><span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\partial</span> t<span class="special">&#125;</span></span><br><span class="line">= <span class="command">\frac</span><span class="special">&#123;</span>-<span class="command">\hbar</span>^2<span class="special">&#125;</span><span class="special">&#123;</span>2m<span class="special">&#125;</span> <span class="command">\left</span>(</span><br><span class="line"><span class="command">\frac</span><span class="special">&#123;</span><span class="command">\partial</span>^2<span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\partial</span> x^2<span class="special">&#125;</span> + <span class="command">\frac</span><span class="special">&#123;</span><span class="command">\partial</span>^2<span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\partial</span> y^2<span class="special">&#125;</span> + <span class="command">\frac</span><span class="special">&#123;</span><span class="command">\partial</span>^2<span class="special">&#125;</span><span class="special">&#123;</span><span class="command">\partial</span> z^2<span class="special">&#125;</span></span><br><span class="line"><span class="command">\right</span>) <span class="command">\psi</span> + V <span class="command">\psi</span>.$$</span></span><br></pre></td></tr></table></figure></p>
-<p>$$ i\hbar\frac{\partial \psi}{\partial t}<br>= \frac{-\hbar^2}{2m} \left(<br>\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}<br>\right) \psi + V \psi.$$</p>
-]]></content>
+    
+    <content type="html"><![CDATA[<!-- ![](http://www.macupdate.com/images/icons256/12104.png) --><p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br><a id="more"></a></p><ul><li>MacTex+Sublime3+Skim安装</li><li>MacTex中文支持</li><li>LaTeX的一些特殊字符总结</li></ul><hr><h3 id="MacTex的安装"><a href="#MacTex的安装" class="headerlink" title="MacTex的安装"></a>MacTex的安装</h3><p><a href="https://tug.org/mactex/" target="_blank" rel="noopener">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p><h3 id="Sublime3-LaTeXTools-的安装"><a href="#Sublime3-LaTeXTools-的安装" class="headerlink" title="Sublime3(LaTeXTools)的安装"></a>Sublime3(LaTeXTools)的安装</h3><p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="noopener"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<br><code>LaTeXTools</code>，确认后安装就OK了。</p><h3 id="Skim的安装"><a href="#Skim的安装" class="headerlink" title="Skim的安装"></a>Skim的安装</h3><p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="noopener">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，同步配置是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。<br><strong><code>打开skim&gt;点击Skim选项&gt;选择同步&gt;改写一些配置</code></strong></p><table><thead><tr><th>预设</th><th>自定义</th></tr></thead><tbody><tr><td>命令</td><td>/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl</td></tr><tr><td>参数</td><td>“%file”:%line</td></tr></tbody></table><p><img src="/images/skimsync.png" alt=""></p><h3 id="MacTex的中文支持"><a href="#MacTex的中文支持" class="headerlink" title="MacTex的中文支持"></a>MacTex的中文支持</h3><p>中文支持是我很恼火的一个问题，因为早两年我在windows上用LaTeX的时候就发觉中文的支持贼差，但是现在国内一些较好的杂志(如<em>《中国科学》</em>、<em>《物理学报》</em>)又纷纷推出了LaTeX的模版，好比硬要给拖拉机装上12缸😊，在mac上折腾发现也没有那么轻松，在此我也说句良心话，用LaTeX还是尽量去敲英文吧。参考了一些人的博客，大致有三种方式可以实现。</p><ul><li>最简便的方法，只需要在tex文件的最上部加上<code>%!TEX program = xelatex</code>就可以了，参考下文的代码和最终结果，但是这里需要多注意两个问题：<ul><li>一定要注意设定字体。参考下文中的 <code>\setmainfont{Hiragino Sans GB}</code>。</li><li>中文一定要多加一句代码<code>\XeTeXlinebreaklocale &quot;zh&quot;</code>，这是为了中文可以正常换行。</li></ul></li></ul><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">%!TEX program = xelatex</span><br><span class="line">%!TEX TS-program = xelatex</span><br><span class="line">%!TEX encoding = UTF-<span class="number">8</span> Unicode</span><br><span class="line"></span><br><span class="line">\documentclass[<span class="number">12</span>pt]&#123;article&#125; %这个我就不多说了，头文件</span><br><span class="line">\usepackage&#123;url&#125; %这个我也不多说了</span><br><span class="line">\usepackage&#123;fontspec,xltxtra,xunicode&#125; %最新的mactex都有</span><br><span class="line"></span><br><span class="line">\defaultfontfeatures&#123;Mapping=tex-text&#125;</span><br><span class="line">\setromanfont&#123;Heiti SC&#125; %设置中文字体</span><br><span class="line">\XeTeXlinebreaklocale “zh”</span><br><span class="line">\XeTeXlinebreakskip = 0pt plus <span class="number">1</span>pt minus <span class="number">0</span>.<span class="number">1</span>pt %文章内中文自动换行，可以自行调节</span><br><span class="line"></span><br><span class="line">\newfontfamily&#123;\H&#125;&#123;Songti SC&#125; %设定新的字体快捷命令</span><br><span class="line">\newfontfamily&#123;\E&#125;&#123;Weibei SC&#125; %设定新的字体快捷命令</span><br><span class="line">\<span class="keyword">begin</span>&#123;document&#125;</span><br><span class="line">\thispagestyle&#123;empty&#125;</span><br><span class="line">\small&#123;给一个比较简单的方法，在mac上折腾CJK有点麻烦，其实XeTeX就可以解决中文的问题。编码的改动其实不需要在mactex的设置里面改，写在前面然后注释掉就好了。\\</span><br><span class="line">繁體字什麼的也是可以實現的。\\</span><br><span class="line">当你需要打不同字体的时候，就需要用到这个\url&#123;\newfontfamily&#125;，这样你可以在一行中显示多种字体。比如说：\\&#125;</span><br><span class="line">\Huge&#123;&#123;\H 宋体&#125; &#123;\E 魏碑&#125; 黑体&#125;</span><br><span class="line">\<span class="keyword">end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure><p><img src="/images/latexPic.png" alt=""></p><ul><li>比较折腾的方法，就是去折腾这个<a href="http://cjk.ffii.org/" target="_blank" rel="noopener">CJK</a>。其实也没有很折腾，我下载的最新的mactex2015版，CJK已经集成在其中了，不用单独下载了，只要在文档开头加上<code>\usepackage[encapsulated]{CJK}</code>就可以了。具体参看下面的测试tex：</li></ul><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[<span class="number">12</span>pt]&#123;article&#125;</span><br><span class="line">\usepackage[encapsulated]&#123;CJK&#125; % <span class="number">1</span>. Dec. <span class="number">2009</span>更新：使用[encapsulate]才是正確的用法</span><br><span class="line">\<span class="keyword">begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line">\<span class="keyword">begin</span>&#123;CJK&#125;&#123;UTF8&#125;&#123;bsmi&#125; % 開始 CJK 環境，設定編碼，設定字體</span><br><span class="line">“互联网能造空调吗？互联网永远都只是工具，不能替代实体经济。”在互联网是万能的甚至可以颠覆、通杀一切的说法在中国商界流行之时，董明珠仍然坚持自己观点。她给在场企业家鼓劲说，不信再等两年来看，实体经济一定会崛起。无论什么企业和公司，都要有自己的核心技术。实体店也会一直存在下去，但在互联网时代发生很大变化。实体店应该在便利性等方面下功夫，让顾客感觉跟自己更近。</span><br><span class="line">This is a test.</span><br><span class="line">\<span class="keyword">end</span>&#123;CJK&#125; % 結束 CJK 環境</span><br><span class="line">\<span class="keyword">end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure><ul><li>比较严谨的方法，安装latexmk，然后在LaTeXTools中更改设置，首先</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo tlmgr update --self</span><br><span class="line">sudo tlmgr install latexmk</span><br></pre></td></tr></table></figure><p>然后在Sulime中打开<code>Preferences——Package Settings——LaTeXTools——Settings-User</code>，在builder－settings中进行如下设置（<strong>记住一定是在builder-settings这个选项下进行设置</strong>）：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"program" : "xelatex",</span><br><span class="line">"command" : ["latexmk", "-cd", "-e", "$pdflatex = 'xelatex -interaction=nonstopmode -synctex=1 %S %O'", "-f", "-pdf"],</span><br></pre></td></tr></table></figure><p>更加具体的配置和一些问题，可以访问<a href="http://www.readern.com/sublime-text-latex-chinese-under-mac.html" target="_blank" rel="noopener">Readern博客</a>，特别是如果编译出现问题可以多follow下面的评论。</p><h3 id="LaTeX的命令总结"><a href="#LaTeX的命令总结" class="headerlink" title="LaTeX的命令总结"></a>LaTeX的命令总结</h3><p>这部分我会在具体一边做的时候一边补充，所以我先慢慢整理。</p><h4 id="LaTeX对应的所有希腊字母："><a href="#LaTeX对应的所有希腊字母：" class="headerlink" title="LaTeX对应的所有希腊字母："></a>LaTeX对应的所有希腊字母：</h4><p>这部分顺便测试这个Hexo里的MathJax。</p><table><thead><tr><th>\alpha</th><th style="text-align:center">$\alpha$</th><th>\beta</th><th style="text-align:center">$\beta$</th><th>\gamma</th><th style="text-align:center">$\gamma$</th></tr></thead><tbody><tr><td>\delta</td><td style="text-align:center">$\delta$</td><td>\epsilon</td><td style="text-align:center">$\epsilon$</td><td>\zeta</td><td style="text-align:center">$\zeta$</td></tr><tr><td>\eta</td><td style="text-align:center">$\eta$</td><td>\theta</td><td style="text-align:center">$\theta$</td><td>\iota</td><td style="text-align:center">$\iota$</td></tr><tr><td>\kappa</td><td style="text-align:center">$\kappa$</td><td>\lambda</td><td style="text-align:center">$\lambda$</td><td>\mu</td><td style="text-align:center">$\mu$</td></tr><tr><td>\nu</td><td style="text-align:center">$\nu$</td><td>\xi</td><td style="text-align:center">$\xi$</td><td>\omicron</td><td style="text-align:center">$\omicron$</td></tr><tr><td>\pi</td><td style="text-align:center">$\pi$</td><td>\rho</td><td style="text-align:center">$\rho$</td><td>\sigma</td><td style="text-align:center">$\sigma$</td></tr><tr><td>\tau</td><td style="text-align:center">$\tau$</td><td>\upsilon</td><td style="text-align:center">$\upsilon$</td><td>\phi</td><td style="text-align:center">$\phi$</td></tr><tr><td>\chi</td><td style="text-align:center">$\chi$</td><td>\psi</td><td style="text-align:center">$\psi$</td><td>\omega</td><td style="text-align:center">$\omega$</td></tr></tbody></table><h4 id="公式："><a href="#公式：" class="headerlink" title="公式："></a>公式：</h4><p>单行公式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$a = b + c$$</span><br></pre></td></tr></table></figure></p><p>$$a = b + c$$<br>稍复杂的公式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;\partial u&#125;&#123;\partial t&#125;</span><br><span class="line">= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$</span><br></pre></td></tr></table></figure></p><p>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>薛定谔方程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$ i\hbar\frac&#123;\partial \psi&#125;&#123;\partial t&#125;</span><br><span class="line">= \frac&#123;-\hbar^2&#125;&#123;2m&#125; \left(</span><br><span class="line">\frac&#123;\partial^2&#125;&#123;\partial x^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial y^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial z^2&#125;</span><br><span class="line">\right) \psi + V \psi.$$</span><br></pre></td></tr></table></figure></p><p>$$ i\hbar\frac{\partial \psi}{\partial t}<br>= \frac{-\hbar^2}{2m} \left(<br>\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}<br>\right) \psi + V \psi.$$</p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<!-- ![](http://www.macupdate.com/images/icons256/12104.png) -->
-<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br>]]>
+    
+      &lt;!-- ![](http://www.macupdate.com/images/icons256/12104.png) --&gt;
+&lt;p&gt;刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了&lt;strong&gt;&lt;code&gt;MacTex+Sublime3+Skim&lt;/code&gt;&lt;/strong&gt;的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：&lt;br&gt;
     
     </summary>
     
-      <category term="mactex" scheme="http://alexjiangzy.com/tags/mactex/"/>
-    
       <category term="工具Tools" scheme="http://alexjiangzy.com/categories/%E5%B7%A5%E5%85%B7Tools/"/>
+    
+    
+      <category term="mactex" scheme="http://alexjiangzy.com/tags/mactex/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[atom的强力plugin:activate-power-mode]]></title>
+    <title>atom的强力plugin:activate-power-mode</title>
     <link href="http://alexjiangzy.com/2015/12/14/atomPlugin/"/>
     <id>http://alexjiangzy.com/2015/12/14/atomPlugin/</id>
     <published>2015-12-14T15:02:56.000Z</published>
     <updated>2015-12-17T02:59:30.000Z</updated>
-    <content type="html"><![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
-<h2 id="工具">工具</h2><ul>
-<li>mac osx</li>
-<li><a href="atom.io">atom</a>, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。</li>
-</ul>
-<a id="more"></a>
-<h2 id="安装atom">安装atom</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install Caskroom/cask/atom <span class="comment">#在安装homebrew的前提下</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装plugin:activate-power-mode">安装plugin:activate-power-mode</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.atom/packages</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/JoelBesada/activate-power-mode.git</span><br><span class="line">$ <span class="built_in">cd</span> activate-power-mode</span><br><span class="line">$ apm install</span><br></pre></td></tr></table></figure>
-<h2 id="打开atom编辑器右键点击激活">打开atom编辑器右键点击激活</h2><p>进入atom，随便打开一个页面，右键点击Toggle activate-power-mode<br><img src="/images/pluginToggle.jpg" alt=""></p>
-<h2 id="效果">效果</h2><p>在最终效果之前，可以先点击下面的播放键，是不是感觉像在开高达，双脚抖起来打小怪兽喽～</p>
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26625301&auto=0&height=66"></iframe><br><img src="http://www.dvel.cc/upload/2015/12/b8f249ec-9605-11e5-978c-eb3bb21eecd8.gif" alt=""></p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul><li>mac osx</li><li><a href="atom.io">atom</a>, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。</li></ul><a id="more"></a><h2 id="安装atom"><a href="#安装atom" class="headerlink" title="安装atom"></a>安装atom</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install Caskroom/cask/atom <span class="comment">#在安装homebrew的前提下</span></span><br></pre></td></tr></table></figure><h2 id="安装plugin-activate-power-mode"><a href="#安装plugin-activate-power-mode" class="headerlink" title="安装plugin:activate-power-mode"></a>安装plugin:activate-power-mode</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.atom/packages</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/JoelBesada/activate-power-mode.git</span><br><span class="line">$ <span class="built_in">cd</span> activate-power-mode</span><br><span class="line">$ apm install</span><br></pre></td></tr></table></figure><h2 id="打开atom编辑器右键点击激活"><a href="#打开atom编辑器右键点击激活" class="headerlink" title="打开atom编辑器右键点击激活"></a>打开atom编辑器右键点击激活</h2><p>进入atom，随便打开一个页面，右键点击Toggle activate-power-mode<br><img src="/images/pluginToggle.jpg" alt=""></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>在最终效果之前，可以先点击下面的播放键，是不是感觉像在开高达，双脚抖起来打小怪兽喽～</p><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26625301&auto=0&height=66"></iframe><br><img src="http://www.dvel.cc/upload/2015/12/b8f249ec-9605-11e5-978c-eb3bb21eecd8.gif" alt=""></p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。</p>
-<h2 id="工具">工具</h2><ul>
-<li>mac osx</li>
-<li><a href="atom.io">atom</a>, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。</li>
-</ul>]]>
+    
+      &lt;p&gt;最近朋友圈狂晒Atom activate-power-mode强力驱动的编辑器插件。本人体验了下之后果然是有点酸爽，故写个小教程来小纪录一下。&lt;/p&gt;
+&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;mac osx&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;atom.io&quot;&gt;atom&lt;/a&gt;, 值得一提的是atom是github主推的下一代编辑器，未来还是值得期待。&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
-      <category term="前端" scheme="http://alexjiangzy.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="工具Tools" scheme="http://alexjiangzy.com/categories/%E5%B7%A5%E5%85%B7Tools/"/>
+    
+    
+      <category term="前端" scheme="http://alexjiangzy.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
