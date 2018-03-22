@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alexjiangzy.com/lab/index.html</loc>
+    
+    <lastmod>2018-03-22T12:03:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alexjiangzy.com/tags/index.html</loc>
+    
+    <lastmod>2018-03-22T08:49:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alexjiangzy.com/2018/03/21/sgFeeling/</loc>
     
-    <lastmod>2018-03-22T05:07:42.000Z</lastmod>
+    <lastmod>2018-03-22T08:14:27.000Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>http://alexjiangzy.com/categories/index.html</loc>
     
     <lastmod>2018-03-21T13:30:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alexjiangzy.com/tags/index.html</loc>
-    
-    <lastmod>2018-03-21T13:29:39.000Z</lastmod>
     
   </url>
   
