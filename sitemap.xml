@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alexjiangzy.com/2015/12/31/my2015/</loc>
+    
+    <lastmod>2018-04-01T13:23:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alexjiangzy.com/lab/index.html</loc>
     
     <lastmod>2018-04-01T07:47:05.000Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://alexjiangzy.com/2015/12/16/MactexTool/</loc>
     
     <lastmod>2018-03-19T14:48:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alexjiangzy.com/2015/12/31/my2015/</loc>
-    
-    <lastmod>2016-05-17T07:29:04.000Z</lastmod>
     
   </url>
   
