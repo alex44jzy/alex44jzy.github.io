@@ -1,6 +1,4 @@
-
-
-
+<!DOCTYPE html>
 <html>
 <head>
       <meta charset="UTF-8">
@@ -13,25 +11,42 @@
                   margin: 0;
                   padding: 0;
                   border: none;
+                  color: #6c6b6b;
                   font-family: Georgia;
             }
             .container {
-                  width: 80%;
+                  width: 78%;
                   margin: 0 auto;
                   margin-top: 10px;
-                  border: solid 1px grey;
-                  box-shadow: 0 0 1em grey;
-                  padding-left: 20px;
-                  padding-right: 20px;
+                  /*box-shadow: 0 0 5px grey;*/
+                  padding-left: 30px;
+                  padding-right: 30px;
+            }
+            .dot {
+                  background-color: #6c6b6b;
+                  height: 14px;
+                  width: 14px;
+                  border-radius: 100%;
+                  position: absolute;
+                  left: 11.5%;
+                  float: left;
+            }
+            .flake {
+                  position: absolute;
+                  left: -17px;
             }
             h2 {
                   text-align: center;
             }
             h3 {
-                  margin-top: 25px;
+                  margin-top: 10px;
             }
-            h3 i, h3, .education h4 {
-                  color: #2b8ce3;
+            a {
+                  color: #df405a;
+            }
+            
+            .award h3 {
+                  color: #FFDFA1;
             }
             ul {
                   list-style-type: none;
@@ -41,8 +56,35 @@
             }
             p {
                   font-size: 14px;
-                  margin-top: 2px;
-                  margin-bottom: 2px;
+                  margin-top: 4px;
+                  margin-bottom: 4px;
+            }
+            dt {
+                  margin-top: 8px;
+                  margin-bottom: 8px;
+                  margin-left: 0px;
+                  font-size: 15px;
+            }
+            dd {
+                  margin-top: 4px;
+                  margin-bottom: 4px;
+                  font-size: 14px;
+                  margin-left:35px;
+                  text-align: justify;
+                  position: relative;
+            }
+            .education {
+                  margin-top: 10px;
+                  margin-bottom: 30px;
+                  border-top-style: dashed;
+                  border-top-width: thick;
+                  border-color: #3b5998;
+            }
+            .education h3, .education h4, .education i {
+                  color: #3b5998;
+            }
+            .education-h3, .education-h3 i {
+                  color: #3b5998;
             }
             .education ul li .detail {
                   margin-left: 32px;
@@ -50,51 +92,255 @@
                   width: 95%;
                   margin-top: 3px;
             }
-
             .education .edu-subtitle {
                   font-size:14px;
                   margin-left: 16px;
             }
+            .skill h3, .skill i {
+                  color: #8283a7;
+            }
+            .skill p {
+                  font-size: 15px;
+                  margin-left: 16px
+            }
+            .skill {
+                  margin-top: 10px;
+                  margin-bottom: 30px;
+                  border-top-style: dashed;
+                  border-top-width: thick;
+                  border-color: #8283a7;
+            }
+            .work {
+                  margin-top: 10px;
+                  margin-bottom: 30px;
+                  border-top-style: dashed;
+                  border-top-width: thick;
+                  border-color: #8FBC94;
+            }
+            .work h3, .work i {
+                  color: #8FBC94;
+            }
+            .work .detail {
+                  text-align: justify;
+            }
+            .research h3, .research i {
+                  color: #fcbe32;
+            }
+            .research {
+                  margin-top: 10px;
+                  margin-bottom: 30px;
+                  border-top-style: dashed;
+                  border-top-width: thick;
+                  border-color: #fcbe32;
+            }
+
       </style>
 </head>
 <body>
       <div class="container">
             <div class="person">
-                  <h2>Alex Jiang Zhiyuan (江之源)</h2>
+                  <h2>Alex Jiang Zhiyuan 😚</h2>
             </div>
             <div class="education">
-                  <h3><i class="fas fa-graduation-cap"></i>  Education</h3>
+                  <h3 class="education-h3"><i class="fas fa-graduation-cap"></i>  Education</h3>
                   <ul>
                         <li>
-                              <h4>1. National University of Singapore (NUS). Singapore.</h4>
+                              <h4>National University of Singapore (NUS). Singapore.</h4>
                               <p class="edu-subtitle">MTech of Enterprise Business Analytics. 2018.1 - 2019.6</p>
                               <div class="detail">
-                                    <p><strong>Core Courses</strong>: Fundation of Business Analytics, Advanced Analytics, Data Analytics, Decision Making Optimization, Information System Security, Computational Intelligence, etc</p>
+                                    <p><strong>- Core Courses</strong>: Fundation of Business Analytics, Advanced Analytics, Data Analytics, Decision Making Optimization, Information System Security, Computational Intelligence, etc</p>
                               </div>
                         </li>
                         <li>
-                              <h4>2.  Southwest University (SWU). China.</h4>
-                              <p class="edu-subtitle">MSc of Signal and Information Processing. 2013.9 - 2016.6. GPA 4.0</p>
+                              <h4>Southwest University (SWU). China.</h4>
+                              <p class="edu-subtitle">MSc of Signal and Information Processing. 2013.9 - 2016.6. <strong>GPA 4.0</strong></p>
                               <div class="detail">
-                                    <p><strong>Core Courses</strong>: Artificial Neural Networks, Matrix Theory, Pattern Recognition, Memristive System and Device, Nonlinear System and Circuit, etc.</p>
-                                    <p><strong>Supervisor</strong>: Prof. Shukai Duan.</p>
-                                    <p><strong>Research Areas</strong>: Resistive Memory, Memristor, Neuromorphic System, Wavelet Neural Network.</p>
+                                    <p><strong>- Core Courses</strong>: Artificial Neural Networks, Matrix Theory, Pattern Recognition, Memristive System and Device, Nonlinear System and Circuit, etc.</p>
+                                    <p><strong>- Supervisor</strong>: Prof. Shukai Duan.</p>
+                                    <p><strong>- Research Areas</strong>: Resistive Memory, Memristor, Neuromorphic System, Wavelet Neural Network.</p>
                               </div>
                         </li>
                         <li>
-                              <h4>3. North University of China (NUC). China.</h4>
-                              <p class="edu-subtitle">BE of Electronic Information Engineering. 2009.9 - 2013.6. GPA 3.3</p>
+                              <h4>North University of China (NUC). China.</h4>
+                              <p class="edu-subtitle">BE of Electronic Information Engineering. 2009.9 - 2013.6. <strong>GPA 3.3</strong></p>
                               <div class="detail">
-                                    <p><strong>Core Courses</strong>: Signal and System, Digital Signal Processing, Computer Network, Electronic Circuit, Data Structure, Digital Image Processing, etc.</p>
+                                    <p><strong>- Core Courses</strong>: Signal and System, Digital Signal Processing, Computer Network, Electronic Circuit, Data Structure, Digital Image Processing, etc.</p>
                               </div>
                         </li>
                   </ul>
             </div>
             <div class="skill">
                   <h3><i class="fas fa-laptop"></i> Skills and Tools</h3>
+                  <ul>
+                        <li>
+                              <p>
+                                    <i class="fas fa-chart-area"></i>
+                                    <strong>Data Analytics</strong>: R, Python (Panda, Scikit-learn), Tableau, Matlab, JMP.
+                              </p>
+                              <p>
+                                    <i class="fab fa-js"></i>
+                                    <strong>Frontend</strong>: Html5, CSS, Javascript (ES6), Angularjs 1.x, React Native (Reactjs), Nodejs, Webpack.
+                              </p>
+                              <p>
+                                    <i class="fas fa-database"></i>
+                                    <strong>Backend</strong>: Java (SpringMVC), Scala (Spark 1.7), Python (Tornado), MySQL, MongoDB.
+                              </p>
+                              <p>
+                                    <i class="fab fa-git-square"></i>
+                                    <strong>Others</strong>: Git, Shell, Hexo, Zeppelin, Microsoft Products, Mac.
+                              </p>
+                              <p>
+                                    <i class="fas fa-globe"></i>
+                                    <strong>Languages</strong>: Chinese, English.
+                              </p>
+                        </li>
+                  </ul>
             </div>
             <div class="work">
                   <h3><i class="fas fa-fighter-jet"></i>  Work Experiences</h3>
+                  <ul>
+                        <li>
+                              <h4>Coupang, GO-HLM Team, Software Engineer. 2016.6 - 2018.1</h4>
+                              <p class="detail"><strong><a href="https://www.coupang.com" target="_blank">Coupang</a></strong>
+                                    is one of the largest and fastest growing eCommerce platform, ranked the 1st place in Korean eCommerce industry. In 2016, received US$ 1 billion investment from Softbank and was included in 50 Smartest Companies by <strong><a href="https://www.technologyreview.com/lists/companies/2016/" target="_blank">MIT Technology Review</a></strong>.
+                              </p>
+                              <p class="detail">
+                                    Our team and I focus on the logistics related business especially the Fleet Management Optimization (FMO) and Hub Sortation Management. Our systems provide system service for 9 hubs, 40+ camps, 300+ linehaul truck orders and over 400,000 parcels perday. 3 major projects I involved listed below.
+                              </p>
+                              <div style="height: 5px"></div>
+                              <dl>
+                                    <dt>(1) Hub Management Mobile Application</dt>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Using <strong>React Native</strong>, <strong>Redux</strong>, <strong>Redux</strong> as the core mobile technique, combined with Android native modules, programmed the basic mobile components and whole application.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Implemented the business features for Hub workers and stakeholders including administration permissions, parcels and trucks info scanning, status track of parcels and trucks, CRUD operations in listview.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Utilizde the lightweight local database <strong>Realm</strong> to develop the app offline mode, which was leveraged to guarantee the data completeness while internet condition was unstable in workplaces. Depending on EventBus, recorded and uploaded the operation logs asynchronously and automatically to store in <strong>MongoDB</strong>.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Developed version management platform for both server side and client side, used 2 strategies which were backend deployed updated package and <strong>CodePush</strong> hotfix.
+                                    </dd>
+                                    <dt>
+                                          (2) Truck Monitoring and Visualization System
+                                    </dt>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          This monitoring system using techniques including <strong>Java</strong>, <strong>Spring MVC (internal MicroService)</strong>, <strong>RabbitMQ</strong>, <strong>Angularjs</strong> and <strong>Google map Javascript api</strong>
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Architected spring batch job and implemented visualization of the realtime linehaul trucks locations and current route path in the Map to monitor individual status.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Developed APIs to interacted by 3rd service companies Korean YLP (Korean location service) and Naver (navigation service). Got remain distance and time of each truck to calculate and analyze the rate of punctuality of CPT (Criteria Pull Time) and ExAT (Expected Arrived Time) in each route.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Integrated with <strong>Slack</strong> and SMS to realize the functionality of sending notification to the operators belonging to each truck vendor.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Developed the distance judgement algorithm to automatically toggle the truck status altering. Generated the statistics reports and graphs in Echart (daily and weekly) to estimate the performance of drivers, vendors and routes.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          This Monitoring system deployed in production, everyday recorded and provided services for 5 main truck vendors, 80+ routes and over 250 drivers.
+                                    </dd>
+                                    <dt>
+                                          (3) Loading Plan system (LPS)
+                                    </dt>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Implemented the simulation system using <strong>Java</strong> and <strong>Angularjs</strong> in backend and frontend.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Designed and optimized the optimal truck dispatch algorithm to generate the most saving-cost dispatch of different vendors for each route perday based on historical data. Aggregated the total cost/saving and displayed in FMO dashboard.
+                                    </dd>
+                                    <dd> 
+                                          <span class="flake">✼</span>
+                                          Aimed at relieving the pressure of intensive paths, the stopover dispatch method was developed to substitue the previous rough management to enhance the delivery efficency amongst the neighbouring camps.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Based on the similarity of weekly dataset, regression algorithms were applied to predicate the hourly shipments. The optimal dispatch would be recommanded and automatically made the truck orders reservations.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          LPS project would save over 3000,000₩ transportation fee per week theoretically.
+                                    </dd>
+                              </dl>
+                        </li>
+                        <div style="height: 15px"></div>
+                        <li>
+                              <h4>Liulishuo (英语流利说), Big Data Intern, 2015.6 - 2015.10</h4>
+                              <p class="detail">
+                                    <strong><a href="https://www.liulishuo.com/en/" target="_blank" rel="noopener">Liulishuo</a></strong> is the world's leading AI + Education company, was also selected in top 100 most promising AI companies in the world by <strong><a href="https://www.cbinsights.com/research-ai-100" target="_blank" rel="noopener">CB Insights</a></strong>. The Company’s flagship mobile app product "Liulishuo" has more than 50 million registered users from 379 cities in China and over 175 countries around the world. Liulishuo has closed Series C funding which was led by China Media Capital and Wu Capital. Trustbridge Partners, IDG Capital, GGV Capital, Cherubic Ventures and Hearst Ventures also participated in this round. My internship mainly included in 3 parts.
+                              </p>
+                              <div style="height: 5px"></div>
+                              <dl>
+                                    <dt>(1) Liulishuo Score Data Visualization</dt>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Aimed at validating the algorithmic robustness, constructed the visualization platform to display the batch speech scoring distribution of each language and algorithm versions, by using <strong><a href="https://zeppelin.apache.org/" target="_blank" rel="noopener">Apache Zeppelin</a></strong>. 
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Integrated with current Spark clusters, using z-manager to operate the deployment. 
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Utilized Angularjs (two-way binding) to realize the frontend layout.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          This job was folked by official <strong><a href="https://www.zepl.com/" target="_blank" rel="noopener">ZEPL</a></strong> as the application exploration in <strong><a href="https://www.zepl.com/viewer/notebooks/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FsZXg0NGp6eS9ub3RlYm9vay16ZXBwZWxpbi9tYXN0ZXIvMkFWQlhaOVJXL25vdGUuanNvbg" target="_blank" rel="noopener">showcase</a></strong>.
+                                    </dd>
+                                    <dt>
+                                          (2) Text-Audio Serialization and Scoring pipeline.
+                                    </dt>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Developed linguistic data serialization, with data scientists implemented linguistic scoring in both stream and batch modes in <strong>Scala</strong>.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Applied <strong>Spark</strong> and cluster to realize the integration of scoring pipeline and stored output scoring files in <strong>HDFS</strong>.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Understood the Spark including Map-Reduce, cluster management, broadcast variables and <strong>Spark SQL</strong>.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Developed downloading audio data bulkly from Qiniu in distributed model.
+                                    </dd>
+                                    <dt>
+                                          (3) Others
+                                    </dt>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Developed web spider to crawl the Korean phonetic symbol in website by Python, Proxy and BS4.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Code cleaning and pptimization.
+                                    </dd>
+                                    <dd>
+                                          <span class="flake">✼</span>
+                                          Learnt knowledge and read papers of the Natural Language Processing and HMM.
+                                    </dd>
+                              </dl>
+                              
+                        </li>
+                  </ul>
             </div>
             <div class="research">
                   <h3><i class="fas fa-space-shuttle"></i>  Research Experiences</h3>
