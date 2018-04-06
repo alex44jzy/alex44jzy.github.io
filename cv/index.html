@@ -14,12 +14,16 @@
                   color: #6c6b6b;
                   font-family: Georgia;
             }
+            body {
+                  background: #f0f8ff;
+            }
             .container {
                   width: 80%;
                   margin: 0 auto;
                   margin-top: 10px;
                   margin-bottom: 10px;
-                  box-shadow: 0 0 5px grey;
+                  background: #fafafa; ;
+                  box-shadow: 0 0 22px grey;
             }
             .dot {
                   background-color: #6c6b6b;
@@ -54,19 +58,39 @@
             a {
                   color: #df405a;
             }
+            img {
+                  position: absolute;
+                  /* z-index: -11; */
+            }
             .img-rocket {
                   width: 293px;
-                  position: absolute;
                   top: -171px;
                   right: -12px;
-                  z-index: -10;
+            }
+            .img-blub {
+                  width: 93px;
+                  right: 248px;
+                  top: -9px;
+                  transform: rotate(-18deg);
             }
             .img-anst {
-                  position: absolute;
-                  z-index: -11;
-                  width: 146px;
+                  width: 136px;
                   right: 45px;
-                  top: -13px;
+                  top: -15px;
+            }
+            .img-coffee {
+                  width: 304px;
+                  top: 587px;
+                  left: -245px;
+            }
+            .img-beans {
+                  width: 189px;
+                  right: -148px;
+                  top: 400px;
+            }
+            .img-bleach {
+                  width: 270px;
+                  right: 0px;
             }
             ul {
                   list-style-type: none;
@@ -227,12 +251,14 @@
                   </ul>
             </div>
             <div class="basic-section skill">
+                  <img class="img-blub" src="./bulb.png" alt="bulb">
+                  <img class="img-anst" src="./anst.png" alt="anst">
                   <div class="billboard">
                         <span class="billboard-span">
                               <h3><i class="fas fa-rocket"></i> Skills and Tools</h3>
                         </span>
                   </div> 
-                  <img class="img-anst" src="./anst.jpg" alt="anst">
+                  
                   <ul>
                         <li>
                               <p>
@@ -259,6 +285,8 @@
                   </ul>
             </div>
             <div class="basic-section work">
+                  <img class="img-coffee" src="./coffee.png" alt="sun">
+                  <img class="img-beans" src="./beans.png" alt="bean">
                   <div class="billboard">
                         <span class="billboard-span">
                               <h3><i class="fas fa-fighter-jet" style="transform: rotate(-45deg)"></i>  Work Experiences</h3>
