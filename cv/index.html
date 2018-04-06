@@ -34,22 +34,39 @@
                   position: absolute;
                   left: -17px;
             }
+            .billboard {
+                  line-height:13px;
+                  height: 39px;
+            }
+            .billboard-span {
+                  display: inline-block;
+                  box-shadow: 4px 3px 5px #aaaaaa;
+                  margin-left: -17px;
+            }
             h2 {
                   text-align: center;
                   color: #f3f3f3;
             }
 
             h3 {
-                  margin-top: 10px;
+                  padding: 10px;
             }
             a {
                   color: #df405a;
             }
             .img-rocket {
-                  width: 154px;
+                  width: 293px;
                   position: absolute;
                   top: -171px;
-                  right: 14px;
+                  right: -12px;
+                  z-index: -10;
+            }
+            .img-anst {
+                  position: absolute;
+                  z-index: -11;
+                  width: 146px;
+                  right: 85px;
+                  top: -17px;
             }
             ul {
                   list-style-type: none;
@@ -88,19 +105,23 @@
                   font-size: 13px;
                   color: #f3f3f3;
             }
-            .education {
+            .basic-section {
                   margin-top: -2px;
                   margin-bottom: 30px;
-                  border-top-style: dashed;
+                  border-top-style:solid;
                   /* border-top-width: thick; */
-                  border-color: #3b5998;
                   padding-left: 5%;
                   padding-right: 5%;
+                  position: relative;
             }
-            .education h3, .education h4, .education i {
-                  color: #3b5998;
+            .education {                  
+                  border-color: #3b5998;
             }
-            .education-h3, .education-h3 i {
+            .education h3, .education i {
+                  color:#f3f3f3;
+                  background:#3b5998;
+            }
+            .education h4 {
                   color: #3b5998;
             }
             .education ul li .detail {
@@ -113,65 +134,43 @@
                   font-size:14px;
                   margin-left: 16px;
             }
-            .skill h3, .skill i {
-                  color: #8283a7;
+            .skill h3, .skill h3 i {
+                  color: #f3f3f3;
+                  background: #8283a7;
             }
             .skill p {
                   font-size: 15px;
                   margin-left: 16px
             }
             .skill {
-                  margin-top: 10px;
-                  margin-bottom: 30px;
-                  border-top-style: dashed;
-                  /* border-top-width: thick; */
                   border-color: #8283a7;
-                  padding-left: 5%;
-                  padding-right: 5%;
             }
             .work {
-                  margin-top: 10px;
-                  margin-bottom: 30px;
-                  border-top-style: dashed;
-                  /* border-top-width: thick; */
                   border-color: #8FBC94;
-                  padding-left: 5%;
-                  padding-right: 5%;
             }
-            .work h3, .work i {
-                  color: #8FBC94;
+            .work h3, .work h3 i {
+                  color: #f3f3f3;
+                  background: #8FBC94
             }
             .work .detail {
                   text-align: justify;
             }
-            .research h3, .research i {
-                  color: #fcbe32;
+            .research h3, .research h3 i {
+                  color: #f3f3f3;
+                  background: #fcbe32
             }
             .research {
-                  margin-top: 10px;
-                  margin-bottom: 30px;
-                  border-top-style: dashed;
-                  /* border-top-width: thick; */
                   border-color: #fcbe32;
-                  position: relative;
-                  padding-left: 5%;
-                  padding-right: 5%;
             }
             .research dt {
                   font-weight: 700;
             }
-            .award h3, .award i {
-                  color: #ffa1b5;
+            .award h3, .award h3 i {
+                  color: #f3f3f3;
+                  background: #ffa1b5
             }
             .award {
-                  margin-top: 10px;
-                  margin-bottom: 30px;
-                  border-top-style: dashed;
-                  /* border-top-width: thick; */
                   border-color: #ffa1b5;
-                  position: relative;
-                  padding-left: 5%;
-                  padding-right: 5%;
             }
 
       </style>
@@ -187,8 +186,12 @@
                   <div style="height: 20px"></div>
 
             </div>
-            <div class="education">
-                  <h3 class="education-h3"><i class="fas fa-paper-plane"></i>  Education</h3>
+            <div class="basic-section education">
+                  <div class="billboard">
+                        <span class="billboard-span">
+                              <h3><i class="fas fa-paper-plane"></i>  Education</h3>
+                        </span>
+                  </div>                  
                   <ul>
                         <li>
                               <h4>National University of Singapore (NUS). Singapore.</h4>
@@ -215,8 +218,13 @@
                         </li>
                   </ul>
             </div>
-            <div class="skill">
-                  <h3><i class="fas fa-rocket"></i> Skills and Tools</h3>
+            <div class="basic-section skill">
+                  <div class="billboard">
+                        <span class="billboard-span">
+                              <h3><i class="fas fa-rocket"></i> Skills and Tools</h3>
+                        </span>
+                  </div> 
+                  <img class="img-anst" src="./anst.jpg" alt="anst">
                   <ul>
                         <li>
                               <p>
@@ -242,8 +250,12 @@
                         </li>
                   </ul>
             </div>
-            <div class="work">
-                  <h3><i class="fas fa-fighter-jet" style="transform: rotate(-45deg)"></i>  Work Experiences</h3>
+            <div class="basic-section work">
+                  <div class="billboard">
+                        <span class="billboard-span">
+                              <h3><i class="fas fa-fighter-jet" style="transform: rotate(-45deg)"></i>  Work Experiences</h3>
+                        </span>
+                  </div> 
                   <ul>
                         <li>
                               <h4>Coupang, GO-HLM Team, Software Engineer. 2016.6 - 2018.1</h4>
@@ -387,9 +399,13 @@
                         </li>
                   </ul>
             </div>
-            <div class="research">
+            <div class="basic-section research">
+                  <div class="billboard">
+                        <span class="billboard-span">
+                              <h3><i class="fas fa-space-shuttle" style="transform: rotate(-45deg)"></i>  Research Experiences</h3>
+                        </span>
+                  </div> 
                   <img class="img-rocket" src="./rocket.png" alt="rocket">
-                  <h3><i class="fas fa-space-shuttle" style="transform: rotate(-45deg)"></i>  Research Experiences</h3>
                   <ul>
                         <li>
                               <dl>
@@ -476,8 +492,12 @@
                         </li>
                   </ul>
             </div>
-            <div class="award">
-                  <h3><i class="fab fa-fly"></i>  Awards</h3>
+            <div class="basic-section award">
+                  <div class="billboard">
+                        <span class="billboard-span">
+                              <h3><i class="fab fa-fly"></i>  Awards</h3>
+                        </span>
+                  </div> 
                   <dt>
                         2014, 2nd Class Prize of The 9th “Huawei” Cup National Graduate Student Electronic Design Competition.
                   </dt> 
