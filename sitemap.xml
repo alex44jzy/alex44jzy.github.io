@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alexjiangzy.com/about/index.html</loc>
+    
+    <lastmod>2018-04-08T04:42:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alexjiangzy.com/2018/04/07/R-imdb5000/</loc>
     
     <lastmod>2018-04-07T15:05:58.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://alexjiangzy.com/lab/index.html</loc>
     
     <lastmod>2018-04-07T08:19:01.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alexjiangzy.com/about/index.html</loc>
-    
-    <lastmod>2018-04-05T16:05:08.000Z</lastmod>
     
   </url>
   
