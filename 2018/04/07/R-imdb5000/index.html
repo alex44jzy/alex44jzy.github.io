@@ -3,22 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>examining the movie industry using r and ggplot from imdb-5000 | SciAes</title>
+  <title>data analytics about the movie industry using r and ggplot from imdb-5000 | SciAes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="R, Visualization" />
   
   
+    <meta name="google-site-verification" content="j9LoDGtNeiWbEyej--tkmfRYhJyMfG3f_SJGmWRe2hA" />
   
   
-  <meta name="description" content="写在前面在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。 IntroductionIMDB 5000 is an I">
+  
+  <meta name="description" content="写在前面在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。 IntroductionIMDB 5000 is an">
 <meta name="keywords" content="R, Visualization">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Examining the Movie Industry Using R and ggplot from IMDB-5000">
+<meta property="og:title" content="Data analytics about the Movie Industry using R and ggplot from IMDB-5000">
 <meta property="og:url" content="http://alexjiangzy.com/2018/04/07/R-imdb5000/index.html">
 <meta property="og:site_name" content="SciAes">
-<meta property="og:description" content="写在前面在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。 IntroductionIMDB 5000 is an I">
+<meta property="og:description" content="写在前面在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。 IntroductionIMDB 5000 is an">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://alexjiangzy.com/images/imdb5000/imdb.jpg">
 <meta property="og:image" content="http://alexjiangzy.com/images/imdb5000/fig1a.png">
 <meta property="og:image" content="http://alexjiangzy.com/images/imdb5000/fig1b.png">
 <meta property="og:image" content="http://alexjiangzy.com/images/imdb5000/fig2.png">
@@ -26,11 +29,11 @@
 <meta property="og:image" content="http://alexjiangzy.com/images/imdb5000/fig4.png">
 <meta property="og:image" content="http://alexjiangzy.com/images/imdb5000/fig5a.png">
 <meta property="og:image" content="http://alexjiangzy.com/images/imdb5000/fig5b.png">
-<meta property="og:updated_time" content="2018-04-07T15:01:12.000Z">
+<meta property="og:updated_time" content="2018-04-07T15:05:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Examining the Movie Industry Using R and ggplot from IMDB-5000">
-<meta name="twitter:description" content="写在前面在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。 IntroductionIMDB 5000 is an I">
-<meta name="twitter:image" content="http://alexjiangzy.com/images/imdb5000/fig1a.png">
+<meta name="twitter:title" content="Data analytics about the Movie Industry using R and ggplot from IMDB-5000">
+<meta name="twitter:description" content="写在前面在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。 IntroductionIMDB 5000 is an">
+<meta name="twitter:image" content="http://alexjiangzy.com/images/imdb5000/imdb.jpg">
   
     <link rel="alternate" href="/atom.xml" title="SciAes" type="application/atom+xml">
   
@@ -176,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Examining the Movie Industry Using R and ggplot from IMDB-5000
+      Data analytics about the Movie Industry using R and ggplot from IMDB-5000
     </h1>
   
 
@@ -201,7 +204,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。<br></p>
+        <p><img src="/images/imdb5000/imdb.jpg" alt=""></p>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。<br></p>
 <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>IMDB 5000 is an Internet movie database with highest rated TV series with at least 5000 votes. In this task, IMDB 5000 is implemented as our database to explore and visualize the different distributions depending on various factors. This dataset could be found in data.world or Kaggle dataset, which includes 28 factors and 5043 movies. The metadata is listed below:</p>
 <table>
 <thead>
@@ -470,6 +474,19 @@
   <script src="/js/dialog.js"></script>
 
 
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-117094882-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 
