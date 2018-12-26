@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alexjiangzy.com/cv/index.html</loc>
+    
+    <lastmod>2018-12-26T14:00:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alexjiangzy.com/about/index.html</loc>
+    
+    <lastmod>2018-12-26T13:59:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alexjiangzy.com/Fav/index.html</loc>
     
     <lastmod>2018-10-09T01:58:13.000Z</lastmod>
@@ -9,23 +23,9 @@
   </url>
   
   <url>
-    <loc>http://alexjiangzy.com/cv/index.html</loc>
-    
-    <lastmod>2018-08-16T03:18:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://alexjiangzy.com/lab/index.html</loc>
     
     <lastmod>2018-08-09T10:04:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alexjiangzy.com/about/index.html</loc>
-    
-    <lastmod>2018-05-25T14:02:37.000Z</lastmod>
     
   </url>
   
