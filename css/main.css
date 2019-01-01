@@ -187,7 +187,7 @@ body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 15px;
-  line-height: 2;
+  line-height: 1.6;
   color: #555;
   background: #eee;
 }
@@ -949,7 +949,7 @@ pre .javascript .function {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-  line-height: 2;
+  line-height: 1.6;
 }
 .btn:hover {
   border-color: #222;
@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff3e86;
+  background: #beff0b;
 }
 .links-of-blogroll {
   font-size: 13px;
