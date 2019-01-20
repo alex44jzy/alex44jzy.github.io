@@ -89,14 +89,13 @@
 <meta property="og:site_name" content="SciAes">
 <meta property="og:description" content="Leetcode-70 爬楼梯问题（DP） You are climbing a stair case. It takes n steps to reach to the top.Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?Note: Given n">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://alexjiangzy.com/2018/12/30/Leetcode刷题记录/quiver-image-url/01E76FCDDE1354E36AC3936CDF184757.jpg%20=200x190">
 <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlzRqIj3mvgCx4JTisjXW8qhL9RSOJjF3x8oOHucCIost4WgYS">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190110184947556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Byb2dyYW1fZGV2ZWxvcGVy,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-01-20T08:39:31.000Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190110184947556.png">
+<meta property="og:updated_time" content="2019-01-20T08:45:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode刷题记录">
 <meta name="twitter:description" content="Leetcode-70 爬楼梯问题（DP） You are climbing a stair case. It takes n steps to reach to the top.Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?Note: Given n">
-<meta name="twitter:image" content="http://alexjiangzy.com/2018/12/30/Leetcode刷题记录/quiver-image-url/01E76FCDDE1354E36AC3936CDF184757.jpg%20=200x190">
+<meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlzRqIj3mvgCx4JTisjXW8qhL9RSOJjF3x8oOHucCIost4WgYS">
 
 
 
@@ -591,7 +590,7 @@
 <p>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”</p>
 </blockquote>
 <blockquote>
-<p>Given binary search tree:  root = [6,2,8,0,4,7,9,null,null,3,5]<br><img src="quiver-image-url/01E76FCDDE1354E36AC3936CDF184757.jpg =200x190" alt="IMAGE"></p>
+<p>Given binary search tree:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
 </blockquote>
 <blockquote>
 <p>Example 1:<br>Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8<br>Output: 6<br>Explanation: The LCA of nodes 2 and 8 is 6.</p>
@@ -645,7 +644,7 @@
 <li>sold[i] = hold[i-1] + price[i]<br>卖出状态的价值 = 前一时刻的持有和当前卖出加钱的和，这里hold[i-1]因为是买入花钱，就一定是负数，所以是求和。</li>
 <li>rest[i] = max(rest[i-1], sold[i-1])<br>空仓状态的价值 = max(前一时刻空仓价值，卖出之后的价值）。因为卖出后必须要cooldown，所以这里的sold[i-1]也可以理解了。</li>
 </ol>
-<p>上述三个状态的图得到如下：<br><img src="https://img-blog.csdnimg.cn/20190110184947556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Byb2dyYW1fZGV2ZWxvcGVy,size_16,color_FFFFFF,t_70" alt="IMAGE"></p>
+<p>上述三个状态的图得到如下：<br><img src="https://img-blog.csdnimg.cn/20190110184947556.png" alt="IMAGE"></p>
 <p>在初始值这里，hold[0] = -inf, sold[0] = 0, rest[0] = 0，这里hold的初始值不可以为0，因为买入是花钱持有的一定是负资产。</p>
 <p>最终状态里，由于我们最后一个时刻不能买入股票，所以最优的状态一定是出现在rest和sold中，即要不最后一天正好卖出，要不最后一天依旧空仓。</p>
 <p>然后我就可以非常顺畅的写下来代码了，一遍过，可见思想是何其重要，借助一个状态机解决了这么大的问题。</p>
