@@ -91,7 +91,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlzRqIj3mvgCx4JTisjXW8qhL9RSOJjF3x8oOHucCIost4WgYS">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190110184947556.png">
-<meta property="og:updated_time" content="2019-01-20T08:45:07.000Z">
+<meta property="og:updated_time" content="2019-01-20T08:46:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode刷题记录">
 <meta name="twitter:description" content="Leetcode-70 爬楼梯问题（DP） You are climbing a stair case. It takes n steps to reach to the top.Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?Note: Given n">
@@ -640,9 +640,9 @@
 <p>先来把概念分析做好，首先这里牵涉到3个动作：buy（买），sell（卖），rest（什么都不做）。然后对应的状态是：hold（买入持有状态），sold（卖出状态），rest（空仓状态）。在这个问题中，我们关心的是手上的资产，因此状态转移方程应该围绕hold，sold和rest3个状态来展开，01背包只有一个状态转移关系，可见这个问题还是比较复杂的。</p>
 <p>根据题意，结合FSM（状态机）的概念，可以把对应的3个转移方程写出来：</p>
 <ol>
-<li>hold[i] = max(hold[i-1], reset[i-1] - price[i])<br>持有状态的价值 = max(前一时刻持有的价值，当前时刻买入的价值)，由于买入之前一定要有cooldown，所以会产生第二种状态转变，注意买入的话是花钱，所以是减去当前股价。</li>
-<li>sold[i] = hold[i-1] + price[i]<br>卖出状态的价值 = 前一时刻的持有和当前卖出加钱的和，这里hold[i-1]因为是买入花钱，就一定是负数，所以是求和。</li>
-<li>rest[i] = max(rest[i-1], sold[i-1])<br>空仓状态的价值 = max(前一时刻空仓价值，卖出之后的价值）。因为卖出后必须要cooldown，所以这里的sold[i-1]也可以理解了。</li>
+<li><strong>hold[i] = max(hold[i-1], reset[i-1] - price[i])</strong><br>持有状态的价值 = max(前一时刻持有的价值，当前时刻买入的价值)，由于买入之前一定要有cooldown，所以会产生第二种状态转变，注意买入的话是花钱，所以是减去当前股价。</li>
+<li><strong>sold[i] = hold[i-1] + price[i]</strong><br>卖出状态的价值 = 前一时刻的持有和当前卖出加钱的和，这里hold[i-1]因为是买入花钱，就一定是负数，所以是求和。</li>
+<li><strong>rest[i] = max(rest[i-1], sold[i-1])</strong><br>空仓状态的价值 = max(前一时刻空仓价值，卖出之后的价值）。因为卖出后必须要cooldown，所以这里的sold[i-1]也可以理解了。</li>
 </ol>
 <p>上述三个状态的图得到如下：<br><img src="https://img-blog.csdnimg.cn/20190110184947556.png" alt="IMAGE"></p>
 <p>在初始值这里，hold[0] = -inf, sold[0] = 0, rest[0] = 0，这里hold的初始值不可以为0，因为买入是花钱持有的一定是负资产。</p>
