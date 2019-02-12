@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="身下万丈深渊，头上无尽苍穹">
+<meta name="description" content="先从线性回归开始 $h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }$ $h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X$ $X">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SciAes">
+<meta property="og:title" content="Logistics到softmax推导整理">
 <meta property="og:url" content="http://alexjiangzy.com/2019/02/13/LogisticsSummary/index.html">
 <meta property="og:site_name" content="SciAes">
-<meta property="og:description" content="身下万丈深渊，头上无尽苍穹">
+<meta property="og:description" content="先从线性回归开始 $h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }$ $h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X$ $X">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-12T23:41:35.000Z">
+<meta property="og:updated_time" content="2019-02-12T23:50:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SciAes">
-<meta name="twitter:description" content="身下万丈深渊，头上无尽苍穹">
+<meta name="twitter:title" content="Logistics到softmax推导整理">
+<meta name="twitter:description" content="先从线性回归开始 $h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }$ $h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X$ $X">
 
 
 
@@ -127,7 +128,7 @@
 
 
 
-  <title> | SciAes</title>
+  <title>Logistics到softmax推导整理 | SciAes</title>
   
 
 
@@ -311,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Logistics到softmax推导整理</h1>
         
 
         <div class="post-meta">
@@ -323,7 +324,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T07:41:27+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T07:49:17+08:00">
                 2019-02-13
               </time>
             
@@ -333,6 +334,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -372,7 +395,66 @@
       
 
       
-        
+        <p>先从线性回归开始</p>
+<p>$h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }$</p>
+<p>$h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X$</p>
+<p>$X = \left[ \begin{array} { c } { 1 } \ { x _ { 1 } } \ { \dots } \ { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \ { w _ { 1 } } \ { \dots } \ { w _ { n } } \end{array} \right]$</p>
+<p>针对线性分类器而言，他解决的是回归问题，为了能更好进行分类问题的探讨，这里就引出了 Logistics 回归。<br><a id="more"></a></p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>逻辑回归是假设数据服从 Bernoulli 分布（抛硬币），因此LR属于参数模型。</p>
+<p>其中是对于线性模型，加上了一个S Sigmoid 函数，这个也是神经网络的激活函数，拥有很多良好的特性。1. 拥有很好的激活特性，2. 求导很容易，这一点在 GD 上太重要了，对于 NN 的 BPTT 也起到了极为重要的作用。</p>
+<p>LR 目标函数定义：$h _ { \theta } ( x ) = g \left( \theta ^ { T } x \right)$</p>
+<p>其中 Sigmoid 函数 g(z) 的定义：$g ( z ) = \frac { 1 } { 1 + e ^ { - z } }$</p>
+<p>Sigmoid 函数求导 $g ^ {‘} (z)$ 为：</p>
+<p>$\begin{aligned} g ^ { \prime } ( z ) &amp; = \frac { d } { d z } \frac { 1 } { 1 + e ^ { - z } } \ &amp; = \frac { 1 } { \left( 1 + e ^ { - z } \right) ^ { 2 } } \left( e ^ { - z } \right) \ &amp; = \frac { 1 } { \left( 1 + e ^ { - z } \right) ^ { 2 } } \cdot \left( 1 - \frac { 1 } { \left( 1 + e ^ { - z } \right) } \right) \ &amp; = g ( z ) ( 1 - g ( z ) ) \end{aligned}$</p>
+<h2 id="似然函数"><a href="#似然函数" class="headerlink" title="似然函数"></a>似然函数</h2><p>假设有n个独立的训练样本 { (x1, y1), (x2, y2), … , (xn, yn)}，y={0, 1}。那每一个观察到的样本 (xi, yi) 出现的概率是：</p>
+<p>$P \left( \mathrm { y } _ { i } , \mathrm { x } _ { i } \right) = P \left( \mathrm { y } _ { i } = 1 | \mathrm { x } _ { i } \right) ^ { y _ { i } } \left( 1 - P \left( \mathrm { y } _ { i } = 1 | \mathrm { x } _ { i } \right) \right) ^ { \mathrm { 1 } - y _ { j } }$</p>
+<p>推广到所有样本下，得到整体的似然函数表达，需要将所有的样本似然函数全部相乘。这里的参数 $\theta$ 是我们要估计的参数，似然函数正比于我们的概率函数 $L ( \theta | x ) \propto P ( \operatorname { x | \theta )}$，累成后得到整体的似然函数表达：</p>
+<p>$L ( \theta ) = \prod P \left( \mathrm { y } _ { i } = 1 | \mathrm { x } _ { i } \right) ^ { y _ { i } } \left( 1 - P \left( \mathrm { y } _ { i } = 1 | \mathrm { x } _ { i } \right) \right) ^ { 1 - y _ { i } }$</p>
+<p>具体为</p>
+<p>$\begin{aligned} L ( \theta )  &amp; = p ( \vec { y } | X ; \theta ) \ &amp; = \prod _ { i = 1 } ^ { m } p \left( y ^ { ( i ) } | x ^ { ( i ) } ; \theta \right) \ &amp; = \prod _ { i = 1 } ^ { m } \left( h _ { \theta } \left( x ^ { ( i ) } \right) \right) ^ { y ^ { ( i ) } } \left( 1 - h _ { \theta } \left( x ^ { ( i ) } \right) \right) ^ { 1 - y ^ { ( i ) } } \end{aligned}$</p>
+<p>累乘的形式不利于进行优化分析，这里将似然函数取对数，得到对数似然函数，作为我们的最终优化目标，运用极大似然估计来求得最优的 $\theta$。</p>
+<p>$\begin{aligned} \ell ( \theta ) &amp; = \log L ( \theta ) \ &amp; = \sum _ { i = 1 } ^ { m } y ^ { ( i ) } \log h \left( x ^ { ( i ) } \right) + \left( 1 - y ^ { ( i ) } \right) \log \left( 1 - h \left( x ^ { ( i ) } \right) \right) \end{aligned}$</p>
+<h2 id="最优化求解推导"><a href="#最优化求解推导" class="headerlink" title="最优化求解推导"></a>最优化求解推导</h2><p>利用链式法对目标函数则进行求导以求得最优参数。</p>
+<p>$\frac { \partial } { \theta _ { j } } J ( \theta ) = \frac { \partial J ( \theta ) } { \partial g \left( \theta ^ { T } x \right) } <em> \frac { \partial g \left( \theta ^ { T } x \right) } { \partial \theta ^ { T } x } </em> \frac { \partial \theta ^ { T } x } { \partial \theta _ { j } }$</p>
+<p>分三部分求导：</p>
+<p>第一部分</p>
+<p>$\frac { \partial J ( \theta ) } { \partial g \left( \theta ^ { T } x \right) } = y <em> \frac { 1 } { g \left( \theta ^ { T } x \right) } + ( y - 1 ) </em> \frac { 1 } { 1 - g \left( \theta ^ { T _ { x } } x \right) }$</p>
+<p>第二部分</p>
+<p>$\frac { \partial g \left( \theta ^ { T } x \right) } { \partial \theta ^ { T } x } = g \left( \theta ^ { T } x \right) \left( 1 - g \left( \theta ^ { T } x \right) \right)$</p>
+<p>第三部分</p>
+<p>$\frac { \partial g \left( \theta ^ { T } x \right) } { \partial \theta ^ { T } x } = g \left( \theta ^ { T } x \right) \left( 1 - g \left( \theta ^ { T } x \right) \right)$</p>
+<p>整理得到最终形式：</p>
+<p>$\begin{aligned} \frac { \partial } { \partial \theta _ { j } } \ell ( \theta ) &amp; = \left( y \frac { 1 } { g \left( \theta ^ { T } x \right) } - ( 1 - y ) \frac { 1 } { 1 - g \left( \theta ^ { T } x \right) } \right) \frac { \partial } { \partial \theta _ { j } } g \left( \theta ^ { T } x \right) \ &amp; = \left( y \frac { 1 } { g \left( \theta ^ { T } x \right) } - ( 1 - y ) \frac { 1 } { 1 - g \left( \theta ^ { T } x \right) } \right) g \left( \theta ^ { T } x \right) \left( 1 - g \left( \theta ^ { T } x \right) \frac { \partial } { \partial \theta _ { j } } \theta ^ { T } x \right. \ &amp; = \left( y \left( 1 - g \left( \theta ^ { T } x \right) \right) - ( 1 - y ) g \left( \theta ^ { T } x \right) \right) x _ { j } \ &amp; = \left( y - h _ { \theta } ( x ) \right) x _ { j } \end{aligned}$</p>
+<p>因此总的 $\theta$ 更新公式为：</p>
+<p>$\theta _ { j } : = \theta _ { j } + \alpha \left( y ^ { ( i ) } - h _ { \theta } \left( x ^ { ( i ) } \right) \right) x _ { j } ^ { ( i ) }$</p>
+<p>整个迭代过程就是最为一般的梯度下降，逻辑回归的似然函数是典型的凸函数，运用凸优化的方式可以保证求得最优解。要考LR的话就可以这么写了吧。</p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>（1）正则化</p>
+<p>上述是最基础的逻辑回归的推导形式，但是在实际中，还是要针对模型进行一些正则化，防止参数规模过大产生过拟合的情况，违背了奥卡姆剃刀。这里列出了含正则化表达式的逻辑回归目标函数：</p>
+<p>$J ( \theta ) = - \frac { 1 } { N } \sum y \log g \left( \theta ^ { T } x \right) + ( 1 - y ) \log \left( 1 - g \left( \theta ^ { T } x \right) \right) + \lambda | w | _ { p }$</p>
+<p>（2）关于优化方法，上述给出的是最为一般的梯度下降法，其他的凸优化方法还包括有：</p>
+<ul>
+<li>牛顿法</li>
+<li>拟牛顿法</li>
+<li>DFP算法</li>
+<li>BGFS拟牛顿法<br>（详见李航《统计学习方法》附录B）</li>
+</ul>
+<p>（3）LR 和 SVM 的异同点</p>
+<p><strong>相同点：</strong></p>
+<ul>
+<li>LR和SVM都是分类算法。</li>
+<li>如果不考虑核函数，LR和SVM都是线性分类算法，也就是说他们的分类决策面都是线性的。</li>
+<li>LR和SVM都是监督学习算法，为判别模型。</li>
+</ul>
+<p><strong>不同点：</strong></p>
+<ul>
+<li>本质上是其loss function不同。<br>逻辑回归方法基于概率理论，假设样本为1的概率可以用sigmoid函数来表示，然后通过极大似然估计的方法估计出参数的值。支持向量机基于几何间隔最大化原理，认为存在最大几何间隔的分类面为最优分类面。</li>
+<li>支持向量机只考虑局部的边界线附近的点，而逻辑回归考虑全局（远离的点对边界线的确定也起作用，虽然作用会相对小一些）。</li>
+<li>在解决非线性问题时，支持向量机采用核函数的机制，而LR通常不采用核函数的方法。</li>
+<li>SVM的损失函数就自带正则！！！（损失函数中的1/2||w||^2项），这就是为什么SVM是结构风险最小化算法的原因！！！而LR必须另外在损失函数上添加正则项！！！</li>
+<li>SVM不是概率输出，Logistic Regression是概率输出。</li>
+</ul>
+<p><strong>总而言之，一个基于距离！一个基于概率！</strong></p>
+
       
     </div>
     
@@ -386,6 +468,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
       
 
       
@@ -466,8 +554,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -504,7 +601,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -534,6 +631,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#似然函数"><span class="nav-number">2.</span> <span class="nav-text">似然函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最优化求解推导"><span class="nav-number">3.</span> <span class="nav-text">最优化求解推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展"><span class="nav-number">4.</span> <span class="nav-text">扩展</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -700,7 +813,7 @@
         var disqus_config = function () {
           this.page.url = 'http://alexjiangzy.com/2019/02/13/LogisticsSummary/';
           this.page.identifier = '2019/02/13/LogisticsSummary/';
-          this.page.title = '';
+          this.page.title = 'Logistics到softmax推导整理';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://alex44jzy.disqus.com/embed.js';

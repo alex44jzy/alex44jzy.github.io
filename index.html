@@ -472,7 +472,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/13/LogisticsSummary/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/02/13/LogisticsSummary/" itemprop="url">Logistics到softmax推导整理</a></h1>
         
 
         <div class="post-meta">
@@ -484,7 +484,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T07:41:27+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T07:49:17+08:00">
                 2019-02-13
               </time>
             
@@ -494,6 +494,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -534,9 +556,18 @@
 
       
         
-          
-            
-          
+          <p>先从线性回归开始</p>
+<p>$h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }$</p>
+<p>$h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X$</p>
+<p>$X = \left[ \begin{array} { c } { 1 } \ { x _ { 1 } } \ { \dots } \ { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \ { w _ { 1 } } \ { \dots } \ { w _ { n } } \end{array} \right]$</p>
+<p>针对线性分类器而言，他解决的是回归问题，为了能更好进行分类问题的探讨，这里就引出了 Logistics 回归。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/13/LogisticsSummary/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1646,7 +1677,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
