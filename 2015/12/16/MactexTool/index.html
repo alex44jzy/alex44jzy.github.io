@@ -409,6 +409,7 @@
 <h3 id="MacTex的安装"><a href="#MacTex的安装" class="headerlink" title="MacTex的安装"></a>MacTex的安装</h3><p><a href="https://tug.org/mactex/" target="_blank" rel="noopener">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p>
 <h3 id="Sublime3-LaTeXTools-的安装"><a href="#Sublime3-LaTeXTools-的安装" class="headerlink" title="Sublime3(LaTeXTools)的安装"></a>Sublime3(LaTeXTools)的安装</h3><p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="noopener"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<br><code>LaTeXTools</code>，确认后安装就OK了。</p>
 <h3 id="Skim的安装"><a href="#Skim的安装" class="headerlink" title="Skim的安装"></a>Skim的安装</h3><p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="noopener">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，同步配置是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。<br><strong><code>打开skim&gt;点击Skim选项&gt;选择同步&gt;改写一些配置</code></strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -427,6 +428,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><img src="/images/skimsync.png" alt=""></p>
 <h3 id="MacTex的中文支持"><a href="#MacTex的中文支持" class="headerlink" title="MacTex的中文支持"></a>MacTex的中文支持</h3><p>中文支持是我很恼火的一个问题，因为早两年我在windows上用LaTeX的时候就发觉中文的支持贼差，但是现在国内一些较好的杂志(如<em>《中国科学》</em>、<em>《物理学报》</em>)又纷纷推出了LaTeX的模版，好比硬要给拖拉机装上12缸😊，在mac上折腾发现也没有那么轻松，在此我也说句良心话，用LaTeX还是尽量去敲英文吧。参考了一些人的博客，大致有三种方式可以实现。</p>
 <ul>
@@ -451,6 +453,7 @@
 <p>更加具体的配置和一些问题，可以访问<a href="http://www.readern.com/sublime-text-latex-chinese-under-mac.html" target="_blank" rel="noopener">Readern博客</a>，特别是如果编译出现问题可以多follow下面的评论。</p>
 <h3 id="LaTeX的命令总结"><a href="#LaTeX的命令总结" class="headerlink" title="LaTeX的命令总结"></a>LaTeX的命令总结</h3><p>这部分我会在具体一边做的时候一边补充，所以我先慢慢整理。</p>
 <h4 id="LaTeX对应的所有希腊字母："><a href="#LaTeX对应的所有希腊字母：" class="headerlink" title="LaTeX对应的所有希腊字母："></a>LaTeX对应的所有希腊字母：</h4><p>这部分顺便测试这个Hexo里的MathJax。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -521,11 +524,17 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="公式："><a href="#公式：" class="headerlink" title="公式："></a>公式：</h4><p>单行公式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$a = b + c$$</span><br></pre></td></tr></table></figure></p>
-<p>$$a = b + c$$<br>稍复杂的公式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;\partial u&#125;&#123;\partial t&#125;</span><br><span class="line">= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$</span><br></pre></td></tr></table></figure></p>
-<p>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>薛定谔方程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$ i\hbar\frac&#123;\partial \psi&#125;&#123;\partial t&#125;</span><br><span class="line">= \frac&#123;-\hbar^2&#125;&#123;2m&#125; \left(</span><br><span class="line">\frac&#123;\partial^2&#125;&#123;\partial x^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial y^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial z^2&#125;</span><br><span class="line">\right) \psi + V \psi.$$</span><br></pre></td></tr></table></figure></p>
-<p>$$ i\hbar\frac{\partial \psi}{\partial t}<br>= \frac{-\hbar^2}{2m} \left(<br>\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}<br>\right) \psi + V \psi.$$</p>
-
+<script type="math/tex; mode=display">a = b + c</script><p>稍复杂的公式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;\partial u&#125;&#123;\partial t&#125;</span><br><span class="line">= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">\frac{\partial u}{\partial t}
+= h^2 \left( \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2} +
+\frac{\partial^2 u}{\partial z^2}\right)</script><p>薛定谔方程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$ i\hbar\frac&#123;\partial \psi&#125;&#123;\partial t&#125;</span><br><span class="line">= \frac&#123;-\hbar^2&#125;&#123;2m&#125; \left(</span><br><span class="line">\frac&#123;\partial^2&#125;&#123;\partial x^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial y^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial z^2&#125;</span><br><span class="line">\right) \psi + V \psi.$$</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">i\hbar\frac{\partial \psi}{\partial t}
+= \frac{-\hbar^2}{2m} \left(
+\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+\right) \psi + V \psi.</script>
       
     </div>
     
