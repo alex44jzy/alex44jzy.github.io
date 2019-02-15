@@ -81,21 +81,21 @@
 
 
 
-<meta name="description" content="Logistics Regression先从线性回归开始 h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } =">
+<meta name="description" content="最近复习了一些基础知识，摘取了一些重要的做了一点推导，也为了之后可能面试会用到。应该是机器学习类的，但是也懒得分那么多类了，就先放在慢学NLP下面吧。这里选择把逻辑回归和softmax归到一起来讲，原因在于更好的比较两者的异同和联系。总结为以下两点： 逻辑回归的优化目标是极大化对数似然估计，采用梯度上升来学习及更新参数 $\theta$ 向量的值。 Softmax的优化目标是极小化交叉熵损失函数，">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Logistics到softmax推导整理">
 <meta property="og:url" content="http://alexjiangzy.com/2019/02/13/LogisticsSummary/index.html">
 <meta property="og:site_name" content="SciAes">
-<meta property="og:description" content="Logistics Regression先从线性回归开始 h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } =">
+<meta property="og:description" content="最近复习了一些基础知识，摘取了一些重要的做了一点推导，也为了之后可能面试会用到。应该是机器学习类的，但是也懒得分那么多类了，就先放在慢学NLP下面吧。这里选择把逻辑回归和softmax归到一起来讲，原因在于更好的比较两者的异同和联系。总结为以下两点： 逻辑回归的优化目标是极大化对数似然估计，采用梯度上升来学习及更新参数 $\theta$ 向量的值。 Softmax的优化目标是极小化交叉熵损失函数，">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.postimg.cc/jq7GHt6r/image.png">
 <meta property="og:image" content="https://i.postimg.cc/qB1CGHpj/image.png">
 <meta property="og:image" content="https://i.postimg.cc/mDPHFcCC/image.png">
-<meta property="og:updated_time" content="2019-02-15T16:24:55.000Z">
+<meta property="og:updated_time" content="2019-02-15T16:32:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Logistics到softmax推导整理">
-<meta name="twitter:description" content="Logistics Regression先从线性回归开始 h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } =">
+<meta name="twitter:description" content="最近复习了一些基础知识，摘取了一些重要的做了一点推导，也为了之后可能面试会用到。应该是机器学习类的，但是也懒得分那么多类了，就先放在慢学NLP下面吧。这里选择把逻辑回归和softmax归到一起来讲，原因在于更好的比较两者的异同和联系。总结为以下两点： 逻辑回归的优化目标是极大化对数似然估计，采用梯度上升来学习及更新参数 $\theta$ 向量的值。 Softmax的优化目标是极小化交叉熵损失函数，">
 <meta name="twitter:image" content="https://i.postimg.cc/jq7GHt6r/image.png">
 
 
@@ -399,14 +399,16 @@
       
 
       
-        <h1 id="Logistics-Regression"><a href="#Logistics-Regression" class="headerlink" title="Logistics Regression"></a>Logistics Regression</h1><p>先从线性回归开始</p>
+        <p>最近复习了一些基础知识，摘取了一些重要的做了一点推导，也为了之后可能面试会用到。应该是机器学习类的，但是也懒得分那么多类了，就先放在慢学NLP下面吧。这里选择把逻辑回归和softmax归到一起来讲，原因在于更好的比较两者的异同和联系。总结为以下两点：</p>
+<p><strong>逻辑回归的优化目标是极大化对数似然估计，采用梯度上升来学习及更新参数 $\theta$ 向量的值。</strong></p>
+<p><strong>Softmax的优化目标是极小化交叉熵损失函数，采用梯度下降和链式法则来更新各层权值。</strong></p>
+<h1 id="Logistics-Regression"><a href="#Logistics-Regression" class="headerlink" title="Logistics Regression"></a>Logistics Regression</h1><p>先从线性回归开始</p>
 <script type="math/tex; mode=display">h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }</script><script type="math/tex; mode=display">h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X</script><script type="math/tex; mode=display">X = \left[ \begin{array} { c } { 1 } \\ { x _ { 1 } } \\ { \dots } \\ { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \\ { w _ { 1 } } \\ { \dots } \\ { w _ { n } } \end{array} \right]</script><p>针对线性分类器而言，他解决的是回归问题，为了能更好进行分类问题的探讨，这里就引出了 Logistics 回归。</p>
 <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>逻辑回归是假设数据服从 Bernoulli 分布（抛硬币），因此LR属于参数模型。</p>
 <p>其中是对于线性模型，加上了一个S Sigmoid 函数，这个也是神经网络的激活函数，拥有很多良好的特性。1. 拥有很好的激活特性，2. 求导很容易，这一点在 GD 上太重要了，对于 NN 的 BPTT 也起到了极为重要的作用。</p>
 <p>LR 目标函数定义：$h _ { \theta } ( x ) = g \left( \theta ^ { T } x \right)$</p>
 <p>其中 Sigmoid 函数 g(z) 的定义：$g ( z ) = \frac { 1 } { 1 + e ^ { - z } }$</p>
 <p>Sigmoid 函数求导 $g ^ {‘} (z)$ 为：</p>
-<a id="more"></a>
 <script type="math/tex; mode=display">
 \begin{aligned} g ^ { \prime } ( z ) & = \frac { d } { d z } \frac { 1 } { 1 + e ^ { - z } } \\ & = \frac { 1 } { \left( 1 + e ^ { - z } \right) ^ { 2 } } \left( e ^ { - z } \right) \\ & = \frac { 1 } { \left( 1 + e ^ { - z } \right) ^ { 2 } } \cdot \left( 1 - \frac { 1 } { \left( 1 + e ^ { - z } \right) } \right) \\ & = g ( z ) ( 1 - g ( z ) ) \end{aligned}</script><h2 id="似然函数"><a href="#似然函数" class="headerlink" title="似然函数"></a>似然函数</h2><p>假设有n个独立的训练样本 { (x1, y1), (x2, y2), … , (xn, yn)}，y={0, 1}。那每一个观察到的样本 (xi, yi) 出现的概率是：</p>
 <script type="math/tex; mode=display">
