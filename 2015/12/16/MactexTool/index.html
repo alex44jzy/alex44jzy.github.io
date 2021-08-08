@@ -407,13 +407,13 @@
 <li>LaTeX的一些特殊字符总结</li>
 </ul>
 <hr>
-<h3 id="MacTex的安装"><a class="header-anchor" href="#MacTex的安装">¶</a>MacTex的安装</h3>
+<h3 id="MacTex的安装">MacTex的安装</h3>
 <p><a href="https://tug.org/mactex/" target="_blank" rel="noopener">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p>
-<h3 id="Sublime3-LaTeXTools-的安装"><a class="header-anchor" href="#Sublime3-LaTeXTools-的安装">¶</a>Sublime3(LaTeXTools)的安装</h3>
+<h3 id="Sublime3-LaTeXTools-的安装">Sublime3(LaTeXTools)的安装</h3>
 <p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="noopener"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>
 打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<br>
 <code>LaTeXTools</code>，确认后安装就OK了。</p>
-<h3 id="Skim的安装"><a class="header-anchor" href="#Skim的安装">¶</a>Skim的安装</h3>
+<h3 id="Skim的安装">Skim的安装</h3>
 <p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="noopener">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，同步配置是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。<br>
 <strong><code>打开skim&gt;点击Skim选项&gt;选择同步&gt;改写一些配置</code></strong></p>
 <table>
@@ -435,7 +435,7 @@
 </tbody>
 </table>
 <p><img src="/images/skimsync.png" alt=""></p>
-<h3 id="MacTex的中文支持"><a class="header-anchor" href="#MacTex的中文支持">¶</a>MacTex的中文支持</h3>
+<h3 id="MacTex的中文支持">MacTex的中文支持</h3>
 <p>中文支持是我很恼火的一个问题，因为早两年我在windows上用LaTeX的时候就发觉中文的支持贼差，但是现在国内一些较好的杂志(如_《中国科学》<em>、</em>《物理学报》_)又纷纷推出了LaTeX的模版，好比硬要给拖拉机装上12缸😊，在mac上折腾发现也没有那么轻松，在此我也说句良心话，用LaTeX还是尽量去敲英文吧。参考了一些人的博客，大致有三种方式可以实现。</p>
 <ul>
 <li>最简便的方法，只需要在tex文件的最上部加上<code>%!TEX program = xelatex</code>就可以了，参考下文的代码和最终结果，但是这里需要多注意两个问题：
@@ -458,9 +458,9 @@
 <p>然后在Sulime中打开<code>Preferences——Package Settings——LaTeXTools——Settings-User</code>，在builder－settings中进行如下设置（<strong>记住一定是在builder-settings这个选项下进行设置</strong>）：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"program" : "xelatex",</span><br><span class="line">"command" : ["latexmk", "-cd", "-e", "$pdflatex = 'xelatex -interaction=nonstopmode -synctex=1 %S %O'", "-f", "-pdf"],</span><br></pre></td></tr></table></figure>
 <p>更加具体的配置和一些问题，可以访问<a href="http://www.readern.com/sublime-text-latex-chinese-under-mac.html" target="_blank" rel="noopener">Readern博客</a>，特别是如果编译出现问题可以多follow下面的评论。</p>
-<h3 id="LaTeX的命令总结"><a class="header-anchor" href="#LaTeX的命令总结">¶</a>LaTeX的命令总结</h3>
+<h3 id="LaTeX的命令总结">LaTeX的命令总结</h3>
 <p>这部分我会在具体一边做的时候一边补充，所以我先慢慢整理。</p>
-<h4 id="LaTeX对应的所有希腊字母："><a class="header-anchor" href="#LaTeX对应的所有希腊字母：">¶</a>LaTeX对应的所有希腊字母：</h4>
+<h4 id="LaTeX对应的所有希腊字母：">LaTeX对应的所有希腊字母：</h4>
 <p>这部分顺便测试这个Hexo里的MathJax。</p>
 <table>
 <thead>
@@ -532,7 +532,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="公式："><a class="header-anchor" href="#公式：">¶</a>公式：</h4>
+<h4 id="公式：">公式：</h4>
 <p>单行公式:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$a = b + c$$</span><br></pre></td></tr></table></figure>
 <p>$$a = b + c$$<br>
@@ -739,7 +739,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MacTex的安装"><span class="nav-number">1.</span> <span class="nav-text">¶MacTex的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime3-LaTeXTools-的安装"><span class="nav-number">2.</span> <span class="nav-text">¶Sublime3(LaTeXTools)的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Skim的安装"><span class="nav-number">3.</span> <span class="nav-text">¶Skim的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MacTex的中文支持"><span class="nav-number">4.</span> <span class="nav-text">¶MacTex的中文支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LaTeX的命令总结"><span class="nav-number">5.</span> <span class="nav-text">¶LaTeX的命令总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LaTeX对应的所有希腊字母："><span class="nav-number">5.1.</span> <span class="nav-text">¶LaTeX对应的所有希腊字母：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公式："><span class="nav-number">5.2.</span> <span class="nav-text">¶公式：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MacTex的安装"><span class="nav-number">1.</span> <span class="nav-text">MacTex的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublime3-LaTeXTools-的安装"><span class="nav-number">2.</span> <span class="nav-text">Sublime3(LaTeXTools)的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Skim的安装"><span class="nav-number">3.</span> <span class="nav-text">Skim的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MacTex的中文支持"><span class="nav-number">4.</span> <span class="nav-text">MacTex的中文支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LaTeX的命令总结"><span class="nav-number">5.</span> <span class="nav-text">LaTeX的命令总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LaTeX对应的所有希腊字母："><span class="nav-number">5.1.</span> <span class="nav-text">LaTeX对应的所有希腊字母：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公式："><span class="nav-number">5.2.</span> <span class="nav-text">公式：</span></a></li></ol></li></ol></div>
             
 
           </div>
