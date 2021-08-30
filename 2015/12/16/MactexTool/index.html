@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了MacTex+Sublime3+Skim的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：">
+<meta name="description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了**MacTex+Sublime3+Skim**的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：">
 <meta name="keywords" content="mactex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令">
 <meta property="og:url" content="http://alexjiangzy.com/2015/12/16/MactexTool/index.html">
 <meta property="og:site_name" content="SciAes">
-<meta property="og:description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了MacTex+Sublime3+Skim的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：">
+<meta property="og:description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了**MacTex+Sublime3+Skim**的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://alexjiangzy.com/images/skimsync.png">
 <meta property="og:image" content="http://alexjiangzy.com/images/latexPic.png">
 <meta property="og:updated_time" content="2018-03-19T14:48:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令">
-<meta name="twitter:description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了MacTex+Sublime3+Skim的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：">
+<meta name="twitter:description" content="刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了**MacTex+Sublime3+Skim**的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：">
 <meta name="twitter:image" content="http://alexjiangzy.com/images/skimsync.png">
 
 
@@ -399,17 +399,23 @@
 
       
         <!-- ![](http://www.macupdate.com/images/icons256/12104.png) -->
-<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了<strong><code>MacTex+Sublime3+Skim</code></strong>的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：<br><a id="more"></a></p>
+<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了**<code>MacTex+Sublime3+Skim</code>**的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：</p>
+<a id="more"></a>
 <ul>
 <li>MacTex+Sublime3+Skim安装</li>
 <li>MacTex中文支持</li>
 <li>LaTeX的一些特殊字符总结</li>
 </ul>
 <hr>
-<h3 id="MacTex的安装"><a href="#MacTex的安装" class="headerlink" title="MacTex的安装"></a>MacTex的安装</h3><p><a href="https://tug.org/mactex/" target="_blank" rel="noopener">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p>
-<h3 id="Sublime3-LaTeXTools-的安装"><a href="#Sublime3-LaTeXTools-的安装" class="headerlink" title="Sublime3(LaTeXTools)的安装"></a>Sublime3(LaTeXTools)的安装</h3><p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="noopener"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<br><code>LaTeXTools</code>，确认后安装就OK了。</p>
-<h3 id="Skim的安装"><a href="#Skim的安装" class="headerlink" title="Skim的安装"></a>Skim的安装</h3><p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="noopener">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，同步配置是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。<br><strong><code>打开skim&gt;点击Skim选项&gt;选择同步&gt;改写一些配置</code></strong></p>
-<div class="table-container">
+<h3 id="MacTex的安装">MacTex的安装</h3>
+<p><a href="https://tug.org/mactex/" target="_blank" rel="noopener">Mactex官网</a>进行安装即可，无脑操作，一步步往下点。值得注意的是可以只下载精简版就好，虽然我还是装了那个2G多的大胖子。</p>
+<h3 id="Sublime3-LaTeXTools-的安装">Sublime3(LaTeXTools)的安装</h3>
+<p><a href="www.sublimetext.com">Sublime3</a>官网进行安装，这里就不赘述了，它强大的工具插件集成，轻量级的架构都是很吸引人的地方，对比于之前把玩的<a href="atom.org">Atom</a>，常常卡掉也懒得弄了。这里需要做的是既然选择了Sublime作为编辑器，就需要下载一个Sublime中针对LaTeX的给力插件——<a href="https://github.com/SublimeText/LaTeXTools" target="_blank" rel="noopener"><strong>LaTeXTools</strong></a>，支持直接编译和代码高亮。<br>
+打开Sublime，<code>command</code>+<code>shift</code>+<code>P</code>，输入<code>pi</code>(Package Control: Install Package)，进入了插件安装页面输入<br>
+<code>LaTeXTools</code>，确认后安装就OK了。</p>
+<h3 id="Skim的安装">Skim的安装</h3>
+<p>Skim是一款PDF查看软件，同样是在<a href="http://skim-app.sourceforge.net/" target="_blank" rel="noopener">Skim官方网站</a>上下载后进行无脑安装，用于tex文件编译完成后查看，同步配置是为了能和Sublime编辑器同步，在Sublime中编译后(command+B)，直接可以在Skim中同步看到效果。<br>
+<strong><code>打开skim&gt;点击Skim选项&gt;选择同步&gt;改写一些配置</code></strong></p>
 <table>
 <thead>
 <tr>
@@ -428,11 +434,12 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><img src="/images/skimsync.png" alt=""></p>
-<h3 id="MacTex的中文支持"><a href="#MacTex的中文支持" class="headerlink" title="MacTex的中文支持"></a>MacTex的中文支持</h3><p>中文支持是我很恼火的一个问题，因为早两年我在windows上用LaTeX的时候就发觉中文的支持贼差，但是现在国内一些较好的杂志(如<em>《中国科学》</em>、<em>《物理学报》</em>)又纷纷推出了LaTeX的模版，好比硬要给拖拉机装上12缸😊，在mac上折腾发现也没有那么轻松，在此我也说句良心话，用LaTeX还是尽量去敲英文吧。参考了一些人的博客，大致有三种方式可以实现。</p>
+<h3 id="MacTex的中文支持">MacTex的中文支持</h3>
+<p>中文支持是我很恼火的一个问题，因为早两年我在windows上用LaTeX的时候就发觉中文的支持贼差，但是现在国内一些较好的杂志(如_《中国科学》<em>、</em>《物理学报》_)又纷纷推出了LaTeX的模版，好比硬要给拖拉机装上12缸😊，在mac上折腾发现也没有那么轻松，在此我也说句良心话，用LaTeX还是尽量去敲英文吧。参考了一些人的博客，大致有三种方式可以实现。</p>
 <ul>
-<li>最简便的方法，只需要在tex文件的最上部加上<code>%!TEX program = xelatex</code>就可以了，参考下文的代码和最终结果，但是这里需要多注意两个问题：<ul>
+<li>最简便的方法，只需要在tex文件的最上部加上<code>%!TEX program = xelatex</code>就可以了，参考下文的代码和最终结果，但是这里需要多注意两个问题：
+<ul>
 <li>一定要注意设定字体。参考下文中的 <code>\setmainfont{Hiragino Sans GB}</code>。</li>
 <li>中文一定要多加一句代码<code>\XeTeXlinebreaklocale &quot;zh&quot;</code>，这是为了中文可以正常换行。</li>
 </ul>
@@ -441,7 +448,7 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">%!TEX program = xelatex</span><br><span class="line">%!TEX TS-program = xelatex</span><br><span class="line">%!TEX encoding = UTF-<span class="number">8</span> Unicode</span><br><span class="line"></span><br><span class="line">\documentclass[<span class="number">12</span>pt]&#123;article&#125; %这个我就不多说了，头文件</span><br><span class="line">\usepackage&#123;url&#125; %这个我也不多说了</span><br><span class="line">\usepackage&#123;fontspec,xltxtra,xunicode&#125; %最新的mactex都有</span><br><span class="line"></span><br><span class="line">\defaultfontfeatures&#123;Mapping=tex-text&#125;</span><br><span class="line">\setromanfont&#123;Heiti SC&#125; %设置中文字体</span><br><span class="line">\XeTeXlinebreaklocale “zh”</span><br><span class="line">\XeTeXlinebreakskip = 0pt plus <span class="number">1</span>pt minus <span class="number">0</span>.<span class="number">1</span>pt %文章内中文自动换行，可以自行调节</span><br><span class="line"></span><br><span class="line">\newfontfamily&#123;\H&#125;&#123;Songti SC&#125; %设定新的字体快捷命令</span><br><span class="line">\newfontfamily&#123;\E&#125;&#123;Weibei SC&#125; %设定新的字体快捷命令</span><br><span class="line">\<span class="keyword">begin</span>&#123;document&#125;</span><br><span class="line">\thispagestyle&#123;empty&#125;</span><br><span class="line">\small&#123;给一个比较简单的方法，在mac上折腾CJK有点麻烦，其实XeTeX就可以解决中文的问题。编码的改动其实不需要在mactex的设置里面改，写在前面然后注释掉就好了。\\</span><br><span class="line">繁體字什麼的也是可以實現的。\\</span><br><span class="line">当你需要打不同字体的时候，就需要用到这个\url&#123;\newfontfamily&#125;，这样你可以在一行中显示多种字体。比如说：\\&#125;</span><br><span class="line">\Huge&#123;&#123;\H 宋体&#125; &#123;\E 魏碑&#125; 黑体&#125;</span><br><span class="line">\<span class="keyword">end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/latexPic.png" alt=""></p>
 <ul>
-<li>比较折腾的方法，就是去折腾这个<a href="http://cjk.ffii.org/" target="_blank" rel="noopener">CJK</a>。其实也没有很折腾，我下载的最新的mactex2015版，CJK已经集成在其中了，不用单独下载了，只要在文档开头加上<code>\usepackage[encapsulated]{CJK}</code>就可以了。具体参看下面的测试tex：</li>
+<li>比较折腾的方法，就是去折腾这个<a href="http://cjk.ffii.org/" target="_blank" rel="noopener">CJK</a>。其实也没有很折腾，我下载的最新的mactex2015版，CJK已经集成在其中了，不用单独下载了，只要在文档开头加上<code>\usepackage[encapsulated]{CJK} </code>就可以了。具体参看下面的测试tex：</li>
 </ul>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[<span class="number">12</span>pt]&#123;article&#125;</span><br><span class="line">\usepackage[encapsulated]&#123;CJK&#125; % <span class="number">1</span>. Dec. <span class="number">2009</span>更新：使用[encapsulate]才是正確的用法</span><br><span class="line">\<span class="keyword">begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line">\<span class="keyword">begin</span>&#123;CJK&#125;&#123;UTF8&#125;&#123;bsmi&#125; % 開始 CJK 環境，設定編碼，設定字體</span><br><span class="line">“互联网能造空调吗？互联网永远都只是工具，不能替代实体经济。”在互联网是万能的甚至可以颠覆、通杀一切的说法在中国商界流行之时，董明珠仍然坚持自己观点。她给在场企业家鼓劲说，不信再等两年来看，实体经济一定会崛起。无论什么企业和公司，都要有自己的核心技术。实体店也会一直存在下去，但在互联网时代发生很大变化。实体店应该在便利性等方面下功夫，让顾客感觉跟自己更近。</span><br><span class="line">This is a test.</span><br><span class="line">\<span class="keyword">end</span>&#123;CJK&#125; % 結束 CJK 環境</span><br><span class="line">\<span class="keyword">end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -451,9 +458,10 @@
 <p>然后在Sulime中打开<code>Preferences——Package Settings——LaTeXTools——Settings-User</code>，在builder－settings中进行如下设置（<strong>记住一定是在builder-settings这个选项下进行设置</strong>）：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"program" : "xelatex",</span><br><span class="line">"command" : ["latexmk", "-cd", "-e", "$pdflatex = 'xelatex -interaction=nonstopmode -synctex=1 %S %O'", "-f", "-pdf"],</span><br></pre></td></tr></table></figure>
 <p>更加具体的配置和一些问题，可以访问<a href="http://www.readern.com/sublime-text-latex-chinese-under-mac.html" target="_blank" rel="noopener">Readern博客</a>，特别是如果编译出现问题可以多follow下面的评论。</p>
-<h3 id="LaTeX的命令总结"><a href="#LaTeX的命令总结" class="headerlink" title="LaTeX的命令总结"></a>LaTeX的命令总结</h3><p>这部分我会在具体一边做的时候一边补充，所以我先慢慢整理。</p>
-<h4 id="LaTeX对应的所有希腊字母："><a href="#LaTeX对应的所有希腊字母：" class="headerlink" title="LaTeX对应的所有希腊字母："></a>LaTeX对应的所有希腊字母：</h4><p>这部分顺便测试这个Hexo里的MathJax。</p>
-<div class="table-container">
+<h3 id="LaTeX的命令总结">LaTeX的命令总结</h3>
+<p>这部分我会在具体一边做的时候一边补充，所以我先慢慢整理。</p>
+<h4 id="LaTeX对应的所有希腊字母：">LaTeX对应的所有希腊字母：</h4>
+<p>这部分顺便测试这个Hexo里的MathJax。</p>
 <table>
 <thead>
 <tr>
@@ -524,17 +532,23 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="公式："><a href="#公式：" class="headerlink" title="公式："></a>公式：</h4><p>单行公式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$a = b + c$$</span><br></pre></td></tr></table></figure></p>
-<script type="math/tex; mode=display">a = b + c</script><p>稍复杂的公式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;\partial u&#125;&#123;\partial t&#125;</span><br><span class="line">= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$</span><br></pre></td></tr></table></figure></p>
-<script type="math/tex; mode=display">\frac{\partial u}{\partial t}
-= h^2 \left( \frac{\partial^2 u}{\partial x^2} +
-\frac{\partial^2 u}{\partial y^2} +
-\frac{\partial^2 u}{\partial z^2}\right)</script><p>薛定谔方程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$ i\hbar\frac&#123;\partial \psi&#125;&#123;\partial t&#125;</span><br><span class="line">= \frac&#123;-\hbar^2&#125;&#123;2m&#125; \left(</span><br><span class="line">\frac&#123;\partial^2&#125;&#123;\partial x^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial y^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial z^2&#125;</span><br><span class="line">\right) \psi + V \psi.$$</span><br></pre></td></tr></table></figure></p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial \psi}{\partial t}
-= \frac{-\hbar^2}{2m} \left(
-\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
-\right) \psi + V \psi.</script>
+<h4 id="公式：">公式：</h4>
+<p>单行公式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$a = b + c$$</span><br></pre></td></tr></table></figure>
+<p>$$a = b + c$$<br>
+稍复杂的公式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;\partial u&#125;&#123;\partial t&#125;</span><br><span class="line">= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$</span><br></pre></td></tr></table></figure>
+<p>$$\frac{\partial u}{\partial t}<br>
+= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>
+\frac{\partial^2 u}{\partial y^2} +<br>
+\frac{\partial^2 u}{\partial z^2}\right)$$<br>
+薛定谔方程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$ i\hbar\frac&#123;\partial \psi&#125;&#123;\partial t&#125;</span><br><span class="line">= \frac&#123;-\hbar^2&#125;&#123;2m&#125; \left(</span><br><span class="line">\frac&#123;\partial^2&#125;&#123;\partial x^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial y^2&#125; + \frac&#123;\partial^2&#125;&#123;\partial z^2&#125;</span><br><span class="line">\right) \psi + V \psi.$$</span><br></pre></td></tr></table></figure>
+<p>$$ i\hbar\frac{\partial \psi}{\partial t}<br>
+= \frac{-\hbar^2}{2m} \left(<br>
+\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}<br>
+\right) \psi + V \psi.$$</p>
+
       
     </div>
     
