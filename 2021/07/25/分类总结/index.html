@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="SciAes">
 <meta property="og:description" content="目录 双指针  LC-1 2数求和 LC-15 三数之和 LC-16 最接近的三数之和 LC-142 环形链表2 LC-75 颜色分类 LC-11 盛最多水的容器 LC-763 划分字母区间 LC-80 删除排序数组中的重复项">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-09-12T18:46:10.474Z">
+<meta property="og:updated_time" content="2021-09-12T18:47:39.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类总结">
 <meta name="twitter:description" content="目录 双指针  LC-1 2数求和 LC-15 三数之和 LC-16 最接近的三数之和 LC-142 环形链表2 LC-75 颜色分类 LC-11 盛最多水的容器 LC-763 划分字母区间 LC-80 删除排序数组中的重复项">
@@ -1240,6 +1240,7 @@ rand_x() % target + 1</p>
 1  3  -1 [-3  5  3] 6  7       5<br>
 1  3  -1  -3 [5  3  6] 7       6<br>
 1  3  -1  -3  5 [3  6  7]      7</p>
+<p>单调队列，新的元素，检查是否大于最后一个，满足pop掉末尾的，上浮；判断第一个是否不在窗口，popleft。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSlidingWindow</span><span class="params">(self, nums: List[int], k: int)</span> -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        window = deque()</span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">while</span> window <span class="keyword">and</span> nums[i] &gt; nums[window[<span class="number">-1</span>]]:</span><br><span class="line">                window.pop()</span><br><span class="line">            window.append(i)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> window[<span class="number">0</span>] &lt;= i - k:</span><br><span class="line">                window.popleft()</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> i - k + <span class="number">1</span> &gt;= <span class="number">0</span>:</span><br><span class="line">                res.append(nums[window[<span class="number">0</span>]])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 <h1>二分查找</h1>
 <p><strong>二分查找模型：</strong></p>
