@@ -1081,11 +1081,6 @@ pre .javascript .function {
     display: none !important;
   }
 }
-@media (max-width: 767px) {
-  .back-to-top {
-    display: none !important;
-  }
-}
 .back-to-top.back-to-top-on {
   bottom: 30px;
 }
@@ -1823,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d07fff;
+  background: #3cbe90;
 }
 .links-of-blogroll {
   font-size: 13px;
