@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="信息流信息流推荐场景：推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。推荐评估 召回  向量化召回  u2i: YoutubeDNN user-emb 和 item-emb 做点积召回 i2i: ICF，点击序列构建 word2vec，node2vec，EGES u2u: YoutubeDNN 的 user">
+<meta name="description" content="信息流 信息流推荐场景： 推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。 推荐评估 召回   向量化召回  u2i: YoutubeDNN user-emb 和 item-emb 做点积召回 i2i: ICF，点击序列构建 word2vec，node2vec，EGES u2u: YoutubeDNN 的 u">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="信息流推荐算法小结">
 <meta property="og:url" content="http://alexjiangzy.com/2021/10/23/信息流推荐要点/index.html">
 <meta property="og:site_name" content="SciAes">
-<meta property="og:description" content="信息流信息流推荐场景：推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。推荐评估 召回  向量化召回  u2i: YoutubeDNN user-emb 和 item-emb 做点积召回 i2i: ICF，点击序列构建 word2vec，node2vec，EGES u2u: YoutubeDNN 的 user">
+<meta property="og:description" content="信息流 信息流推荐场景： 推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。 推荐评估 召回   向量化召回  u2i: YoutubeDNN user-emb 和 item-emb 做点积召回 i2i: ICF，点击序列构建 word2vec，node2vec，EGES u2u: YoutubeDNN 的 u">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2021-10-23T11:19:52.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="信息流推荐算法小结">
-<meta name="twitter:description" content="信息流信息流推荐场景：推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。推荐评估 召回  向量化召回  u2i: YoutubeDNN user-emb 和 item-emb 做点积召回 i2i: ICF，点击序列构建 word2vec，node2vec，EGES u2u: YoutubeDNN 的 user">
+<meta name="twitter:description" content="信息流 信息流推荐场景： 推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。 推荐评估 召回   向量化召回  u2i: YoutubeDNN user-emb 和 item-emb 做点积召回 i2i: ICF，点击序列构建 word2vec，node2vec，EGES u2u: YoutubeDNN 的 u">
 
 
 
@@ -397,10 +397,14 @@
       
 
       
-        <h3 id="信息流"><a href="#信息流" class="headerlink" title="信息流"></a>信息流</h3><p>信息流推荐场景：<br>推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。<br>推荐评估</p>
+        <h3 id="信息流">信息流</h3>
+<p>信息流推荐场景：<br>
+推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。<br>
+推荐评估</p>
 <p>召回</p>
 <ul>
-<li><p>向量化召回</p>
+<li>
+<p>向量化召回</p>
 <ul>
 <li>u2i: YoutubeDNN user-emb 和 item-emb 做点积召回</li>
 <li>i2i: ICF，点击序列构建 word2vec，node2vec，EGES</li>
@@ -408,18 +412,24 @@
 <li>向量化召回样本trick，样本中增加负采样，否则会逐步变成高热通道；负采样尝试全局负采样，batch 内负采样，修正loss，实验除主指标正向以外，集中度显著下降，新鲜度上升</li>
 </ul>
 </li>
-<li><p>策略类召回</p>
+<li>
+<p>策略类召回</p>
 <ul>
 <li>城市、poi类召回 基于城市意图分，订单、意图、本地、热门城市下按照产品质量分召回和分段召回</li>
 <li>新用户产品池</li>
 <li></li>
 </ul>
 </li>
-<li>探索类召回<ul>
-<li>新入库产品的 explore 通道<br>排序</li>
+<li>
+<p>探索类召回</p>
+<ul>
+<li>新入库产品的 explore 通道<br>
+排序</li>
 </ul>
 </li>
-<li>粗排<ul>
+<li>
+<p>粗排</p>
+<ul>
 <li>基于 LR</li>
 <li></li>
 </ul>
