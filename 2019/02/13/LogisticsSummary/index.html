@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://i.postimg.cc/jq7GHt6r/image.png">
 <meta property="og:image" content="https://i.postimg.cc/qB1CGHpj/image.png">
 <meta property="og:image" content="https://i.postimg.cc/mDPHFcCC/image.png">
-<meta property="og:updated_time" content="2021-10-10T00:49:34.580Z">
+<meta property="og:updated_time" content="2021-10-23T11:17:42.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Logistics到softmax推导整理">
 <meta name="twitter:description" content="最近复习了一些基础知识，摘取了一些重要的做了一点推导，也为了之后可能面试会用到。应该是机器学习类的，但是也懒得分那么多类了，就先放在慢学NLP下面吧。这里选择把逻辑回归和softmax归到一起来讲，原因在于更好的比较两者的异同和联系。总结为以下两点： 逻辑回归的优化目标是极大化对数似然估计，采用梯度上升来学习及更新参数 $\theta$ 向量的值。 Softmax的优化目标是极小化交叉熵损失函数，">
@@ -408,7 +408,7 @@
 <p>先从线性回归开始</p>
 <p>$$h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }$$</p>
 <p>$$h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X$$</p>
-<p>$$X = \left[ \begin{array} { c } { 1 } \ { x _ { 1 } } \ { \dots } \ { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \ { w _ { 1 } } \ { \dots } \ { w _ { n } } \end{array} \right]$$</p>
+<p>$$X = \left[ \begin{array} { c } { 1 } \newline { x _ { 1 } } \newline { \dots } \newline { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \newline { w _ { 1 } } \newline { \dots } \newline { w _ { n } } \end{array} \right]$$</p>
 <p>针对线性分类器而言，他解决的是回归问题，为了能更好进行分类问题的探讨，这里就引出了 Logistics 回归。</p>
 <a id="more"></a>
 <h2 id="基础知识">基础知识</h2>
@@ -418,7 +418,7 @@
 <p>其中 Sigmoid 函数 g(z) 的定义：$g ( z ) = \frac { 1 } { 1 + e ^ { - z } }$</p>
 <p>Sigmoid 函数求导 $g ^ {'} (z)$ 为：</p>
 <p>$$<br>
-\begin{aligned} g ^ { \prime } ( z ) &amp; = \frac { d } { d z } \frac { 1 } { 1 + e ^ { - z } } \ &amp; = \frac { 1 } { \left( 1 + e ^ { - z } \right) ^ { 2 } } \left( e ^ { - z } \right) \ &amp; = \frac { 1 } { \left( 1 + e ^ { - z } \right) ^ { 2 } } \cdot \left( 1 - \frac { 1 } { \left( 1 + e ^ { - z } \right) } \right) \ &amp; = g ( z ) ( 1 - g ( z ) ) \end{aligned}<br>
+\begin{aligned} g ^ { \prime } ( z ) &amp; = \frac { d } { d z } \frac { 1 } { 1 + e ^ { - z } } \newline &amp; = \frac { 1 } { \left( 1 + e ^ { - z } \right) ^ { 2 } } \left( e ^ { - z } \right) \newline &amp; = \frac { 1 } { \left( 1 + e ^ { - z } \right) ^ { 2 } } \cdot \left( 1 - \frac { 1 } { \left( 1 + e ^ { - z } \right) } \right) \newline &amp; = g ( z ) ( 1 - g ( z ) ) \end{aligned}<br>
 $$</p>
 <h2 id="似然函数">似然函数</h2>
 <p>假设有n个独立的训练样本 { (x1, y1), (x2, y2), … , (xn, yn)}，y={0, 1}。那每一个观察到的样本 (xi, yi) 出现的概率是：</p>
@@ -431,11 +431,11 @@ L ( \theta ) = \prod P \left( \mathrm { y } _ { i } = 1 | \mathrm { x } _ { i } 
 $$</p>
 <p>具体为</p>
 <p>$$<br>
-\begin{aligned} L ( \theta )  &amp; = p ( \vec { y } | X ; \theta ) \ &amp; = \prod _ { i = 1 } ^ { m } p \left( y ^ { ( i ) } | x ^ { ( i ) } ; \theta \right) \ &amp; = \prod _ { i = 1 } ^ { m } \left( h _ { \theta } \left( x ^ { ( i ) } \right) \right) ^ { y ^ { ( i ) } } \left( 1 - h _ { \theta } \left( x ^ { ( i ) } \right) \right) ^ { 1 - y ^ { ( i ) } } \end{aligned}<br>
+\begin{aligned} L ( \theta )  &amp; = p ( \vec { y } | X ; \theta ) \newline &amp; = \prod _ { i = 1 } ^ { m } p \left( y ^ { ( i ) } | x ^ { ( i ) } ; \theta \right) \newline &amp; = \prod _ { i = 1 } ^ { m } \left( h _ { \theta } \left( x ^ { ( i ) } \right) \right) ^ { y ^ { ( i ) } } \left( 1 - h _ { \theta } \left( x ^ { ( i ) } \right) \right) ^ { 1 - y ^ { ( i ) } } \end{aligned}<br>
 $$</p>
 <p>累乘的形式不利于进行优化分析，这里将似然函数取对数，得到对数似然函数，作为我们的最终优化目标，运用极大似然估计来求得最优的 $\theta$</p>
 <p>$$<br>
-\begin{aligned} \ell ( \theta ) &amp; = \log L ( \theta ) \ &amp; = \sum _ { i = 1 } ^ { m } y ^ { ( i ) } \log h \left( x ^ { ( i ) } \right) + \left( 1 - y ^ { ( i ) } \right) \log \left( 1 - h \left( x ^ { ( i ) } \right) \right) \end{aligned}<br>
+\begin{aligned} \ell ( \theta ) &amp; = \log L ( \theta ) \newline &amp; = \sum _ { i = 1 } ^ { m } y ^ { ( i ) } \log h \left( x ^ { ( i ) } \right) + \left( 1 - y ^ { ( i ) } \right) \log \left( 1 - h \left( x ^ { ( i ) } \right) \right) \end{aligned}<br>
 $$</p>
 <h2 id="最优化求解推导">最优化求解推导</h2>
 <p>利用链式法对目标函数则进行求导以求得最优参数。</p>
@@ -457,7 +457,7 @@ $$</p>
 $$</p>
 <p>整理得到最终形式：</p>
 <p>$$<br>
-\begin{aligned} \frac { \partial } { \partial \theta _ { j } } \ell ( \theta ) &amp; = \left( y \frac { 1 } { g \left( \theta ^ { T } x \right) } - ( 1 - y ) \frac { 1 } { 1 - g \left( \theta ^ { T } x \right) } \right) \frac { \partial } { \partial \theta _ { j } } g \left( \theta ^ { T } x \right) \ &amp; = \left( y \frac { 1 } { g \left( \theta ^ { T } x \right) } - ( 1 - y ) \frac { 1 } { 1 - g \left( \theta ^ { T } x \right) } \right) g \left( \theta ^ { T } x \right) \left( 1 - g \left( \theta ^ { T } x ) \right) \right) \frac { \partial } { \partial \theta _ { j } } \theta ^ { T } x \ &amp; = \left( y \left( 1 - g \left( \theta ^ { T } x \right) \right) - ( 1 - y ) g \left( \theta ^ { T } x \right) \right) x _ { j } \ &amp; = \left( y - h _ { \theta } ( x ) \right) x _ { j } \end{aligned}<br>
+\begin{aligned} \frac { \partial } { \partial \theta _ { j } } \ell ( \theta ) &amp; = \left( y \frac { 1 } { g \left( \theta ^ { T } x \right) } - ( 1 - y ) \frac { 1 } { 1 - g \left( \theta ^ { T } x \right) } \right) \frac { \partial } { \partial \theta _ { j } } g \left( \theta ^ { T } x \right) \newline &amp; = \left( y \frac { 1 } { g \left( \theta ^ { T } x \right) } - ( 1 - y ) \frac { 1 } { 1 - g \left( \theta ^ { T } x \right) } \right) g \left( \theta ^ { T } x \right) \left( 1 - g \left( \theta ^ { T } x ) \right) \right) \frac { \partial } { \partial \theta _ { j } } \theta ^ { T } x \newline &amp; = \left( y \left( 1 - g \left( \theta ^ { T } x \right) \right) - ( 1 - y ) g \left( \theta ^ { T } x \right) \right) x _ { j } \newline &amp; = \left( y - h _ { \theta } ( x ) \right) x _ { j } \end{aligned}<br>
 $$</p>
 <p>因此总的 $\theta$ 更新公式为：</p>
 <p>$$<br>
@@ -522,19 +522,19 @@ $$</p>
 $$</p>
 <p><strong>计算第一项：</strong></p>
 <p>$$<br>
-\begin{aligned} \frac { \partial J } { \partial p _ { i } } &amp; = \frac { \partial - [ y \log ( p ) + ( 1 - y ) \log ( 1 - p ) ] } { \partial p _ { i } } \ &amp; = - \frac { \partial y _ { i } \log p _ { i } } { \partial p _ { i } } - \frac { \partial \left( 1 - y _ { i } \right) \log \left( 1 - p _ { i } \right) } { \partial p _ { i } } \ &amp; = - \frac { y _ { i } } { p _ { i } } - \left[ \left( 1 - y _ { i } \right) \cdot \frac { 1 } { 1 - p _ { i } } \cdot ( - 1 ) \right] \ &amp; = - \frac { y _ { i } } { p _ { i } } + \frac { 1 - y _ { i } } { 1 - p _ { i } } \ &amp; = - \frac { y _ { i } } { \sigma \left( y _ { i } \right) } + \frac { 1 - y _ { i } } { 1 - \sigma \left( y _ { i } \right) }  \end{aligned}<br>
+\begin{aligned} \frac { \partial J } { \partial p _ { i } } &amp; = \frac { \partial - [ y \log ( p ) + ( 1 - y ) \log ( 1 - p ) ] } { \partial p _ { i } } \newline &amp; = - \frac { \partial y _ { i } \log p _ { i } } { \partial p _ { i } } - \frac { \partial \left( 1 - y _ { i } \right) \log \left( 1 - p _ { i } \right) } { \partial p _ { i } } \newline &amp; = - \frac { y _ { i } } { p _ { i } } - \left[ \left( 1 - y _ { i } \right) \cdot \frac { 1 } { 1 - p _ { i } } \cdot ( - 1 ) \right] \newline &amp; = - \frac { y _ { i } } { p _ { i } } + \frac { 1 - y _ { i } } { 1 - p _ { i } } \newline &amp; = - \frac { y _ { i } } { \sigma \left( y _ { i } \right) } + \frac { 1 - y _ { i } } { 1 - \sigma \left( y _ { i } \right) }  \end{aligned}<br>
 $$</p>
 <p>计算第二项，稍微有点复杂，第一种k等于i的情况</p>
 <p>$$<br>
-\begin{aligned} \frac { \partial p _ { i } } { \partial s c o r e _ { i } } &amp; = \frac { \left( e ^ { y _ { i } } \right) ^ { \prime } \cdot \left( \sum _ { i } e ^ { y _ { i } } \right) - e ^ { y _ { i } } \cdot \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { \prime } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \ &amp; = \frac { e ^ { y _ { i } } \cdot \sum _ { i } e ^ { y _ { i } } - \left( e ^ { y _ { i } } \right) ^ { 2 } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \ &amp; = \frac { e ^ { y _ { i } } } { \sum _ { j } e ^ { y _ { i } } } - \frac { \left( e ^ { y _ { i } } \right) ^ { 2 } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \ &amp; = \frac { e ^ { y _ { i } } } { \sum _ { j } e ^ { y _ { i } } } \cdot \left( 1 - \frac { e ^ { y _ { i } } } { \sum _ { j } e ^ { y _ { i } } } \right) \ &amp; = \sigma \left( y _ { i } \right) \left( 1 - \sigma \left( y _ { i } \right) \right) \end{aligned}<br>
+\begin{aligned} \frac { \partial p _ { i } } { \partial s c o r e _ { i } } &amp; = \frac { \left( e ^ { y _ { i } } \right) ^ { \prime } \cdot \left( \sum _ { i } e ^ { y _ { i } } \right) - e ^ { y _ { i } } \cdot \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { \prime } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \newline &amp; = \frac { e ^ { y _ { i } } \cdot \sum _ { i } e ^ { y _ { i } } - \left( e ^ { y _ { i } } \right) ^ { 2 } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \newline &amp; = \frac { e ^ { y _ { i } } } { \sum _ { j } e ^ { y _ { i } } } - \frac { \left( e ^ { y _ { i } } \right) ^ { 2 } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \newline &amp; = \frac { e ^ { y _ { i } } } { \sum _ { j } e ^ { y _ { i } } } \cdot \left( 1 - \frac { e ^ { y _ { i } } } { \sum _ { j } e ^ { y _ { i } } } \right) \newline &amp; = \sigma \left( y _ { i } \right) \left( 1 - \sigma \left( y _ { i } \right) \right) \end{aligned}<br>
 $$</p>
 <p>第二种考虑k不等于i的情况</p>
 <p>$$<br>
-\begin{aligned} \frac { \partial p _ { k } } { \partial s c o r e _ { i } } &amp; = \frac { \left( e ^ { y _ { k } } \right) ^ { \prime } \cdot \left( \sum _ { i } e ^ { y _ { i } } \right) - e ^ { y _ { i } } \cdot \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { \prime } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \ &amp; = \frac { 0 \cdot \sum _ { i } e ^ { y _ { i } } - \left( e ^ { y _ { i } } \right) \cdot \left( e ^ { y _ { k } } \right) } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \ &amp; = - \frac { e ^ { y _ { i } } \cdot e ^ { y _ { k } } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \ &amp; = - \frac { e ^ { y _ { i } } } { \sum _ { j } e ^ { y _ { i } } } \cdot \frac { e ^ { y _ { k } } } { \sum _ { j } e ^ { y _ { i } } } \ &amp; = - \sigma \left( y _ { k } \right) \cdot \sigma \left( y _ { k } \right) \ &amp; = \sigma \left( y _ { k } \right) \cdot \left( 1 - \sigma \left( y _ { i } \right) \right) \end{aligned}<br>
+\begin{aligned} \frac { \partial p _ { k } } { \partial s c o r e _ { i } } &amp; = \frac { \left( e ^ { y _ { k } } \right) ^ { \prime } \cdot \left( \sum _ { i } e ^ { y _ { i } } \right) - e ^ { y _ { i } } \cdot \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { \prime } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \newline &amp; = \frac { 0 \cdot \sum _ { i } e ^ { y _ { i } } - \left( e ^ { y _ { i } } \right) \cdot \left( e ^ { y _ { k } } \right) } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \newline &amp; = - \frac { e ^ { y _ { i } } \cdot e ^ { y _ { k } } } { \left( \sum _ { j } e ^ { y _ { i } } \right) ^ { 2 } } \newline &amp; = - \frac { e ^ { y _ { i } } } { \sum _ { j } e ^ { y _ { i } } } \cdot \frac { e ^ { y _ { k } } } { \sum _ { j } e ^ { y _ { i } } } \newline &amp; = - \sigma \left( y _ { k } \right) \cdot \sigma \left( y _ { k } \right) \newline &amp; = \sigma \left( y _ { k } \right) \cdot \left( 1 - \sigma \left( y _ { i } \right) \right) \end{aligned}<br>
 $$</p>
 <p>总和两个式子的结果，我们得到了统一的形式：<br>
 $$<br>
-\frac { \partial p _ { k } } { \partial s c o r e _ { i } } = \left{ \begin{array} { l l } { \sigma \left( y _ { i } \right) \left( 1 - \sigma \left( y _ { i } \right) \right) } &amp; { \text { if } k = i } \ { \sigma \left( y _ { k } \right) \cdot \left( 1 - \sigma \left( y _ { i } \right) \right) } &amp; { \text { if } k \neq i } \end{array} \right.<br>
+\frac { \partial p _ { k } } { \partial s c o r e _ { i } } = \left{ \begin{array} { l l } { \sigma \left( y _ { i } \right) \left( 1 - \sigma \left( y _ { i } \right) \right) } &amp; { \text { if } k = i } \newline { \sigma \left( y _ { k } \right) \cdot \left( 1 - \sigma \left( y _ { i } \right) \right) } &amp; { \text { if } k \neq i } \end{array} \right.<br>
 $$</p>
 <p>即<br>
 $$<br>
@@ -546,7 +546,7 @@ $$<br>
 $$</p>
 <p>综上计算统一的结果为</p>
 <p>$$<br>
-\begin{aligned} \frac { \partial J } { \partial w _ { i } } &amp; = \frac { \partial J } { \partial p _ { i } } \cdot \frac { \partial p _ { i } } { \partial s c o r e _ { i } } \cdot \frac { \partial s c o r e _ { i } } { \partial w _ { i } } \ &amp; = \left[ - \frac { y _ { i } } { \sigma \left( y _ { i } \right) } + \frac { 1 - y _ { i } } { 1 - \sigma \left( y _ { i } \right) } \right] \cdot \sigma \left( y _ { i } \right) \left( 1 - \sigma \left( y _ { i } \right) \right) \cdot x _ { i } \ &amp; = \left[ - \frac { y _ { i } } { \sigma \left( y _ { i } \right) } \cdot \sigma \left( y _ { i } \right) \cdot \left( 1 - \sigma \left( y _ { i } \right) \right) + \frac { 1 - y _ { i } } { 1 - \sigma \left( y _ { i } \right) } \cdot \sigma \left( y _ { i } \right) \cdot \left( 1 - \sigma \left( y _ { i } \right) \right) \right] \cdot x _ { i } \ &amp; = \left[ - y _ { i } + y _ { i } \cdot \sigma \left( y _ { i } \right) + \sigma \left( y _ { i } \right) - y _ { i } \cdot \sigma \left( y _ { i } \right) \right] \cdot x _ { i } \ &amp; = \left[ \sigma \left( y _ { i } \right) - y _ { i } \right] \cdot x _ { i } \end{aligned}<br>
+\begin{aligned} \frac { \partial J } { \partial w _ { i } } &amp; = \frac { \partial J } { \partial p _ { i } } \cdot \frac { \partial p _ { i } } { \partial s c o r e _ { i } } \cdot \frac { \partial s c o r e _ { i } } { \partial w _ { i } } \newline &amp; = \left[ - \frac { y _ { i } } { \sigma \left( y _ { i } \right) } + \frac { 1 - y _ { i } } { 1 - \sigma \left( y _ { i } \right) } \right] \cdot \sigma \left( y _ { i } \right) \left( 1 - \sigma \left( y _ { i } \right) \right) \cdot x _ { i } \newline &amp; = \left[ - \frac { y _ { i } } { \sigma \left( y _ { i } \right) } \cdot \sigma \left( y _ { i } \right) \cdot \left( 1 - \sigma \left( y _ { i } \right) \right) + \frac { 1 - y _ { i } } { 1 - \sigma \left( y _ { i } \right) } \cdot \sigma \left( y _ { i } \right) \cdot \left( 1 - \sigma \left( y _ { i } \right) \right) \right] \cdot x _ { i } \newline &amp; = \left[ - y _ { i } + y _ { i } \cdot \sigma \left( y _ { i } \right) + \sigma \left( y _ { i } \right) - y _ { i } \cdot \sigma \left( y _ { i } \right) \right] \cdot x _ { i } \newline &amp; = \left[ \sigma \left( y _ { i } \right) - y _ { i } \right] \cdot x _ { i } \end{aligned}<br>
 $$</p>
 <p>因此如果反向传播的是 $i$ 对应于真实的标签为 1，即 $y_i=1$，那么回传的梯度变化就需要减去 <strong>1</strong>, 再乘以 $x_i$。如果对应真实标签为0，那么 $y_i=0$，传递回该位置的 softmax 值乘以 $x_i$。如此一来，我们就得到了全连接层到输出层的梯度变化了，再回传其实也没有那么困难了。</p>
 <h2 id="总结">总结</h2>
@@ -684,7 +684,7 @@ $$</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

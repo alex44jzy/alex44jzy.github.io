@@ -461,6 +461,196 @@ Explanation: There are two ways to climb to the top.</p>
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://alexjiangzy.com/2021/07/25/信息流推荐要点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SciAes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/07/25/信息流推荐要点/" itemprop="url">信息流推荐算法小结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-07-25T00:12:44+08:00">
+                2021-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/07/25/信息流推荐要点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/07/25/信息流推荐要点/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="信息流">信息流</h3>
+<p>信息流推荐场景：<br>
+推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。<br>
+推荐评估</p>
+<p>召回</p>
+<ul>
+<li>
+<p>向量化召回</p>
+<ul>
+<li>u2i: YoutubeDNN user-emb 和 item-emb 做点积召回</li>
+<li>i2i: ICF，点击序列构建 word2vec，node2vec，EGES</li>
+<li>u2u: YoutubeDNN 的 user embedding 相似度召回；node2vec 加入 user 建图得到 user embedding</li>
+<li>向量化召回样本trick，样本中增加负采样，否则会逐步变成高热通道；负采样尝试全局负采样，batch 内负采样，修正loss，实验除主指标正向以外，集中度显著下降，新鲜度上升</li>
+</ul>
+</li>
+<li>
+<p>策略类召回</p>
+<ul>
+<li>城市、poi类召回 基于城市意图分，订单、意图、本地、热门城市下按照产品质量分召回和分段召回</li>
+<li>新用户产品池</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p>探索类召回</p>
+<ul>
+<li>新入库产品的 explore 通道<br>
+排序</li>
+</ul>
+</li>
+<li>
+<p>粗排</p>
+<ul>
+<li>基于 LR</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://alexjiangzy.com/2021/07/25/分类总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -748,7 +938,7 @@ Explanation: There are two ways to climb to the top.</p>
 <p>先从线性回归开始</p>
 <p>$$h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }$$</p>
 <p>$$h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X$$</p>
-<p>$$X = \left[ \begin{array} { c } { 1 } \ { x _ { 1 } } \ { \dots } \ { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \ { w _ { 1 } } \ { \dots } \ { w _ { n } } \end{array} \right]$$</p>
+<p>$$X = \left[ \begin{array} { c } { 1 } \newline { x _ { 1 } } \newline { \dots } \newline { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \newline { w _ { 1 } } \newline { \dots } \newline { w _ { n } } \end{array} \right]$$</p>
 <p>针对线性分类器而言，他解决的是回归问题，为了能更好进行分类问题的探讨，这里就引出了 Logistics 回归。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1853,7 +2043,7 @@ Explanation: There are two ways to climb to the top.</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
