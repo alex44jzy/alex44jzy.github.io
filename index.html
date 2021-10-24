@@ -610,7 +610,19 @@ Explanation: There are two ways to climb to the top.</p>
 A: 不推荐直接使用，原因不够快捷、变为黑盒破坏LR的解释性、不稳定。<br>
 衍生出一系列衡量 &lt;user, item&gt; 相关度的指标，在 LR 中使用 <strong>衍生指标</strong>，如将计算收藏或点击的item的listing embedding 集合求均值，当成这个user下行为的embedding，再与候选的item embedding做点积，计算相似度喂入模型，参考 airbnb。</p>
 <p>Q2: 召回和粗排的双塔有什么异同？<br>
-A:</p>
+A: 1. 样本<br>
+召回正例是真实正例，负例通过采样（全局采样、batch内采样等）得到。<br>
+粗排正负例都是从用户的真实正负例中选取。<br>
+2. 特征：无区别<br>
+3. 网络结构：粗排和召回在网络结构的区别是：双塔的交互时机不同。<br>
+召回一般是通过双塔分别得到 user emb 和 item emb，然后简单进行cos/mul计算；为了效率以及使用近邻搜索组件来进行线上召回，双塔之间的交互只能在最后的emb层来做。<br>
+粗排可以在双塔的底层就可以对不同塔的特征进行交互得到交叉特征。<br>
+4. Loss<br>
+召回一般是单目标模型，通过pointwise（sigmoid）或者pairwise（sample softmax）来计算loss。如果需要达到多目标的效果。一般业内有两种做法，一种根据多个目标训练多个召回模型，然后线上多路召回/融合；一种是不同行为做加权生成label权重，通过调节label权重来达到多目标的效果。<br>
+粗排一般是多目标模型，不同目标得分进行融合得到粗排分。<br>
+5. 评估<br>
+召回使用的评估指标是hit rate等指标；<br>
+粗排一般使用排序的评估指标auc、uauc等。</p>
 <p>经典双塔模型，user embedding 和 item embedding 作内积，使得用户和正例 item 在 embedding 空间更接近，和负例 item 在 embedding 空间拉远。损失函数为交叉熵转化为一个分类问题。</p>
 <p>传统双塔模型的问题，(1) 组合特征由于分离结构无法使用，但可以拆分分离问题不算太大；（2）User 侧和 Item 侧的特征交互时间点的问题，在最后阶段交互时机太晚，特征损失较大。</p>
 <p>Senet 构建</p>
