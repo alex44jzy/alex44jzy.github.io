@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://alexjiangzy.com/"/>
-  <updated>2021-10-23T11:19:52.499Z</updated>
+  <updated>2021-10-24T12:39:06.225Z</updated>
   <id>http://alexjiangzy.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://alexjiangzy.com/2021/10/23/%E4%BF%A1%E6%81%AF%E6%B5%81%E6%8E%A8%E8%8D%90%E8%A6%81%E7%82%B9/"/>
     <id>http://alexjiangzy.com/2021/10/23/信息流推荐要点/</id>
     <published>2021-10-22T16:12:44.000Z</published>
-    <updated>2021-10-23T11:19:52.499Z</updated>
+    <updated>2021-10-24T12:39:06.225Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="信息流">信息流</h3><p>信息流推荐场景：<br>推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。<br>推荐评估</p><p>召回</p><ul><li><p>向量化召回</p><ul><li>u2i: YoutubeDNN user-emb 和 item-emb 做点积召回</li><li>i2i: ICF，点击序列构建 word2vec，node2vec，EGES</li><li>u2u: YoutubeDNN 的 user embedding 相似度召回；node2vec 加入 user 建图得到 user embedding</li><li>向量化召回样本trick，样本中增加负采样，否则会逐步变成高热通道；负采样尝试全局负采样，batch 内负采样，修正loss，实验除主指标正向以外，集中度显著下降，新鲜度上升</li></ul></li><li><p>策略类召回</p><ul><li>城市、poi类召回 基于城市意图分，订单、意图、本地、热门城市下按照产品质量分召回和分段召回</li><li>新用户产品池</li><li></li></ul></li><li><p>探索类召回</p><ul><li>新入库产品的 explore 通道<br>排序</li></ul></li><li><p>粗排</p><ul><li>基于 LR</li><li></li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id="信息流">信息流</h3><p>信息流推荐场景：<br>推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。<br>推荐评估</p><p>召回</p><ul><li>向量化召回<ul><li>u2i: YoutubeDNN user-emb 和 item-emb 做点积召回</li><li>i2i: ICF，点击序列构建 word2vec (加入side information)，node2vec (userid + itemid)，EGES</li><li>u2u: YoutubeDNN 的 user embedding 相似度召回；node2vec 加入 user 建图得到 user embedding</li><li>向量化召回样本trick，样本中增加负采样，否则会逐步变成高热通道；负采样尝试全局负采样，batch 内负采样，修正loss，实验除主指标正向以外，集中度显著下降，新鲜度上升</li></ul></li><li>策略类召回<ul><li>城市、poi类召回 基于城市意图分，订单、意图、熟悉、本地、热门城市下按照产品质量分召回、分段、搭配退场进行召回</li><li>交互作者 IAR</li><li>Tag 召回 （主题和图片标签）</li><li>新用户产品池</li></ul></li><li>探索类召回<ul><li>新入库产品的 explore 通道</li><li>EE 汤普森采样 小时级 online learning</li></ul></li></ul><p>排序</p><ul><li>粗排 (分阶段)<ul><li>双塔结构，item 离线计算好，user 在线推理，特征引入用户行为序列，线上做点积后取 topk</li><li>user 和 item 塔内做 DCN，feasign embedding 的生成由只基于 show 改为基于 show_click score</li><li>粗排与精排一致构建多目标模型，引入时长</li><li>蒸馏，学习精排的 soft label 的蒸馏 loss 叠加真实 label 的真实 loss</li><li>浅层 COLD，SENet，构建浅层网络，引入交叉特征，item 历史的 show click</li></ul></li></ul><p>Q1: 如何将 embedding 融入LR框架中？<br>A: 不推荐直接使用，原因不够快捷、变为黑盒破坏LR的解释性、不稳定。<br>衍生出一系列衡量 &lt;user, item&gt; 相关度的指标，在 LR 中使用 <strong>衍生指标</strong>，如将计算收藏或点击的item的listing embedding 集合求均值，当成这个user下行为的embedding，再与候选的item embedding做点积，计算相似度喂入模型，参考 airbnb。</p><p>Q2: 召回和粗排的双塔有什么异同？<br>A:</p><p>经典双塔模型，user embedding 和 item embedding 作内积，使得用户和正例 item 在 embedding 空间更接近，和负例 item 在 embedding 空间拉远。损失函数为交叉熵转化为一个分类问题。</p><p>传统双塔模型的问题，(1) 组合特征由于分离结构无法使用，但可以拆分分离问题不算太大；（2）User 侧和 Item 侧的特征交互时间点的问题，在最后阶段交互时机太晚，特征损失较大。</p><p>Senet 构建</p>]]></content>
     
     <summary type="html">
     
