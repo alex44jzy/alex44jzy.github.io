@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/13/rotate1.jpg">
 <meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/original_images/17_telephone_keypad.png">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg">
-<meta property="og:updated_time" content="2021-11-01T02:09:48.084Z">
+<meta property="og:updated_time" content="2021-12-04T09:50:42.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类总结">
 <meta name="twitter:description" content="目录 双指针  LC-1 2数求和 先带上index排序 LC-15 三数之和 排序，3指针: i，left=i+1, right=len(nums)-1；i/left/right都需要考虑去重 LC-16 最接近的三数之和 同，排序，3指针 LC-75 颜色分类 荷兰旗，head,mid=0,tail=n-1, mid=0交换mid和head前进, mid=2交换mid和tail，tail-1,">
@@ -526,88 +526,89 @@ dp，初始化为全长该位置数字，dp为减去平方数加1</li>
 <ul>
 <li><input type="checkbox" id="checkbox75" checked="true"><label for="checkbox75"></label><a href="#p2">LC-2 两数相加</a></li>
 <li><input type="checkbox" id="checkbox76" checked="true"><label for="checkbox76"></label><a href="#p8">LC-8 字符串转整数</a></li>
-<li><input type="checkbox" id="checkbox77" checked="true"><label for="checkbox77"></label><a href="#p50">LC-50 Pow(x,n)</a><br>
-递归，2个判断，正负幂，剩余n是否是2的倍数</li>
-<li><input type="checkbox" id="checkbox78" checked="true"><label for="checkbox78"></label><a href="#p400">LC-400 第N个数字</a></li>
-<li><input type="checkbox" id="checkbox79" checked="true"><label for="checkbox79"></label><a href="#p43">LC-43 字符串相乘</a></li>
-<li><input type="checkbox" id="checkbox80" checked="true"><label for="checkbox80"></label><a href="#p470">LC-470 rand7() 实现 rand10()</a></li>
-<li><input type="checkbox" id="checkbox81" checked="true"><label for="checkbox81"></label><a href="#p264">LC-264 丑数2</a></li>
-<li><input type="checkbox" id="checkbox82" checked="true"><label for="checkbox82"></label><a href="#p279">LC-279 完全平方数</a></li>
-<li><input type="checkbox" id="checkbox83" checked="true"><label for="checkbox83"></label><a href="#p12">LC-12 整数转罗马数字</a></li>
-<li><input type="checkbox" id="checkbox84"><label for="checkbox84">LC-1201 丑数3</label></li>
-<li><input type="checkbox" id="checkbox85"><label for="checkbox85">LC-109 有序链表转换二叉搜索树</label></li>
-<li><input type="checkbox" id="checkbox86"><label for="checkbox86">LC-369 单链表加一</label><br>
+<li><input type="checkbox" id="checkbox77" checked="true"><label for="checkbox77"></label><a href="#p50">LC-50 Pow(x,n)</a></li>
+<li><input type="checkbox" id="checkbox78" checked="true"><label for="checkbox78"></label><a href="#p50">JZ-16 数值的整数次方</a><br>
+递归，2个判断，正负幂，剩余n是否是2的倍数；进阶快速幂</li>
+<li><input type="checkbox" id="checkbox79" checked="true"><label for="checkbox79"></label><a href="#p400">LC-400 第N个数字</a></li>
+<li><input type="checkbox" id="checkbox80" checked="true"><label for="checkbox80"></label><a href="#p43">LC-43 字符串相乘</a></li>
+<li><input type="checkbox" id="checkbox81" checked="true"><label for="checkbox81"></label><a href="#p470">LC-470 rand7() 实现 rand10()</a></li>
+<li><input type="checkbox" id="checkbox82" checked="true"><label for="checkbox82"></label><a href="#p264">LC-264 丑数2</a></li>
+<li><input type="checkbox" id="checkbox83" checked="true"><label for="checkbox83"></label><a href="#p279">LC-279 完全平方数</a></li>
+<li><input type="checkbox" id="checkbox84" checked="true"><label for="checkbox84"></label><a href="#p12">LC-12 整数转罗马数字</a></li>
+<li><input type="checkbox" id="checkbox85"><label for="checkbox85">LC-1201 丑数3</label></li>
+<li><input type="checkbox" id="checkbox86"><label for="checkbox86">LC-109 有序链表转换二叉搜索树</label></li>
+<li><input type="checkbox" id="checkbox87"><label for="checkbox87">LC-369 单链表加一</label><br>
 计算中点</li>
-<li><input type="checkbox" id="checkbox87"><label for="checkbox87">LC-41 缺失的第一个正数</label></li>
+<li><input type="checkbox" id="checkbox88"><label for="checkbox88">LC-41 缺失的第一个正数</label></li>
 </ul>
 <h2 id="滑动窗口">滑动窗口</h2>
 <p>（子串一般都是是滑动窗口法，子串求和使用前缀和）</p>
 <ul>
-<li><input type="checkbox" id="checkbox88" checked="true"><label for="checkbox88"></label><a href="#p523">LC-523 连续的子数组和</a></li>
-<li><input type="checkbox" id="checkbox89" checked="true"><label for="checkbox89"></label><a href="#p3">LC-3 无重复字符的最长子串</a></li>
-<li><input type="checkbox" id="checkbox90" checked="true"><label for="checkbox90"></label><a href="#p395">LC-395 至少有k个重复字符子串</a></li>
-<li><input type="checkbox" id="checkbox91" checked="true"><label for="checkbox91"></label><a href="#p76">LC-76 最小覆盖子串</a></li>
-<li><input type="checkbox" id="checkbox92" checked="true"><label for="checkbox92"></label><a href="#p239">LC-239 滑动窗口最大值</a>(栈)</li>
-<li><input type="checkbox" id="checkbox93" checked="true"><label for="checkbox93"></label><a href="#p209">LC-209 长度最小的子数组</a></li>
-<li><input type="checkbox" id="checkbox94" checked="true"><label for="checkbox94"></label><a href="#p340">LC-340 至多包含k个不同字符的最长子串</a></li>
+<li><input type="checkbox" id="checkbox89" checked="true"><label for="checkbox89"></label><a href="#p523">LC-523 连续的子数组和</a></li>
+<li><input type="checkbox" id="checkbox90" checked="true"><label for="checkbox90"></label><a href="#p3">LC-3 无重复字符的最长子串</a></li>
+<li><input type="checkbox" id="checkbox91" checked="true"><label for="checkbox91"></label><a href="#p395">LC-395 至少有k个重复字符子串</a></li>
+<li><input type="checkbox" id="checkbox92" checked="true"><label for="checkbox92"></label><a href="#p76">LC-76 最小覆盖子串</a></li>
+<li><input type="checkbox" id="checkbox93" checked="true"><label for="checkbox93"></label><a href="#p239">LC-239 滑动窗口最大值</a>(栈)</li>
+<li><input type="checkbox" id="checkbox94" checked="true"><label for="checkbox94"></label><a href="#p209">LC-209 长度最小的子数组</a></li>
+<li><input type="checkbox" id="checkbox95" checked="true"><label for="checkbox95"></label><a href="#p340">LC-340 至多包含k个不同字符的最长子串</a></li>
 </ul>
 <h2 id="二分查找">二分查找</h2>
 <ul>
-<li><input type="checkbox" id="checkbox95" checked="true"><label for="checkbox95"></label><a href="#p33">LC-33 搜索旋转排序数组</a></li>
-<li><input type="checkbox" id="checkbox96" checked="true"><label for="checkbox96"></label><a href="#p162">LC-162 寻找峰值</a></li>
-<li><input type="checkbox" id="checkbox97" checked="true"><label for="checkbox97"></label><a href="#p240">LC-240 搜索二维矩阵2</a></li>
-<li><input type="checkbox" id="checkbox98" checked="true"><label for="checkbox98"></label><a href="#p718">LC-718 最长重复子数组</a></li>
-<li><input type="checkbox" id="checkbox99" checked="true"><label for="checkbox99"></label><a href="#p31">LC-31 下一个排列</a></li>
-<li><input type="checkbox" id="checkbox100" checked="true"><label for="checkbox100"></label><a href="#p230">LC-230 二叉搜索树中第k小的元素</a></li>
-<li><input type="checkbox" id="checkbox101" checked="true"><label for="checkbox101"></label><a href="#p34">LC-34 排序数组中查找第一个和最后一个位置</a></li>
-<li><input type="checkbox" id="checkbox102" checked="true"><label for="checkbox102"></label><a href="#p287">LC-287 寻找重复数</a></li>
-<li><input type="checkbox" id="checkbox103" checked="true"><label for="checkbox103"></label><a href="#p153">LC-153 寻找旋转排序数组中的最小值（最大值）</a></li>
+<li><input type="checkbox" id="checkbox96" checked="true"><label for="checkbox96"></label><a href="#p33">LC-33 搜索旋转排序数组</a></li>
+<li><input type="checkbox" id="checkbox97" checked="true"><label for="checkbox97"></label><a href="#p162">LC-162 寻找峰值</a></li>
+<li><input type="checkbox" id="checkbox98" checked="true"><label for="checkbox98"></label><a href="#p240">LC-240 搜索二维矩阵2</a></li>
+<li><input type="checkbox" id="checkbox99" checked="true"><label for="checkbox99"></label><a href="#p718">LC-718 最长重复子数组</a></li>
+<li><input type="checkbox" id="checkbox100" checked="true"><label for="checkbox100"></label><a href="#p31">LC-31 下一个排列</a></li>
+<li><input type="checkbox" id="checkbox101" checked="true"><label for="checkbox101"></label><a href="#p230">LC-230 二叉搜索树中第k小的元素</a></li>
+<li><input type="checkbox" id="checkbox102" checked="true"><label for="checkbox102"></label><a href="#p34">LC-34 排序数组中查找第一个和最后一个位置</a></li>
+<li><input type="checkbox" id="checkbox103" checked="true"><label for="checkbox103"></label><a href="#p287">LC-287 寻找重复数</a></li>
+<li><input type="checkbox" id="checkbox104" checked="true"><label for="checkbox104"></label><a href="#p153">LC-153 寻找旋转排序数组中的最小值（最大值）</a></li>
 </ul>
 <h2 id="回溯">回溯</h2>
 <ul>
-<li><input type="checkbox" id="checkbox104" checked="true"><label for="checkbox104"></label><a href="#p46">LC-46 全排列</a></li>
-<li><input type="checkbox" id="checkbox105" checked="true"><label for="checkbox105"></label><a href="#p78">LC-78 子集</a></li>
-<li><input type="checkbox" id="checkbox106" checked="true"><label for="checkbox106"></label><a href="#p77">LC-77 组合</a></li>
-<li><input type="checkbox" id="checkbox107" checked="true"><label for="checkbox107"></label><a href="#p39">LC-39 组合总和</a></li>
-<li><input type="checkbox" id="checkbox108" checked="true"><label for="checkbox108"></label><a href="#p22">LC-22 括号生成</a></li>
-<li><input type="checkbox" id="checkbox109" checked="true"><label for="checkbox109"></label><a href="#p79">LC-79 单词搜索</a></li>
-<li><input type="checkbox" id="checkbox110" checked="true"><label for="checkbox110"></label><a href="#p47">LC-47 全排列2</a></li>
-<li><input type="checkbox" id="checkbox111" checked="true"><label for="checkbox111"></label><a href="#p40">LC-40 组合总和2</a></li>
-<li><input type="checkbox" id="checkbox112" checked="true"><label for="checkbox112"></label><a href="#p17">LC-17 电话号码字母组合</a></li>
-<li><input type="checkbox" id="checkbox113"><label for="checkbox113">LC-306 累加数</label></li>
+<li><input type="checkbox" id="checkbox105" checked="true"><label for="checkbox105"></label><a href="#p46">LC-46 全排列</a></li>
+<li><input type="checkbox" id="checkbox106" checked="true"><label for="checkbox106"></label><a href="#p78">LC-78 子集</a></li>
+<li><input type="checkbox" id="checkbox107" checked="true"><label for="checkbox107"></label><a href="#p77">LC-77 组合</a></li>
+<li><input type="checkbox" id="checkbox108" checked="true"><label for="checkbox108"></label><a href="#p39">LC-39 组合总和</a></li>
+<li><input type="checkbox" id="checkbox109" checked="true"><label for="checkbox109"></label><a href="#p22">LC-22 括号生成</a></li>
+<li><input type="checkbox" id="checkbox110" checked="true"><label for="checkbox110"></label><a href="#p79">LC-79 单词搜索</a></li>
+<li><input type="checkbox" id="checkbox111" checked="true"><label for="checkbox111"></label><a href="#p47">LC-47 全排列2</a></li>
+<li><input type="checkbox" id="checkbox112" checked="true"><label for="checkbox112"></label><a href="#p40">LC-40 组合总和2</a></li>
+<li><input type="checkbox" id="checkbox113" checked="true"><label for="checkbox113"></label><a href="#p17">LC-17 电话号码字母组合</a></li>
+<li><input type="checkbox" id="checkbox114"><label for="checkbox114">LC-306 累加数</label></li>
 </ul>
 <h2 id="DFS-BFS">DFS/BFS</h2>
 <ul>
-<li><input type="checkbox" id="checkbox114" checked="true"><label for="checkbox114"></label><a href="#p200">LC-200 岛屿数量</a></li>
-<li><input type="checkbox" id="checkbox115" checked="true"><label for="checkbox115"></label><a href="#p695">LC-695 岛屿最大面积</a></li>
-<li><input type="checkbox" id="checkbox116" checked="true"><label for="checkbox116"></label><a href="#p394">LC-394 字符串解码</a></li>
-<li><input type="checkbox" id="checkbox117" checked="true"><label for="checkbox117"></label><a href="#p207">LC-207 课程表</a></li>
-<li><input type="checkbox" id="checkbox118" checked="true"><label for="checkbox118"></label><a href="#p106">LC-106 从中序遍历和后序遍历构造二叉树</a></li>
-<li><input type="checkbox" id="checkbox119" checked="true"><label for="checkbox119"></label><a href="#p547">LC-547 省份数量</a></li>
-<li><input type="checkbox" id="checkbox120"><label for="checkbox120">LC-494 目标和</label></li>
-<li><input type="checkbox" id="checkbox121"><label for="checkbox121">LC-337 打劫家舍3</label></li>
+<li><input type="checkbox" id="checkbox115" checked="true"><label for="checkbox115"></label><a href="#p200">LC-200 岛屿数量</a></li>
+<li><input type="checkbox" id="checkbox116" checked="true"><label for="checkbox116"></label><a href="#p695">LC-695 岛屿最大面积</a></li>
+<li><input type="checkbox" id="checkbox117" checked="true"><label for="checkbox117"></label><a href="#p394">LC-394 字符串解码</a></li>
+<li><input type="checkbox" id="checkbox118" checked="true"><label for="checkbox118"></label><a href="#p207">LC-207 课程表</a></li>
+<li><input type="checkbox" id="checkbox119" checked="true"><label for="checkbox119"></label><a href="#p106">LC-106 从中序遍历和后序遍历构造二叉树</a></li>
+<li><input type="checkbox" id="checkbox120" checked="true"><label for="checkbox120"></label><a href="#p547">LC-547 省份数量</a></li>
+<li><input type="checkbox" id="checkbox121"><label for="checkbox121">LC-494 目标和</label></li>
+<li><input type="checkbox" id="checkbox122"><label for="checkbox122">LC-337 打劫家舍3</label></li>
 </ul>
 <h2 id="字符串">字符串</h2>
 <ul>
-<li><input type="checkbox" id="checkbox122" checked="true"><label for="checkbox122"></label><a href="#p151">LC-151 反转字符串里的单词</a></li>
-<li><input type="checkbox" id="checkbox123" checked="true"><label for="checkbox123"></label><a href="#p165">LC-165 比较版本号</a></li>
-<li><input type="checkbox" id="checkbox124" checked="true"><label for="checkbox124"></label><a href="#p93">LC-93 复原IP地址</a></li>
-<li><input type="checkbox" id="checkbox125" checked="true"><label for="checkbox125"></label><a href="#p227">LC-227 基本计算器2</a><br>
+<li><input type="checkbox" id="checkbox123" checked="true"><label for="checkbox123"></label><a href="#p151">LC-151 反转字符串里的单词</a></li>
+<li><input type="checkbox" id="checkbox124" checked="true"><label for="checkbox124"></label><a href="#p165">LC-165 比较版本号</a></li>
+<li><input type="checkbox" id="checkbox125" checked="true"><label for="checkbox125"></label><a href="#p93">LC-93 复原IP地址</a></li>
+<li><input type="checkbox" id="checkbox126" checked="true"><label for="checkbox126"></label><a href="#p227">LC-227 基本计算器2</a><br>
 使用单栈，注意数字</li>
-<li><input type="checkbox" id="checkbox126" checked="true"><label for="checkbox126"></label><a href="#p443">LC-443 压缩字符串</a></li>
-<li><input type="checkbox" id="checkbox127"><label for="checkbox127">LC-556 下一个更大的元素3</label></li>
-<li><input type="checkbox" id="checkbox128"><label for="checkbox128">LC-71 简化路径</label></li>
-<li><input type="checkbox" id="checkbox129"><label for="checkbox129">LC-6 Z字形变换</label></li>
-<li><input type="checkbox" id="checkbox130"><label for="checkbox130">LC-678 有效括号字符串</label></li>
-<li><input type="checkbox" id="checkbox131"><label for="checkbox131">LC-97 交错字符串</label></li>
-<li><input type="checkbox" id="checkbox132"><label for="checkbox132">LC-767 重构字符串</label></li>
-<li><input type="checkbox" id="checkbox133"><label for="checkbox133">LC-179 最大数</label></li>
+<li><input type="checkbox" id="checkbox127" checked="true"><label for="checkbox127"></label><a href="#p443">LC-443 压缩字符串</a></li>
+<li><input type="checkbox" id="checkbox128"><label for="checkbox128">LC-556 下一个更大的元素3</label></li>
+<li><input type="checkbox" id="checkbox129"><label for="checkbox129">LC-71 简化路径</label></li>
+<li><input type="checkbox" id="checkbox130"><label for="checkbox130">LC-6 Z字形变换</label></li>
+<li><input type="checkbox" id="checkbox131"><label for="checkbox131">LC-678 有效括号字符串</label></li>
+<li><input type="checkbox" id="checkbox132"><label for="checkbox132">LC-97 交错字符串</label></li>
+<li><input type="checkbox" id="checkbox133"><label for="checkbox133">LC-767 重构字符串</label></li>
+<li><input type="checkbox" id="checkbox134"><label for="checkbox134">LC-179 最大数</label></li>
 </ul>
 <h2 id="其他">其他</h2>
 <ul>
-<li><input type="checkbox" id="checkbox134" checked="true"><label for="checkbox134"></label><a href="#p146">LC-146 LRU缓存机制</a></li>
-<li><input type="checkbox" id="checkbox135" checked="true"><label for="checkbox135"></label><a href="#p54">LC-54 旋转矩阵</a></li>
-<li><input type="checkbox" id="checkbox136" checked="true"><label for="checkbox136"></label><a href="#p215">LC-215 第K大的元素</a></li>
+<li><input type="checkbox" id="checkbox135" checked="true"><label for="checkbox135"></label><a href="#p146">LC-146 LRU缓存机制</a></li>
+<li><input type="checkbox" id="checkbox136" checked="true"><label for="checkbox136"></label><a href="#p54">LC-54 旋转矩阵</a></li>
+<li><input type="checkbox" id="checkbox137" checked="true"><label for="checkbox137"></label><a href="#p215">LC-215 第K大的元素</a></li>
 </ul>
 <h1>双指针</h1>
 <h3 id="a-name-p1-a-LC-1-2数求和"><a name="p1"></a> <a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">LC-1 2数求和</a></h3>
@@ -3107,6 +3108,36 @@ class Solution:
         
         return quickMul(n) if n &gt;= 0 else 1.0 / quickMul(-n)
 </code></pre>
+<p>快速幂模板：</p>
+<pre><code class="language-python"># 实数
+def qpow(a, n):
+    ans = 1
+    while n &gt; 0:
+        if (n &amp; 1):
+            ans *= a
+        a *= a
+        n &gt;&gt;= 1
+    return ans
+
+# 矩阵
+import numpy as np
+
+def pow(n):
+    a = np.array([[1,0],[0,1]])
+    b = np.array([[1,1],[1,0]])
+    while(n &gt; 0):
+        if (n % 2 == 1):
+            a = np.dot(b, a)
+        b = np.dot(b, b)
+        n &gt;&gt;= 1
+    return a[0][1]
+
+class Solution:
+    def myPow(self, x: float, n: int) -&gt; float:
+        if n &lt; 0:
+            x, n = 1/x, n*(-1)
+        return qpow(x, n)
+</code></pre>
 <h3 id="a-name-p400-a-LC-400-第-N-位数字"><a name="p400"></a> <a href="https://leetcode-cn.com/problems/powx-n/" target="_blank" rel="noopener">LC-400 第 N 位数字</a></h3>
 <p>给你一个整数 n ，请你在无限的整数序列 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, …] 中找出并返回第 n 位数字。<br>
 示例 1：<br>
@@ -3440,7 +3471,7 @@ def binarySearch(nums, target):
         if nums[mid] == target:
             return mid
         elif nums[mid] &gt; target:
-            right = mid - 1
+            right = mid - 1 # -1 强制保证
         elif nums[mid] &lt; target:
             left = mid + 1
     return -1
