@@ -565,7 +565,39 @@ Explanation: There are two ways to climb to the top.</p>
       
         
           
-            <h2 id="MHA">MHA</h2>
+            <h2 id="FM">FM</h2>
+<p>class FactorizationMachine(tf.keras.Model):<br>
+def <strong>init</strong>(self, num_features, embedding_size):<br>
+super(FactorizationMachine, self).<strong>init</strong>()<br>
+self.num_features = num_features<br>
+self.embedding_size = embedding_size</p>
+<pre><code>    # 初始化参数
+    self.w0 = tf.Variable(tf.zeros([1]), name='bias')
+    self.w = tf.Variable(tf.random.normal([num_features, 1]), name='linear_weights')
+    self.V = tf.Variable(tf.random.normal([num_features, embedding_size]), name='interaction_weights')
+
+def call(self, inputs):
+    # embedding 部分
+    embedding_first = tf.nn.embedding_lookup(self.w, inputs)
+    embedding = tf.nn.embedding_lookup(self.V, inputs)
+    value = tf.reshape(inputs, [-1, self.num_features, 1])
+    embedding_value = tf.multiply(embedding, value)
+    
+    # 前向传播
+    # first order 部分
+    first_order = tf.reduce_sum(tf.multiply(embedding_first, value), axis=1)
+    liner = tf.add(self.w0, first_order)
+    
+    # second order 部分
+    mul_square = tf.square(tf.reduce_sum(embedding_value, 1))
+    square_mul = tf.reduce_sum(tf.square(embedding_value), 1)
+    second_order = 0.5 * tf.reduce_sum(tf.subtract(mul_square, square_mul), 1, keepdims=True)
+    
+    # FM 模型的预测值
+    fm_model = tf.add(liner, second_order)
+    return tf.nn.sigmoid(fm_model)
+</code></pre>
+<h2 id="MHA">MHA</h2>
 <pre><code class="language-python">def scaled_dot_product_attention(Q, K, V, mask=None):
     &quot;&quot;&quot;
     计算缩放点积注意力
