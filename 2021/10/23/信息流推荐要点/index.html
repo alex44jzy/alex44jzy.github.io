@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="SciAes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="面试记录 蚂蚁金服：  多目标跷跷板怎么快速调，逻辑回归中似然函数和概率的关系；编程题，实现一个树的数据结构，可以支持遍历；写 FM layer。  字节电商：  一面，DIN 无效怎么分析；编程题（1）中序后序树子节点；（2）估算 pi 二面，用户序列笛卡尔积量级大，特征重要性是否有效；时长 loss 分类问题；编程题（1）旋转数组找中点；（2）链表随机采样 蓄水池算法 三面，多目标跷跷板问题怎">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息流推荐算法小结">
+<meta property="og:url" content="http://alexjiangzy.com/2021/10/23/信息流推荐要点/index.html">
+<meta property="og:site_name" content="SciAes">
+<meta property="og:description" content="面试记录 蚂蚁金服：  多目标跷跷板怎么快速调，逻辑回归中似然函数和概率的关系；编程题，实现一个树的数据结构，可以支持遍历；写 FM layer。  字节电商：  一面，DIN 无效怎么分析；编程题（1）中序后序树子节点；（2）估算 pi 二面，用户序列笛卡尔积量级大，特征重要性是否有效；时长 loss 分类问题；编程题（1）旋转数组找中点；（2）链表随机采样 蓄水池算法 三面，多目标跷跷板问题怎">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-11-13T04:27:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="信息流推荐算法小结">
+<meta name="twitter:description" content="面试记录 蚂蚁金服：  多目标跷跷板怎么快速调，逻辑回归中似然函数和概率的关系；编程题，实现一个树的数据结构，可以支持遍历；写 FM layer。  字节电商：  一面，DIN 无效怎么分析；编程题（1）中序后序树子节点；（2）估算 pi 二面，用户序列笛卡尔积量级大，特征重要性是否有效；时长 loss 分类问题；编程题（1）旋转数组找中点；（2）链表随机采样 蓄水池算法 三面，多目标跷跷板问题怎">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://alexjiangzy.com/2021/10/23/信息流推荐要点/"/>
+
+
+
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+
+  <title>信息流推荐算法小结 | SciAes</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-117094882-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">SciAes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">机器学习的自我重建之路</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-lab">
+          <a href="/lab" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Lab
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-fav">
+          <a href="/Fav" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Fav
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://alexjiangzy.com/2021/10/23/信息流推荐要点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SciAes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">信息流推荐算法小结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-10-23T00:12:44+08:00">
+                2021-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/10/23/信息流推荐要点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/10/23/信息流推荐要点/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="面试记录">面试记录</h3>
+<p>蚂蚁金服：</p>
+<ul>
+<li>多目标跷跷板怎么快速调，逻辑回归中似然函数和概率的关系；编程题，实现一个树的数据结构，可以支持遍历；写 FM layer。</li>
+</ul>
+<p>字节电商：</p>
+<ul>
+<li>一面，DIN 无效怎么分析；编程题（1）中序后序树子节点；（2）估算 pi</li>
+<li>二面，用户序列笛卡尔积量级大，特征重要性是否有效；时长 loss 分类问题；编程题（1）旋转数组找中点；（2）链表随机采样 蓄水池算法</li>
+<li>三面，多目标跷跷板问题怎么调；多目标 MMoE 怎么分析；debias 还有什么方法；多目标 loss 融合方法。编程题（1）堆排快排，不使用额外空间</li>
+<li>互娱一面，多目标 loss weight 调整；粗排 serving 方式；编程题（1）链表加法，（2）判断 B 是 A 的子树</li>
+</ul>
+<p>腾讯：</p>
+<ul>
+<li>FM 相关 N 阶特征交叉空间复杂度；数据倾斜怎么解决；A 和 B 抛硬币，A先抛赢的概率；debias 相邻的方法，编程题（1）股票买卖；（2）排序</li>
+</ul>
+<h3 id="信息流">信息流</h3>
+<p>信息流推荐场景：<br>
+推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。</p>
+<p>线上推荐评估：</p>
+<ol>
+<li>uv 点击率、人均点击 pv 数</li>
+<li>消费类：消费时长、总时长</li>
+<li>生态类：集中度、新鲜度、多样性</li>
+<li>留存，渗透率</li>
+<li>交互类：点赞、收藏、分享、关注、评论</li>
+</ol>
+<a id="more"></a>
+<p>召回</p>
+<ul>
+<li>向量化召回
+<ul>
+<li>u2i: YoutubeDNN user-emb 和 item-emb 做点积召回</li>
+<li>i2i: ICF，点击序列构建 word2vec (加入side information)，node2vec (userid + itemid)，EGES</li>
+<li>u2u: YoutubeDNN 的 user embedding 相似度召回；node2vec 加入 user 建图得到 user embedding</li>
+<li>向量化召回样本trick，样本中增加负采样，否则会逐步变成高热通道；负采样尝试全局负采样，batch 内负采样，修正loss，实验除主指标正向以外，集中度显著下降，新鲜度上升</li>
+</ul>
+</li>
+<li>策略类召回
+<ul>
+<li>城市、poi类召回 基于城市意图分，订单、意图、熟悉、本地、热门城市下按照产品质量分召回、分段、搭配退场进行召回</li>
+<li>交互作者 IAR</li>
+<li>Tag 召回 （主题和图片标签）</li>
+<li>新用户产品池</li>
+</ul>
+</li>
+<li>探索类召回
+<ul>
+<li>新入库产品的 explore 通道</li>
+<li>EE 汤普森采样 小时级 online learning</li>
+</ul>
+</li>
+</ul>
+<p>排序</p>
+<ul>
+<li>
+<p>粗排 (分阶段)</p>
+<ul>
+<li>双塔结构，item 离线计算好，user 在线推理，特征引入用户行为序列，线上做点积后取 topk</li>
+<li>user 和 item 塔内做 DCN，feasign embedding 的生成由只基于 show 改为基于 show_click score</li>
+<li>粗排与精排一致构建多目标模型，引入时长</li>
+<li>蒸馏，学习精排的 soft label 的蒸馏 loss 叠加真实 label 的真实 loss。进一步可以让精排的 teacher 模型和 student 模型联合学习</li>
+<li>浅层 COLD，SENet，构建浅层网络，引入交叉特征，item 历史的 show click</li>
+</ul>
+</li>
+<li>
+<p>精排</p>
+</li>
+<li>
+<p>模型结构迭代</p>
+<ol>
+<li>单目标 ctr 尝试 LR、WDL、DNN</li>
+<li>参考位置去偏 debias, PAL 对位置作 onehot 拼接在网络不同层上，最后一层效果最好，生态指标有收益，可视化可以学到不同位置的权重变化</li>
+<li>多目标点击和时长 bottom share 架构，尝试曝光时长算作 0 来拟合以及mask掉不加入拟合，即预估曝光时长和点击时长，后者效果更好；线上调整融合参数作 AB</li>
+<li>时长目标尝试截断后归一化 loss 为 mse loss 做1/2次幂，和点击量纲有差距；后改为归一化后转为分类模型，预估加权的logloss，有收益</li>
+<li>label 域因果关系引入 ESMM，有提升；引入 MMoE 4 个 expert 有收益，点击提升更多，时长提升较少；引入 CGC 提升不明显，缓解跷跷板</li>
+<li>多目标引入 5 个交互指标，点赞、收藏、分享、关注、评论，单独迭代，分为 2 阶段</li>
+<li>多目标权重 https://mp.weixin.qq.com/s/JaMSZfJZ6zPEOueuVg6XHw ，GradNorm 主要 2 个要点，loss 量级接近、不同任务以相近的速度学习</li>
+<li>考虑蒸馏，蒸馏点后的行为</li>
+</ol>
+</li>
+<li>
+<p>特征迭代 https://zhuanlan.zhihu.com/p/95779014</p>
+<ol>
+<li>用户、item、context、</li>
+<li></li>
+</ol>
+</li>
+</ul>
+<p>Q1: 如何将 embedding 融入LR框架中？<br>
+A: 不推荐直接使用，原因不够快捷、变为黑盒破坏LR的解释性、不稳定。<br>
+衍生出一系列衡量 &lt;user, item&gt; 相关度的指标，在 LR 中使用 <strong>衍生指标</strong>，如将计算收藏或点击的item的listing embedding 集合求均值，当成这个user下行为的embedding，再与候选的item embedding做点积，计算相似度喂入模型，参考 airbnb。</p>
+<p>Q2: 召回和粗排的双塔有什么异同？<br>
+A: 1. 样本<br>
+召回正例是真实正例，负例通过采样（全局采样、batch内采样等）得到。<br>
+粗排正负例都是从用户的真实正负例中选取。<br>
+2. 特征：无区别<br>
+3. 网络结构：粗排和召回在网络结构的区别是：双塔的交互时机不同。<br>
+召回一般是通过双塔分别得到 user emb 和 item emb，然后简单进行cos/mul计算；为了效率以及使用近邻搜索组件来进行线上召回，双塔之间的交互只能在最后的emb层来做。<br>
+粗排可以在双塔的底层就可以对不同塔的特征进行交互得到交叉特征。<br>
+4. Loss<br>
+召回一般是单目标模型，通过pointwise（sigmoid）或者pairwise（sample softmax）来计算loss。如果需要达到多目标的效果。一般业内有两种做法，一种根据多个目标训练多个召回模型，然后线上多路召回/融合；一种是不同行为做加权生成label权重，通过调节label权重来达到多目标的效果。<br>
+粗排一般是多目标模型，不同目标得分进行融合得到粗排分。<br>
+5. 评估<br>
+召回使用的评估指标是hit rate等指标；<br>
+粗排一般使用排序的评估指标auc、uauc等。</p>
+<p>经典双塔模型，user embedding 和 item embedding 作内积，使得用户和正例 item 在 embedding 空间更接近，和负例 item 在 embedding 空间拉远。损失函数为交叉熵转化为一个分类问题。<br>
+传统双塔模型的问题，(1) 组合特征由于分离结构无法使用，但可以拆分分离问题不算太大；（2）User 侧和 Item 侧的特征交互时间点的问题，在最后阶段交互时机太晚，特征损失较大。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/07/25/分类总结/" rel="next" title="分类总结">
+                <i class="fa fa-chevron-left"></i> 分类总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/12/18/offersword/" rel="prev" title="剑指offer">
+                剑指offer <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Alex Jiang</p>
+              <p class="site-description motion-element" itemprop="description">身下万丈深渊，头上无尽苍穹</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试记录"><span class="nav-number">1.</span> <span class="nav-text">面试记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息流"><span class="nav-number">2.</span> <span class="nav-text">信息流</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Jiang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<script src="/js/prism/prism.js" async></script>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://alex44jzy.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://alexjiangzy.com/2021/10/23/信息流推荐要点/';
+          this.page.identifier = '2021/10/23/信息流推荐要点/';
+          this.page.title = '信息流推荐算法小结';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://alex44jzy.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
