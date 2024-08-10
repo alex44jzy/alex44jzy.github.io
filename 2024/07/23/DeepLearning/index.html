@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="SciAes">
 <meta property="og:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2024-08-10T04:18:57.635Z">
+<meta property="og:updated_time" content="2024-08-10T10:26:57.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning">
 <meta name="twitter:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
@@ -488,13 +488,9 @@ class MultiHeadAttention(tf.layers.Layer):
         v = self.split_heads(v, batch_size)  # (batch_size, num_heads, seq_len_v, depth)
         
         scaled_attention, attention_weights = scaled_dot_product_attention(q, k, v, mask)
-        
         scaled_attention = tf.transpose(scaled_attention, perm=[0, 2, 1, 3])  # (batch_size, seq_len_q, num_heads, depth)
-        
         concat_attention = tf.reshape(scaled_attention, (batch_size, -1, self.d_model))  # (batch_size, seq_len_q, d_model)
-        
         output = tf.layers.dense(inputs=concat_attention, units=self.d_model, use_bias=False)  # (batch_size, seq_len_q, d_model)
-        
         return output, attention_weights
 </code></pre>
 
@@ -527,8 +523,8 @@ class MultiHeadAttention(tf.layers.Layer):
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/12/18/offersword/" rel="next" title="剑指offer">
-                <i class="fa fa-chevron-left"></i> 剑指offer
+              <a href="/2021/10/23/信息流推荐要点/" rel="next" title="信息流推荐算法小结">
+                <i class="fa fa-chevron-left"></i> 信息流推荐算法小结
               </a>
             
           </div>
@@ -622,7 +618,7 @@ class MultiHeadAttention(tf.layers.Layer):
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

@@ -656,169 +656,10 @@ class MultiHeadAttention(tf.layers.Layer):
         v = self.split_heads(v, batch_size)  # (batch_size, num_heads, seq_len_v, depth)
         
         scaled_attention, attention_weights = scaled_dot_product_attention(q, k, v, mask)
-        
         scaled_attention = tf.transpose(scaled_attention, perm=[0, 2, 1, 3])  # (batch_size, seq_len_q, num_heads, depth)
-        
         concat_attention = tf.reshape(scaled_attention, (batch_size, -1, self.d_model))  # (batch_size, seq_len_q, d_model)
-        
         output = tf.layers.dense(inputs=concat_attention, units=self.d_model, use_bias=False)  # (batch_size, seq_len_q, d_model)
-        
         return output, attention_weights
-</code></pre>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alexjiangzy.com/2021/12/18/offersword/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alex Jiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SciAes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/12/18/offersword/" itemprop="url">剑指offer</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-12-18T23:03:44+08:00">
-                2021-12-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/12/18/offersword/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2021/12/18/offersword/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="剑指-Offer-60-n个骰子的点数">剑指 Offer 60. n个骰子的点数</h2>
-<pre><code class="language-python">
 </code></pre>
 
           
@@ -971,7 +812,9 @@ class MultiHeadAttention(tf.layers.Layer):
 
       
         
-          <h3 id="面试记录">面试记录</h3>
+          
+            <a id="more"></a>
+<h3 id="面试记录">面试记录</h3>
 <p>蚂蚁金服：</p>
 <ul>
 <li>多目标跷跷板怎么快速调，逻辑回归中似然函数和概率的关系；编程题，实现一个树的数据结构，可以支持遍历；写 FM layer。</li>
@@ -998,13 +841,88 @@ class MultiHeadAttention(tf.layers.Layer):
 <li>留存，渗透率</li>
 <li>交互类：点赞、收藏、分享、关注、评论</li>
 </ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/10/23/信息流推荐要点/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<p>召回</p>
+<ul>
+<li>向量化召回
+<ul>
+<li>u2i: YoutubeDNN user-emb 和 item-emb 做点积召回</li>
+<li>i2i: ICF，点击序列构建 word2vec (加入side information)，node2vec (userid + itemid)，EGES</li>
+<li>u2u: YoutubeDNN 的 user embedding 相似度召回；node2vec 加入 user 建图得到 user embedding</li>
+<li>向量化召回样本trick，样本中增加负采样，否则会逐步变成高热通道；负采样尝试全局负采样，batch 内负采样，修正loss，实验除主指标正向以外，集中度显著下降，新鲜度上升</li>
+</ul>
+</li>
+<li>策略类召回
+<ul>
+<li>城市、poi类召回 基于城市意图分，订单、意图、熟悉、本地、热门城市下按照产品质量分召回、分段、搭配退场进行召回</li>
+<li>交互作者 IAR</li>
+<li>Tag 召回 （主题和图片标签）</li>
+<li>新用户产品池</li>
+</ul>
+</li>
+<li>探索类召回
+<ul>
+<li>新入库产品的 explore 通道</li>
+<li>EE 汤普森采样 小时级 online learning</li>
+</ul>
+</li>
+</ul>
+<p>排序</p>
+<ul>
+<li>
+<p>粗排 (分阶段)</p>
+<ul>
+<li>双塔结构，item 离线计算好，user 在线推理，特征引入用户行为序列，线上做点积后取 topk</li>
+<li>user 和 item 塔内做 DCN，feasign embedding 的生成由只基于 show 改为基于 show_click score</li>
+<li>粗排与精排一致构建多目标模型，引入时长</li>
+<li>蒸馏，学习精排的 soft label 的蒸馏 loss 叠加真实 label 的真实 loss。进一步可以让精排的 teacher 模型和 student 模型联合学习</li>
+<li>浅层 COLD，SENet，构建浅层网络，引入交叉特征，item 历史的 show click</li>
+</ul>
+</li>
+<li>
+<p>精排</p>
+</li>
+<li>
+<p>模型结构迭代</p>
+<ol>
+<li>单目标 ctr 尝试 LR、WDL、DNN</li>
+<li>参考位置去偏 debias, PAL 对位置作 onehot 拼接在网络不同层上，最后一层效果最好，生态指标有收益，可视化可以学到不同位置的权重变化</li>
+<li>多目标点击和时长 bottom share 架构，尝试曝光时长算作 0 来拟合以及mask掉不加入拟合，即预估曝光时长和点击时长，后者效果更好；线上调整融合参数作 AB</li>
+<li>时长目标尝试截断后归一化 loss 为 mse loss 做1/2次幂，和点击量纲有差距；后改为归一化后转为分类模型，预估加权的logloss，有收益</li>
+<li>label 域因果关系引入 ESMM，有提升；引入 MMoE 4 个 expert 有收益，点击提升更多，时长提升较少；引入 CGC 提升不明显，缓解跷跷板</li>
+<li>多目标引入 5 个交互指标，点赞、收藏、分享、关注、评论，单独迭代，分为 2 阶段</li>
+<li>多目标权重 https://mp.weixin.qq.com/s/JaMSZfJZ6zPEOueuVg6XHw ，GradNorm 主要 2 个要点，loss 量级接近、不同任务以相近的速度学习</li>
+<li>考虑蒸馏，蒸馏点后的行为</li>
+</ol>
+</li>
+<li>
+<p>特征迭代 https://zhuanlan.zhihu.com/p/95779014</p>
+<ol>
+<li>用户、item、context、</li>
+<li></li>
+</ol>
+</li>
+</ul>
+<p>Q1: 如何将 embedding 融入LR框架中？<br>
+A: 不推荐直接使用，原因不够快捷、变为黑盒破坏LR的解释性、不稳定。<br>
+衍生出一系列衡量 &lt;user, item&gt; 相关度的指标，在 LR 中使用 <strong>衍生指标</strong>，如将计算收藏或点击的item的listing embedding 集合求均值，当成这个user下行为的embedding，再与候选的item embedding做点积，计算相似度喂入模型，参考 airbnb。</p>
+<p>Q2: 召回和粗排的双塔有什么异同？<br>
+A: 1. 样本<br>
+召回正例是真实正例，负例通过采样（全局采样、batch内采样等）得到。<br>
+粗排正负例都是从用户的真实正负例中选取。<br>
+2. 特征：无区别<br>
+3. 网络结构：粗排和召回在网络结构的区别是：双塔的交互时机不同。<br>
+召回一般是通过双塔分别得到 user emb 和 item emb，然后简单进行cos/mul计算；为了效率以及使用近邻搜索组件来进行线上召回，双塔之间的交互只能在最后的emb层来做。<br>
+粗排可以在双塔的底层就可以对不同塔的特征进行交互得到交叉特征。<br>
+4. Loss<br>
+召回一般是单目标模型，通过pointwise（sigmoid）或者pairwise（sample softmax）来计算loss。如果需要达到多目标的效果。一般业内有两种做法，一种根据多个目标训练多个召回模型，然后线上多路召回/融合；一种是不同行为做加权生成label权重，通过调节label权重来达到多目标的效果。<br>
+粗排一般是多目标模型，不同目标得分进行融合得到粗排分。<br>
+5. 评估<br>
+召回使用的评估指标是hit rate等指标；<br>
+粗排一般使用排序的评估指标auc、uauc等。</p>
+<p>经典双塔模型，user embedding 和 item embedding 作内积，使得用户和正例 item 在 embedding 空间更接近，和负例 item 在 embedding 空间拉远。损失函数为交叉熵转化为一个分类问题。<br>
+传统双塔模型的问题，(1) 组合特征由于分离结构无法使用，但可以拆分分离问题不算太大；（2）User 侧和 Item 侧的特征交互时间点的问题，在最后阶段交互时机太晚，特征损失较大。</p>
+
+          
         
       
     </div>
@@ -2074,6 +1992,164 @@ class MultiHeadAttention(tf.layers.Layer):
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://alexjiangzy.com/2015/12/16/MactexTool/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SciAes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/12/16/MactexTool/" itemprop="url">Mactex+Sublime3+Skim集成环境安装及LaTeX常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-16T21:38:48+08:00">
+                2015-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具Tools/" itemprop="url" rel="index">
+                    <span itemprop="name">工具Tools</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/12/16/MactexTool/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/12/16/MactexTool/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <!-- ![](http://www.macupdate.com/images/icons256/12104.png) -->
+<p>刚转战到mac上来工作，涉及到文本的书写离开了X软的Word还是有些许不适应，恰逢最近写paper也决心把latex好好折腾下。遂搜了一大顿帖子，发现了**<code>MacTex+Sublime3+Skim</code>**的爆炸组合，做点小总结。所以本文主要涉及以下几个核心方面：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/16/MactexTool/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2124,7 +2200,7 @@ class MultiHeadAttention(tf.layers.Layer):
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
