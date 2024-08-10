@@ -599,7 +599,9 @@ Explanation: There are two ways to climb to the top.</p>
         return tf.nn.sigmoid(fm_model)
 </code></pre>
 <h2 id="MHA">MHA</h2>
-<pre><code class="language-python">def scaled_dot_product_attention(Q, K, V, mask=None):
+<pre><code class="language-python">import tensorflow as tf
+
+def scaled_dot_product_attention(Q, K, V, mask=None):
     &quot;&quot;&quot;
     计算缩放点积注意力
     Q: Queries shape == (..., seq_len_q, depth)
@@ -633,12 +635,6 @@ class MultiHeadAttention(tf.layers.Layer):
         assert d_model % self.num_heads == 0
         
         self.depth = d_model // self.num_heads
-        
-        self.Wq = tf.layers.Dense(d_model)
-        self.Wk = tf.layers.Dense(d_model)
-        self.Wv = tf.layers.Dense(d_model)
-        
-        self.dense = tf.layers.Dense(d_model)
     
     def split_heads(self, x, batch_size):
         &quot;&quot;&quot;
@@ -651,9 +647,9 @@ class MultiHeadAttention(tf.layers.Layer):
     def call(self, v, k, q, mask):
         batch_size = tf.shape(q)[0]
         
-        q = self.Wq(q)  # (batch_size, seq_len, d_model)
-        k = self.Wk(k)  # (batch_size, seq_len, d_model)
-        v = self.Wv(v)  # (batch_size, seq_len, d_model)
+        q = tf.layers.dense(inputs=q, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
+        k = tf.layers.dense(inputs=k, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
+        v = tf.layers.dense(inputs=v, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
         
         q = self.split_heads(q, batch_size)  # (batch_size, num_heads, seq_len_q, depth)
         k = self.split_heads(k, batch_size)  # (batch_size, num_heads, seq_len_k, depth)
@@ -665,7 +661,7 @@ class MultiHeadAttention(tf.layers.Layer):
         
         concat_attention = tf.reshape(scaled_attention, (batch_size, -1, self.d_model))  # (batch_size, seq_len_q, d_model)
         
-        output = self.dense(concat_attention)  # (batch_size, seq_len_q, d_model)
+        output = tf.layers.dense(inputs=concat_attention, units=self.d_model, use_bias=False)  # (batch_size, seq_len_q, d_model)
         
         return output, attention_weights
 </code></pre>
