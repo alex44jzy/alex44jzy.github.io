@@ -399,14 +399,8 @@
 
       
         
-          <h2 id="Leetcode-70-爬楼梯问题（DP）">Leetcode-70 爬楼梯问题（DP）</h2>
-<blockquote>
-<p>You are climbing a stair case. It takes n steps to reach to the top.<br>
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?<br>
-Note: Given n will be a positive integer.<br>
-Input: 2<br>
-Output: 2<br>
-Explanation: There are two ways to climb to the top.</p>
+          <h2 id="Leetcode-70-爬楼梯问题（DP）"><a href="#Leetcode-70-爬楼梯问题（DP）" class="headerlink" title="Leetcode-70 爬楼梯问题（DP）"></a>Leetcode-70 爬楼梯问题（DP）</h2><blockquote>
+<p>You are climbing a stair case. It takes n steps to reach to the top.<br>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?<br>Note: Given n will be a positive integer.<br>Input: 2<br>Output: 2<br>Explanation: There are two ways to climb to the top.</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
@@ -565,17 +559,16 @@ Explanation: There are two ways to climb to the top.</p>
       
         
           
-            <h2 id="FM">FM</h2>
-<pre><code class="language-python">class FactorizationMachine(tf.keras.Model):
+            <h2 id="FM"><a href="#FM" class="headerlink" title="FM"></a>FM</h2><pre><code class="lang-python">class FactorizationMachine(tf.keras.Model):
     def __init__(self, num_features, embedding_size):
         super(FactorizationMachine, self).__init__()
         self.num_features = num_features
         self.embedding_size = embedding_size
-        
+
         # 初始化参数
-        self.w0 = tf.Variable(tf.zeros([1]), name='bias')
-        self.w = tf.Variable(tf.random.normal([num_features, 1]), name='linear_weights')
-        self.V = tf.Variable(tf.random.normal([num_features, embedding_size]), name='interaction_weights')
+        self.w0 = tf.Variable(tf.zeros([1]), name=&#39;bias&#39;)
+        self.w = tf.Variable(tf.random.normal([num_features, 1]), name=&#39;linear_weights&#39;)
+        self.V = tf.Variable(tf.random.normal([num_features, embedding_size]), name=&#39;interaction_weights&#39;)
 
     def call(self, inputs):
         # embedding 部分
@@ -583,23 +576,22 @@ Explanation: There are two ways to climb to the top.</p>
         embedding = tf.nn.embedding_lookup(self.V, inputs)
         value = tf.reshape(inputs, [-1, self.num_features, 1])
         embedding_value = tf.multiply(embedding, value)
-        
+
         # 前向传播
         # first order 部分
         first_order = tf.reduce_sum(tf.multiply(embedding_first, value), axis=1)
         liner = tf.add(self.w0, first_order)
-        
+
         # second order 部分
         mul_square = tf.square(tf.reduce_sum(embedding_value, 1))
         square_mul = tf.reduce_sum(tf.square(embedding_value), 1)
         second_order = 0.5 * tf.reduce_sum(tf.subtract(mul_square, square_mul), 1, keepdims=True)
-        
+
         # FM 模型的预测值
         fm_model = tf.add(liner, second_order)
         return tf.nn.sigmoid(fm_model)
 </code></pre>
-<h2 id="MHA">MHA</h2>
-<pre><code class="language-python">import tensorflow as tf
+<h2 id="MHA"><a href="#MHA" class="headerlink" title="MHA"></a>MHA</h2><pre><code class="lang-python">import tensorflow as tf
 
 def scaled_dot_product_attention(Q, K, V, mask=None):
     &quot;&quot;&quot;
@@ -610,20 +602,20 @@ def scaled_dot_product_attention(Q, K, V, mask=None):
     mask: Float tensor with shape broadcastable to (..., seq_len_q, seq_len_k)
     &quot;&quot;&quot;
     matmul_qk = tf.matmul(Q, K, transpose_b=True)  # (..., seq_len_q, seq_len_k)
-    
+
     # 缩放
     dk = tf.cast(tf.shape(K)[-1], tf.float32)
     scaled_attention_logits = matmul_qk / tf.math.sqrt(dk)
-    
+
     # 添加掩码（mask）
     if mask is not None:
         scaled_attention_logits += (mask * -1e9)
-    
+
     # softmax归一化
     attention_weights = tf.nn.softmax(scaled_attention_logits, axis=-1)  # (..., seq_len_q, seq_len_k)
-    
+
     output = tf.matmul(attention_weights, V)  # (..., seq_len_q, depth_v)
-    
+
     return output, attention_weights
 
 class MultiHeadAttention(tf.layers.Layer):
@@ -631,11 +623,11 @@ class MultiHeadAttention(tf.layers.Layer):
         super(MultiHeadAttention, self).__init__()
         self.num_heads = num_heads
         self.d_model = d_model
-        
+
         assert d_model % self.num_heads == 0
-        
+
         self.depth = d_model // self.num_heads
-    
+
     def split_heads(self, x, batch_size):
         &quot;&quot;&quot;
         分割最后一个维度到 (num_heads, depth).
@@ -643,26 +635,26 @@ class MultiHeadAttention(tf.layers.Layer):
         &quot;&quot;&quot;
         x = tf.reshape(x, (batch_size, -1, self.num_heads, self.depth))
         return tf.transpose(x, perm=[0, 2, 1, 3])
-    
+
     def call(self, v, k, q, mask):
         batch_size = tf.shape(q)[0]
-        
+
         q = tf.layers.dense(inputs=q, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
         k = tf.layers.dense(inputs=k, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
         v = tf.layers.dense(inputs=v, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
-        
+
         q = self.split_heads(q, batch_size)  # (batch_size, num_heads, seq_len_q, depth)
         k = self.split_heads(k, batch_size)  # (batch_size, num_heads, seq_len_k, depth)
         v = self.split_heads(v, batch_size)  # (batch_size, num_heads, seq_len_v, depth)
-        
+
         scaled_attention, attention_weights = scaled_dot_product_attention(q, k, v, mask)
-        
+
         scaled_attention = tf.transpose(scaled_attention, perm=[0, 2, 1, 3])  # (batch_size, seq_len_q, num_heads, depth)
-        
+
         concat_attention = tf.reshape(scaled_attention, (batch_size, -1, self.d_model))  # (batch_size, seq_len_q, d_model)
-        
+
         output = tf.layers.dense(inputs=concat_attention, units=self.d_model, use_bias=False)  # (batch_size, seq_len_q, d_model)
-        
+
         return output, attention_weights
 </code></pre>
 
@@ -817,8 +809,8 @@ class MultiHeadAttention(tf.layers.Layer):
       
         
           
-            <h2 id="剑指-Offer-60-n个骰子的点数">剑指 Offer 60. n个骰子的点数</h2>
-<pre><code class="language-python">
+            <h2 id="剑指-Offer-60-n个骰子的点数"><a href="#剑指-Offer-60-n个骰子的点数" class="headerlink" title="剑指 Offer 60. n个骰子的点数"></a>剑指 Offer 60. n个骰子的点数</h2><pre><code class="lang-python">
+
 </code></pre>
 
           
@@ -971,8 +963,7 @@ class MultiHeadAttention(tf.layers.Layer):
 
       
         
-          <h3 id="面试记录">面试记录</h3>
-<p>蚂蚁金服：</p>
+          <h3 id="面试记录"><a href="#面试记录" class="headerlink" title="面试记录"></a>面试记录</h3><p>蚂蚁金服：</p>
 <ul>
 <li>多目标跷跷板怎么快速调，逻辑回归中似然函数和概率的关系；编程题，实现一个树的数据结构，可以支持遍历；写 FM layer。</li>
 </ul>
@@ -987,17 +978,14 @@ class MultiHeadAttention(tf.layers.Layer):
 <ul>
 <li>FM 相关 N 阶特征交叉空间复杂度；数据倾斜怎么解决；A 和 B 抛硬币，A先抛赢的概率；debias 相邻的方法，编程题（1）股票买卖；（2）排序</li>
 </ul>
-<h3 id="信息流">信息流</h3>
-<p>信息流推荐场景：<br>
-推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。</p>
+<h3 id="信息流"><a href="#信息流" class="headerlink" title="信息流"></a>信息流</h3><p>信息流推荐场景：<br>推荐内容混品类推荐，涉及的品类包括旅拍图文、短视频动图、酒店、景点，是内部内容化消费最大的流量入口，为各bu导流，契合公司内容化转型战略。</p>
 <p>线上推荐评估：</p>
 <ol>
 <li>uv 点击率、人均点击 pv 数</li>
 <li>消费类：消费时长、总时长</li>
 <li>生态类：集中度、新鲜度、多样性</li>
 <li>留存，渗透率</li>
-<li>交互类：点赞、收藏、分享、关注、评论</li>
-</ol>
+<li>交互类：点赞、收藏、分享、关注、评论
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/10/23/信息流推荐要点/#more" rel="contents">
@@ -1154,24 +1142,14 @@ class MultiHeadAttention(tf.layers.Layer):
 
       
         
-          <h1>目录</h1>
-<h2 id="双指针">双指针</h2>
-<ul>
-<li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0"></label><a href="#p1">LC-1 2数求和</a><br>
-先带上index排序</li>
-<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1"></label><a href="#p15">LC-15 三数之和</a><br>
-排序，3指针: i，left=i+1, right=len(nums)-1；i/left/right都需要考虑去重</li>
-<li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2"></label><a href="#p16">LC-16 最接近的三数之和</a><br>
-同，排序，3指针</li>
-<li><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3"></label><a href="#p75">LC-75 颜色分类</a><br>
-荷兰旗，head,mid=0,tail=n-1, mid=0交换mid和head前进, mid=2交换mid和tail，tail-1, 不然mid+1</li>
-<li><input type="checkbox" id="checkbox4" checked="true"><label for="checkbox4"></label><a href="#p11">LC-11 盛最多水的容器</a><br>
-首尾指针，wide=j-i, height=min(h[i], h[j]), max(wide*height)</li>
-<li><input type="checkbox" id="checkbox5" checked="true"><label for="checkbox5"></label><a href="#p763">LC-763 划分字母区间</a><br>
-转成字典，key:字母，value:[start, end]的index，合并区间模板</li>
-<li><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6"></label><a href="#p80">LC-80 删除排序数组中的重复项</a><br>
-重复k个的问题。核心：if i &lt; k or nums[i] != nums[length - k]，重新组织数组</li>
-</ul>
+          <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><ul>
+<li>[x] <a href="#p1">LC-1 2数求和</a><br>先带上index排序</li>
+<li>[x] <a href="#p15">LC-15 三数之和</a><br>排序，3指针: i，left=i+1, right=len(nums)-1；i/left/right都需要考虑去重</li>
+<li>[x] <a href="#p16">LC-16 最接近的三数之和</a><br>同，排序，3指针</li>
+<li>[x] <a href="#p75">LC-75 颜色分类</a><br>荷兰旗，head,mid=0,tail=n-1, mid=0交换mid和head前进, mid=2交换mid和tail，tail-1, 不然mid+1</li>
+<li>[x] <a href="#p11">LC-11 盛最多水的容器</a><br>首尾指针，wide=j-i, height=min(h[i], h[j]), max(wide*height)</li>
+<li>[x] <a href="#p763">LC-763 划分字母区间</a><br>转成字典，key:字母，value:[start, end]的index，合并区间模板</li>
+<li>[x] <a href="#p80">LC-80 删除排序数组中的重复项</a><br>重复k个的问题。核心：if i &lt; k or nums[i] != nums[length - k]，重新组织数组
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/07/25/分类总结/#more" rel="contents">
@@ -1331,12 +1309,8 @@ class MultiHeadAttention(tf.layers.Layer):
           <p>最近复习了一些基础知识，摘取了一些重要的做了一点推导，也为了之后可能面试会用到。应该是机器学习类的，但是也懒得分那么多类了，就先放在慢学NLP下面吧。这里选择把逻辑回归和softmax归到一起来讲，原因在于更好的比较两者的异同和联系。总结为以下两点：</p>
 <p><strong>逻辑回归的优化目标是极大化对数似然估计，采用梯度上升来学习及更新参数 $\theta$ 向量的值。</strong></p>
 <p><strong>Softmax的优化目标是极小化交叉熵损失函数，采用梯度下降和链式法则来更新各层权值。</strong></p>
-<h1>Logistics Regression</h1>
-<p>先从线性回归开始</p>
-<p>$$h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }$$</p>
-<p>$$h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X$$</p>
-<p>$$X = \left[ \begin{array} { c } { 1 } \newline { x _ { 1 } } \newline { \dots } \newline { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \newline { w _ { 1 } } \newline { \dots } \newline { w _ { n } } \end{array} \right]$$</p>
-<p>针对线性分类器而言，他解决的是回归问题，为了能更好进行分类问题的探讨，这里就引出了 Logistics 回归。</p>
+<h1 id="Logistics-Regression"><a href="#Logistics-Regression" class="headerlink" title="Logistics Regression"></a>Logistics Regression</h1><p>先从线性回归开始</p>
+<script type="math/tex; mode=display">h _ { w } \left( x ^ { i } \right) = w _ { 0 } + w _ { 1 } x _ { 1 } + w x _ { 2 } + \ldots + w _ { n } x _ { n }</script><script type="math/tex; mode=display">h _ { w } \left( x ^ { j } \right) = w ^ { T } x _ { i } = W ^ { T } X</script><script type="math/tex; mode=display">X = \left[ \begin{array} { c } { 1 } \newline { x _ { 1 } } \newline { \dots } \newline { x _ { n } } \end{array} \right] \quad W = \left[ \begin{array} { c } { w _ { 0 } } \newline { w _ { 1 } } \newline { \dots } \newline { w _ { n } } \end{array} \right]</script><p>针对线性分类器而言，他解决的是回归问题，为了能更好进行分类问题的探讨，这里就引出了 Logistics 回归。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/02/13/LogisticsSummary/#more" rel="contents">
@@ -1493,8 +1467,7 @@ class MultiHeadAttention(tf.layers.Layer):
 
       
         
-          <p><img src="/images/201822019.jpg" alt=""><br>
-（文章主要记录2018年在新加坡国立大学读企业商务分析Master的点点滴滴）</p>
+          <p><img src="/images/201822019.jpg" alt=""><br>（文章主要记录2018年在新加坡国立大学读企业商务分析Master的点点滴滴）</p>
 <p>可能是夏天出生的缘故，我向来就不喜欢冷，那种刺骨血液冰冻僵住的感觉，想来真是让我不舒服。加上又是易出汗体质，也就很不喜欢裹棉衣，稍微活动几下，毛线夹着背脊的汗，那滋味着实让我难受。曾经也幻想过，要是能天天过上夏天，大拖鞋大短裤，没事就可以跳水里游泳吃冷饮，应该会是及其惬意吧。老天有眼，2018年，我就在新加坡就得偿所愿的过了整整365天的夏天，曾经一年有春夏秋冬，四季分明，如今就只剩初夏，盛夏，仲夏。反而贱嗖嗖的有点想念冬天的滋味了哈哈哈。</p>
 <p>2018年年初办完离职，来到新加坡国立大学再次成为了一名学生。今年的足迹大多只局限在北纬1度的新加坡（十足的赤道），出没于NUS Utown、ISS school、实习待的IBM CBP，也去过马来西亚（亚庇）和越南（胡志明，芽庄）旅行。</p>
 <p>2018年整体而言，关键词是充实和自我重建。</p>
@@ -1655,10 +1628,9 @@ class MultiHeadAttention(tf.layers.Layer):
       
         
           <p><img src="/images/imdb5000/imdb.jpg" alt=""></p>
-<h3 id="写在前面">写在前面</h3>
-<p>在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。<br></p>
-<h3 id="Introduction">Introduction</h3>
-<p>IMDB 5000 is an Internet movie database with highest rated TV series with at least 5000 votes. In this task, IMDB 5000 is implemented as our database to explore and visualize the different distributions depending on various factors. This dataset could be found in data.world or Kaggle dataset, which includes 28 factors and 5043 movies. The metadata is listed below:</p>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>在NUS的学习过程中所涉及到的一些Assignments，会陆陆续续整理然后放上来，由于是英语书写同时也为了锻炼自己的英文写作，遂会尽量用英文来写整个的过程（其实也是照抄作业而已）。本Assignment是关于IMDB5000电影评分的一个分析，比较偏入门的一个作业，通过这个作业可以对R中重要的可视化作图模块有一个较为整体的认识。<br></p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>IMDB 5000 is an Internet movie database with highest rated TV series with at least 5000 votes. In this task, IMDB 5000 is implemented as our database to explore and visualize the different distributions depending on various factors. This dataset could be found in data.world or Kaggle dataset, which includes 28 factors and 5043 movies. The metadata is listed below:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1713,6 +1685,7 @@ class MultiHeadAttention(tf.layers.Layer):
 </tr>
 </tbody>
 </table>
+</div>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/07/R-imdb5000/#more" rel="contents">
@@ -1870,8 +1843,7 @@ class MultiHeadAttention(tf.layers.Layer):
       
         
           <p><img src="/images/sgMarina.jpg" alt=""></p>
-<h2 id="交代">交代</h2>
-<p>距离上一次写博客已经过去2年多了，期间有过好几次想重新开启的时刻，也都随着自己角色的转变以及没救的拖延和懈怠中流逝了。2年前的现在，我还在重庆忙着自己的毕业论文答辩，在一场一场的火锅和KTV中肆意挥洒最后的青春。研究生毕业之后，一个人来到魔都张江，开始了一个真正意义上的程序员的生活，并且也算以此为自己的职业，能在上海养活自己，并且还养的不错，从体重不断的飙升中可见一斑，期间有机会去韩国出差，算是第一次踏出国门。2018年年初又一次下南洋，开始了在国大的另一段求学的生涯，如今坐在NUS的自习室里，云淡风轻的回忆这两年发生的不多不少的种种，有些值得骄傲，有些也感到无力。但这2年总体而言，都是向着好的方向在前进，尤其完成了自己多年以来的出国梦，可能我这一辈子余下的时光都庸庸碌碌，唯有这件事能称之为闪光点吧。</p>
+<h2 id="交代"><a href="#交代" class="headerlink" title="交代"></a>交代</h2><p>距离上一次写博客已经过去2年多了，期间有过好几次想重新开启的时刻，也都随着自己角色的转变以及没救的拖延和懈怠中流逝了。2年前的现在，我还在重庆忙着自己的毕业论文答辩，在一场一场的火锅和KTV中肆意挥洒最后的青春。研究生毕业之后，一个人来到魔都张江，开始了一个真正意义上的程序员的生活，并且也算以此为自己的职业，能在上海养活自己，并且还养的不错，从体重不断的飙升中可见一斑，期间有机会去韩国出差，算是第一次踏出国门。2018年年初又一次下南洋，开始了在国大的另一段求学的生涯，如今坐在NUS的自习室里，云淡风轻的回忆这两年发生的不多不少的种种，有些值得骄傲，有些也感到无力。但这2年总体而言，都是向着好的方向在前进，尤其完成了自己多年以来的出国梦，可能我这一辈子余下的时光都庸庸碌碌，唯有这件事能称之为闪光点吧。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/21/sgFeeling/#more" rel="contents">
@@ -2029,11 +2001,7 @@ class MultiHeadAttention(tf.layers.Layer):
       
         
           <p><img src="/images/2016pic.jpg" alt=""></p>
-<h3 id="总体">总体</h3>
-<p>2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了_<strong>差距</strong>_，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自我认识的过程。<br>
-<strong>2015年足迹经过了无锡，上海，杭州，重庆，成都，哈尔滨。</strong><br>
-过去的旧时光我都记得，但是更重要的还是向前看。我还是要对自己的2015做一些总结。<br>
-2015对我而言的年度词语我觉得应该是——<strong>开眼</strong>。</p>
+<h3 id="总体"><a href="#总体" class="headerlink" title="总体"></a>总体</h3><p>2015还是随风而逝了，有点感伤，也有点感动。感伤于很多时候的无所事事，耽误了不少时间。感动在于一整年也算是完成了自己的一系列小目标，看到了自己的成长。而更多的是看到了<em><strong>差距</strong></em>，差距来源于自己视野的不断打开，正因为如此我会有很多对自己的不满足，不满足于自己的拖沓，不满足于自己的懒散。但总体来说这些都算是人生路上的好事，因为我不可能永远停留着做个学生，这一年我也看到了自己的多面性，因为人这一生也是自我认识的过程。<br><strong>2015年足迹经过了无锡，上海，杭州，重庆，成都，哈尔滨。</strong><br>过去的旧时光我都记得，但是更重要的还是向前看。我还是要对自己的2015做一些总结。<br>2015对我而言的年度词语我觉得应该是——<strong>开眼</strong>。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2015/12/31/my2015/#more" rel="contents">
