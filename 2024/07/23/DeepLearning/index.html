@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="SciAes">
 <meta property="og:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2024-08-10T11:38:05.659Z">
+<meta property="og:updated_time" content="2024-08-11T10:02:57.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning">
 <meta name="twitter:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
@@ -494,6 +494,24 @@ class MultiHeadAttention(tf.layers.Layer):
         output = tf.layers.dense(inputs=concat_attention, units=self.d_model, use_bias=False)  # (batch_size, seq_len_q, d_model)
         return output, attention_weights
 </code></pre>
+<h2 id="DIN">DIN</h2>
+<pre><code class="language-python">
+
+
+</code></pre>
+<h2 id="Senet">Senet</h2>
+<pre><code class="language-python"># 64 * 100 * 8
+# reduce mean
+# 64 * 100 * 1  = 64 * 100
+# 2层mlp（relu， sigmoid）
+# 64 * 100 * 1
+# 哈达玛积
+input = tf.random.uniform(shape=(64, 100, 8))
+squ_tensor = tf.reduce_mean(input, axis=-1) # input b * l * e, b * l
+out1 = tf.layers.dense(squ_tensor, units=512, activation='relu', name='se1')
+out2 = 2 * tf.layers.dense(out1, units=squ_tensor.shape[-1], activation='sigmoid', name='se2‘) # b * l
+res = tf.expand_dims(out2, axis = -1) * input
+</code></pre>
 
       
     </div>
@@ -681,7 +699,7 @@ class MultiHeadAttention(tf.layers.Layer):
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FM"><span class="nav-number">1.</span> <span class="nav-text">FM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MHA"><span class="nav-number">2.</span> <span class="nav-text">MHA</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FM"><span class="nav-number">1.</span> <span class="nav-text">FM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MHA"><span class="nav-number">2.</span> <span class="nav-text">MHA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIN"><span class="nav-number">3.</span> <span class="nav-text">DIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Senet"><span class="nav-number">4.</span> <span class="nav-text">Senet</span></a></li></ol></div>
             
 
           </div>
