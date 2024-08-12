@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/13/rotate1.jpg">
 <meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/original_images/17_telephone_keypad.png">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg">
-<meta property="og:updated_time" content="2024-08-11T10:05:07.576Z">
+<meta property="og:updated_time" content="2024-08-12T17:39:15.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类总结">
 <meta name="twitter:description" content="目录 双指针  LC-1 2数求和 先带上index排序 LC-15 三数之和 排序，3指针: i，left=i+1, right=len(nums)-1；i/left/right都需要考虑去重 LC-16 最接近的三数之和 同，排序，3指针 LC-75 颜色分类 荷兰旗，head,mid=0,tail=n-1, mid=0交换mid和head前进, mid=2交换mid和tail，tail-1,">
@@ -4270,6 +4270,27 @@ candidates 中的每个数字在每个组合中只能使用一次。<br>
                 if grid[i][j] == 1:
                     max_area = max(bfs(grid, i, j), max_area)
         return max_area
+</code></pre>
+<pre><code class="language-python">class Solution(object):
+    def maxAreaOfIsland(self, grid):
+        &quot;&quot;&quot;
+        :type grid: List[List[int]]
+        :rtype: int
+        &quot;&quot;&quot;
+        row = len(grid)
+        col = len(grid[0])
+        res = 0
+        def dfs(i, j):
+            if i &gt;= 0 and i &lt;= row - 1 and j &gt;= 0 and j &lt;= col - 1 and grid[i][j]:
+                grid[i][j] = 0
+                return 1 + dfs(i-1, j) + dfs(i+1, j) + dfs(i, j-1) + dfs(i, j+1)
+            return 0
+
+        for i in range(row):
+            for j in range(col):
+                if grid[i][j]:
+                    res = max(res, dfs(i, j))
+        return res
 </code></pre>
 <h3 id="a-name-p1254-a-LC-1254-统计封闭岛屿的数目"><a name="p1254"></a> <a href="https://leetcode-cn.com/problems/number-of-closed-islands/" target="_blank" rel="noopener">LC-1254 统计封闭岛屿的数目</a></h3>
 <p>有一个二维矩阵 grid ，每个位置要么是陆地（记号为 0 ）要么是水域（记号为 1 ）。<br>
