@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="SciAes">
 <meta property="og:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2024-08-11T10:02:57.450Z">
+<meta property="og:updated_time" content="2024-08-12T17:03:51.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning">
 <meta name="twitter:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
@@ -494,10 +494,89 @@ class MultiHeadAttention(tf.layers.Layer):
         output = tf.layers.dense(inputs=concat_attention, units=self.d_model, use_bias=False)  # (batch_size, seq_len_q, d_model)
         return output, attention_weights
 </code></pre>
+<h2 id="DIN-简单">DIN 简单</h2>
+<pre><code class="language-python">def din(self, queries, keys, layer_size):
+    &quot;&quot;&quot;
+    queries shape: (b,1,e) : (batch_size, feasign_size, embedding_size)
+    keys shape: (b,f,e) : (batch_size, feasign_size, embedding_size)
+    &quot;&quot;&quot;
+    queries = tf.tile(queries, [1, keys.shape[1], 1]) # (b,1,e) -&gt; (b,t,e)
+    din_input = tf.concat([queries, keys, queries-keys, queries*keys], axis=-1)
+    din_layer1 = tf.layers.dense(din_input, layer_size[0], activation='sigmoid', name='att1')
+    dice_layer = self.dice(din_layer1, name='dice_layer') # above activation should be none
+    din_layer2 = tf.layers.dense(dice_layer, layer_size[1], activation=None, name='att2')
+    output = din_layer2 * keys
+    return output
+</code></pre>
 <h2 id="DIN">DIN</h2>
-<pre><code class="language-python">
+<pre><code class="language-python">class DINModel:
+    def __init__(self, layer_size=(32,128), mom_decay_rate=0.99):
+        self.mom_decay_rate = mom_decay_rate
+        self.layer_size = layer_size
+        self.initializer = tf.contrib.layers.xavier_initializer()
+
+    def dice(self, _x, name=''):
+        alpha = tf.get_variable('dice_alpha'+name, _x.shape[-1], initializer=tf.contrib.layers.xavier_initializer(), dtype=tf.float32)
+        _x_norm = tf.layers.batch_normalization(inputs=_x, momentum=self.mom_decay_rate, name=&quot;dice_norm&quot;+name)
+        _x_p = tf.nn.sigmoid(_x_norm)
+        return alpha * (1.0 - _x_p) * _x + _x_p * _x
+
+    def layer_normalize(self,is_ln, inputs, mom_decay_rate, name):
+        if is_ln:
+            layer_norm = CustomLayerNormalization()
+            return layer_norm(inputs=inputs)
+        else:
+            return inputs
+    def din(self, queries, keys, is_bn):
+        &quot;&quot;&quot;
+        queries shape: (b,s,1,e) : (batch_size, slots_size, feasign_size, embedding_size)
+        keys shape: (b,s,f,e) : (batch_size, slots_size, feasign_size, embedding_size)
+        &quot;&quot;&quot;
+        queries = self.layer_normalize(is_bn, queries, self.mom_decay_rate, &quot;queries_norm&quot;)
+        keys = self.layer_normalize(is_bn, keys, self.mom_decay_rate, &quot;keys_norm&quot;)
+        queries = tf.tile(queries, [1, 1, keys.shape[2], 1]) # (b,s,1,e) -&gt; (b,s,t,e)
+        din_input = tf.concat([queries, keys, queries-keys, queries*keys], axis=-1)
+        din_layer1 = tf.layers.dense(din_input, self.layer_size[0], activation='relu', name='layer1', kernel_initializer=self.initializer, bias_initializer=self.initializer)
+        din_layer2 = self.dice(
+            tf.layers.dense(din_layer1, self.layer_size[1], activation=None, name='layer2', kernel_initializer=self.initializer, bias_initializer=self.initializer)
+            )
+        din_layer3 = tf.layers.dense(din_layer2, 1, activation=None, name='layer3', kernel_initializer=self.initializer, bias_initializer=self.initializer)
+        # b, s, t, 1
+        din_score = tf.reshape(din_layer3, [keys.shape[0], keys.shape[1], 1, keys.shape[2]])
+        output = tf.reduce_sum(din_score * keys, axis = 2) # b, s, e
+        # output = tf.matmul(din_score, keys) # b, s, t, e
+        return output
+
+    def __call__(self, queries, keys, is_bn=True, name='din'):
+        with tf.variable_scope(name):
+            out = self.din(queries, keys, is_bn)
+        return out
+
+</code></pre>
+<h2 id="MMOE">MMOE</h2>
+<pre><code class="language-python">gate_hidden1 = 128
+expoert_hidden = 512
+experts_nums = 4
+targets_nums = 3
+# input = b, e
+experts_out = []
+for i in range(experts_nums):
+    expert_out = tf.layers.dense(input, expert_hidden, activation='relu')
+    experts_out.appned(expert_out)
+all_experts_out = tf.stack(expert_out, axis=1)
 
 
+def gate_build(input):
+    gate_hidden = tf.layers.dense(input, units=[gate_hidden1, experts_nums], activation='relu')
+    gate_out = tf.layers.dense(gate_hidden, experts_nums, activation='softmax')
+    gate_out = tf.expand_dims(gate_out, axis=1) # b, 4, 1
+    return gate_out
+outs = []
+# b, 4, 512
+for i in range(targets_nums):
+    gate = gate_build(input)
+    outs.append(tf.reduce_sum(gate * all_experts_out, axis = 1))
+# out shape [b, 512] * targets_nums
 </code></pre>
 <h2 id="Senet">Senet</h2>
 <pre><code class="language-python"># 64 * 100 * 8
@@ -511,6 +590,25 @@ squ_tensor = tf.reduce_mean(input, axis=-1) # input b * l * e, b * l
 out1 = tf.layers.dense(squ_tensor, units=512, activation='relu', name='se1')
 out2 = 2 * tf.layers.dense(out1, units=squ_tensor.shape[-1], activation='sigmoid', name='se2‘) # b * l
 res = tf.expand_dims(out2, axis = -1) * input
+</code></pre>
+<h2 id="梯度">梯度</h2>
+<pre><code class="language-python">def get_gradients(qs, input_feas, embedding_size, rv_feas_len):
+    grad_list = []
+    # 处理一个batch内的梯度信息
+    def grad_processing(grad, emb_size, rv_len):
+        # batch内取均值 然后取绝对值
+        # 梯度绝对值的大小反应梯度对相关特征的敏感程度，越接近0 敏感程度越低
+        batch_avg_grad = tf.abs(tf.reduce_mean(grad, axis=0))
+        rv_grad = batch_avg_grad[:rv_len]
+        slot_embed_grad = tf.reshape(batch_avg_grad[rv_len:], [-1, emb_size])
+        # 取一个slot内取最大的绝对值代表该slot中的梯度
+        slot_grad = tf.reduce_max(slot_embed_grad, axis=1)
+        return tf.concat([rv_grad, slot_grad], axis=-1)
+
+    for i in range(len(qs)):
+        concat_grad = tf.concat(tf.gradients(qs[i], input_feas), axis=-1)
+        grad_list.append(grad_processing(concat_grad, embedding_size, rv_feas_len))
+    return grad_list
 </code></pre>
 
       
@@ -699,7 +797,7 @@ res = tf.expand_dims(out2, axis = -1) * input
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FM"><span class="nav-number">1.</span> <span class="nav-text">FM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MHA"><span class="nav-number">2.</span> <span class="nav-text">MHA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIN"><span class="nav-number">3.</span> <span class="nav-text">DIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Senet"><span class="nav-number">4.</span> <span class="nav-text">Senet</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FM"><span class="nav-number">1.</span> <span class="nav-text">FM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MHA"><span class="nav-number">2.</span> <span class="nav-text">MHA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIN-简单"><span class="nav-number">3.</span> <span class="nav-text">DIN 简单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIN"><span class="nav-number">4.</span> <span class="nav-text">DIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MMOE"><span class="nav-number">5.</span> <span class="nav-text">MMOE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Senet"><span class="nav-number">6.</span> <span class="nav-text">Senet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度"><span class="nav-number">7.</span> <span class="nav-text">梯度</span></a></li></ol></div>
             
 
           </div>
