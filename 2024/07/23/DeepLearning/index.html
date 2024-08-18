@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="FMclass FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
+<meta name="description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep learning">
 <meta property="og:url" content="http://alexjiangzy.com/2024/07/23/DeepLearning/index.html">
 <meta property="og:site_name" content="SciAes">
-<meta property="og:description" content="FMclass FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
+<meta property="og:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2024-08-12T17:03:51.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning">
-<meta name="twitter:description" content="FMclass FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
+<meta name="twitter:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
 
 
 
@@ -397,16 +397,17 @@
       
 
       
-        <h2 id="FM"><a href="#FM" class="headerlink" title="FM"></a>FM</h2><pre><code class="lang-python">class FactorizationMachine(tf.keras.Model):
+        <h2 id="FM">FM</h2>
+<pre><code class="language-python">class FactorizationMachine(tf.keras.Model):
     def __init__(self, num_features, embedding_size):
         super(FactorizationMachine, self).__init__()
         self.num_features = num_features
         self.embedding_size = embedding_size
-
+        
         # 初始化参数
-        self.w0 = tf.Variable(tf.zeros([1]), name=&#39;bias&#39;)
-        self.w = tf.Variable(tf.random.normal([num_features, 1]), name=&#39;linear_weights&#39;)
-        self.V = tf.Variable(tf.random.normal([num_features, embedding_size]), name=&#39;interaction_weights&#39;)
+        self.w0 = tf.Variable(tf.zeros([1]), name='bias')
+        self.w = tf.Variable(tf.random.normal([num_features, 1]), name='linear_weights')
+        self.V = tf.Variable(tf.random.normal([num_features, embedding_size]), name='interaction_weights')
 
     def call(self, inputs):
         # embedding 部分
@@ -414,23 +415,24 @@
         embedding = tf.nn.embedding_lookup(self.V, inputs)
         value = tf.reshape(inputs, [-1, self.num_features, 1])
         embedding_value = tf.multiply(embedding, value)
-
+        
         # 前向传播
         # first order 部分
         first_order = tf.reduce_sum(tf.multiply(embedding_first, value), axis=1)
         liner = tf.add(self.w0, first_order)
-
+        
         # second order 部分
         mul_square = tf.square(tf.reduce_sum(embedding_value, 1))
         square_mul = tf.reduce_sum(tf.square(embedding_value), 1)
         second_order = 0.5 * tf.reduce_sum(tf.subtract(mul_square, square_mul), 1, keepdims=True)
-
+        
         # FM 模型的预测值
         fm_model = tf.add(liner, second_order)
         return tf.nn.sigmoid(fm_model)
 </code></pre>
 <a id="more"></a>
-<h2 id="MHA"><a href="#MHA" class="headerlink" title="MHA"></a>MHA</h2><pre><code class="lang-python">import tensorflow as tf
+<h2 id="MHA">MHA</h2>
+<pre><code class="language-python">import tensorflow as tf
 
 def scaled_dot_product_attention(Q, K, V, mask=None):
     &quot;&quot;&quot;
@@ -441,20 +443,20 @@ def scaled_dot_product_attention(Q, K, V, mask=None):
     mask: Float tensor with shape broadcastable to (..., seq_len_q, seq_len_k)
     &quot;&quot;&quot;
     matmul_qk = tf.matmul(Q, K, transpose_b=True)  # (..., seq_len_q, seq_len_k)
-
+    
     # 缩放
     dk = tf.cast(tf.shape(K)[-1], tf.float32)
     scaled_attention_logits = matmul_qk / tf.math.sqrt(dk)
-
+    
     # 添加掩码（mask）
     if mask is not None:
         scaled_attention_logits += (mask * -1e9)
-
+    
     # softmax归一化
     attention_weights = tf.nn.softmax(scaled_attention_logits, axis=-1)  # (..., seq_len_q, seq_len_k)
-
+    
     output = tf.matmul(attention_weights, V)  # (..., seq_len_q, depth_v)
-
+    
     return output, attention_weights
 
 class MultiHeadAttention(tf.layers.Layer):
@@ -462,11 +464,11 @@ class MultiHeadAttention(tf.layers.Layer):
         super(MultiHeadAttention, self).__init__()
         self.num_heads = num_heads
         self.d_model = d_model
-
+        
         assert d_model % self.num_heads == 0
-
+        
         self.depth = d_model // self.num_heads
-
+    
     def split_heads(self, x, batch_size):
         &quot;&quot;&quot;
         分割最后一个维度到 (num_heads, depth).
@@ -474,45 +476,47 @@ class MultiHeadAttention(tf.layers.Layer):
         &quot;&quot;&quot;
         x = tf.reshape(x, (batch_size, -1, self.num_heads, self.depth))
         return tf.transpose(x, perm=[0, 2, 1, 3])
-
+    
     def call(self, v, k, q, mask):
         batch_size = tf.shape(q)[0]
-
+        
         q = tf.layers.dense(inputs=q, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
         k = tf.layers.dense(inputs=k, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
         v = tf.layers.dense(inputs=v, units=self.d_model, use_bias=False)  # (batch_size, seq_len, d_model)
-
+        
         q = self.split_heads(q, batch_size)  # (batch_size, num_heads, seq_len_q, depth)
         k = self.split_heads(k, batch_size)  # (batch_size, num_heads, seq_len_k, depth)
         v = self.split_heads(v, batch_size)  # (batch_size, num_heads, seq_len_v, depth)
-
+        
         scaled_attention, attention_weights = scaled_dot_product_attention(q, k, v, mask)
         scaled_attention = tf.transpose(scaled_attention, perm=[0, 2, 1, 3])  # (batch_size, seq_len_q, num_heads, depth)
         concat_attention = tf.reshape(scaled_attention, (batch_size, -1, self.d_model))  # (batch_size, seq_len_q, d_model)
         output = tf.layers.dense(inputs=concat_attention, units=self.d_model, use_bias=False)  # (batch_size, seq_len_q, d_model)
         return output, attention_weights
 </code></pre>
-<h2 id="DIN-简单"><a href="#DIN-简单" class="headerlink" title="DIN 简单"></a>DIN 简单</h2><pre><code class="lang-python">def din(self, queries, keys, layer_size):
+<h2 id="DIN-简单">DIN 简单</h2>
+<pre><code class="language-python">def din(self, queries, keys, layer_size):
     &quot;&quot;&quot;
     queries shape: (b,1,e) : (batch_size, feasign_size, embedding_size)
     keys shape: (b,f,e) : (batch_size, feasign_size, embedding_size)
     &quot;&quot;&quot;
     queries = tf.tile(queries, [1, keys.shape[1], 1]) # (b,1,e) -&gt; (b,t,e)
     din_input = tf.concat([queries, keys, queries-keys, queries*keys], axis=-1)
-    din_layer1 = tf.layers.dense(din_input, layer_size[0], activation=&#39;sigmoid&#39;, name=&#39;att1&#39;)
-    dice_layer = self.dice(din_layer1, name=&#39;dice_layer&#39;) # above activation should be none
-    din_layer2 = tf.layers.dense(dice_layer, layer_size[1], activation=None, name=&#39;att2&#39;)
+    din_layer1 = tf.layers.dense(din_input, layer_size[0], activation='sigmoid', name='att1')
+    dice_layer = self.dice(din_layer1, name='dice_layer') # above activation should be none
+    din_layer2 = tf.layers.dense(dice_layer, layer_size[1], activation=None, name='att2')
     output = din_layer2 * keys
     return output
 </code></pre>
-<h2 id="DIN"><a href="#DIN" class="headerlink" title="DIN"></a>DIN</h2><pre><code class="lang-python">class DINModel:
+<h2 id="DIN">DIN</h2>
+<pre><code class="language-python">class DINModel:
     def __init__(self, layer_size=(32,128), mom_decay_rate=0.99):
         self.mom_decay_rate = mom_decay_rate
         self.layer_size = layer_size
         self.initializer = tf.contrib.layers.xavier_initializer()
 
-    def dice(self, _x, name=&#39;&#39;):
-        alpha = tf.get_variable(&#39;dice_alpha&#39;+name, _x.shape[-1], initializer=tf.contrib.layers.xavier_initializer(), dtype=tf.float32)
+    def dice(self, _x, name=''):
+        alpha = tf.get_variable('dice_alpha'+name, _x.shape[-1], initializer=tf.contrib.layers.xavier_initializer(), dtype=tf.float32)
         _x_norm = tf.layers.batch_normalization(inputs=_x, momentum=self.mom_decay_rate, name=&quot;dice_norm&quot;+name)
         _x_p = tf.nn.sigmoid(_x_norm)
         return alpha * (1.0 - _x_p) * _x + _x_p * _x
@@ -532,37 +536,39 @@ class MultiHeadAttention(tf.layers.Layer):
         keys = self.layer_normalize(is_bn, keys, self.mom_decay_rate, &quot;keys_norm&quot;)
         queries = tf.tile(queries, [1, 1, keys.shape[2], 1]) # (b,s,1,e) -&gt; (b,s,t,e)
         din_input = tf.concat([queries, keys, queries-keys, queries*keys], axis=-1)
-        din_layer1 = tf.layers.dense(din_input, self.layer_size[0], activation=&#39;relu&#39;, name=&#39;layer1&#39;, kernel_initializer=self.initializer, bias_initializer=self.initializer)
+        din_layer1 = tf.layers.dense(din_input, self.layer_size[0], activation='relu', name='layer1', kernel_initializer=self.initializer, bias_initializer=self.initializer)
         din_layer2 = self.dice(
-            tf.layers.dense(din_layer1, self.layer_size[1], activation=None, name=&#39;layer2&#39;, kernel_initializer=self.initializer, bias_initializer=self.initializer)
+            tf.layers.dense(din_layer1, self.layer_size[1], activation=None, name='layer2', kernel_initializer=self.initializer, bias_initializer=self.initializer)
             )
-        din_layer3 = tf.layers.dense(din_layer2, 1, activation=None, name=&#39;layer3&#39;, kernel_initializer=self.initializer, bias_initializer=self.initializer)
+        din_layer3 = tf.layers.dense(din_layer2, 1, activation=None, name='layer3', kernel_initializer=self.initializer, bias_initializer=self.initializer)
         # b, s, t, 1
         din_score = tf.reshape(din_layer3, [keys.shape[0], keys.shape[1], 1, keys.shape[2]])
         output = tf.reduce_sum(din_score * keys, axis = 2) # b, s, e
         # output = tf.matmul(din_score, keys) # b, s, t, e
         return output
 
-    def __call__(self, queries, keys, is_bn=True, name=&#39;din&#39;):
+    def __call__(self, queries, keys, is_bn=True, name='din'):
         with tf.variable_scope(name):
             out = self.din(queries, keys, is_bn)
         return out
+
 </code></pre>
-<h2 id="MMOE"><a href="#MMOE" class="headerlink" title="MMOE"></a>MMOE</h2><pre><code class="lang-python">gate_hidden1 = 128
+<h2 id="MMOE">MMOE</h2>
+<pre><code class="language-python">gate_hidden1 = 128
 expoert_hidden = 512
 experts_nums = 4
 targets_nums = 3
 # input = b, e
 experts_out = []
 for i in range(experts_nums):
-    expert_out = tf.layers.dense(input, expert_hidden, activation=&#39;relu&#39;)
+    expert_out = tf.layers.dense(input, expert_hidden, activation='relu')
     experts_out.appned(expert_out)
 all_experts_out = tf.stack(expert_out, axis=1)
 
 
 def gate_build(input):
-    gate_hidden = tf.layers.dense(input, units=[gate_hidden1, experts_nums], activation=&#39;relu&#39;)
-    gate_out = tf.layers.dense(gate_hidden, experts_nums, activation=&#39;softmax&#39;)
+    gate_hidden = tf.layers.dense(input, units=[gate_hidden1, experts_nums], activation='relu')
+    gate_out = tf.layers.dense(gate_hidden, experts_nums, activation='softmax')
     gate_out = tf.expand_dims(gate_out, axis=1) # b, 4, 1
     return gate_out
 outs = []
@@ -572,7 +578,8 @@ for i in range(targets_nums):
     outs.append(tf.reduce_sum(gate * all_experts_out, axis = 1))
 # out shape [b, 512] * targets_nums
 </code></pre>
-<h2 id="Senet"><a href="#Senet" class="headerlink" title="Senet"></a>Senet</h2><pre><code class="lang-python"># 64 * 100 * 8
+<h2 id="Senet">Senet</h2>
+<pre><code class="language-python"># 64 * 100 * 8
 # reduce mean
 # 64 * 100 * 1  = 64 * 100
 # 2层mlp（relu， sigmoid）
@@ -580,11 +587,12 @@ for i in range(targets_nums):
 # 哈达玛积
 input = tf.random.uniform(shape=(64, 100, 8))
 squ_tensor = tf.reduce_mean(input, axis=-1) # input b * l * e, b * l
-out1 = tf.layers.dense(squ_tensor, units=512, activation=&#39;relu&#39;, name=&#39;se1&#39;)
-out2 = 2 * tf.layers.dense(out1, units=squ_tensor.shape[-1], activation=&#39;sigmoid&#39;, name=&#39;se2‘) # b * l
+out1 = tf.layers.dense(squ_tensor, units=512, activation='relu', name='se1')
+out2 = 2 * tf.layers.dense(out1, units=squ_tensor.shape[-1], activation='sigmoid', name='se2‘) # b * l
 res = tf.expand_dims(out2, axis = -1) * input
 </code></pre>
-<h2 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h2><pre><code class="lang-python">def get_gradients(qs, input_feas, embedding_size, rv_feas_len):
+<h2 id="梯度">梯度</h2>
+<pre><code class="language-python">def get_gradients(qs, input_feas, embedding_size, rv_feas_len):
     grad_list = []
     # 处理一个batch内的梯度信息
     def grad_processing(grad, emb_size, rv_len):
