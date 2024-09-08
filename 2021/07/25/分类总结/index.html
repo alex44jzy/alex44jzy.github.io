@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/13/rotate1.jpg">
 <meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/original_images/17_telephone_keypad.png">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg">
-<meta property="og:updated_time" content="2024-08-18T02:10:59.786Z">
+<meta property="og:updated_time" content="2024-09-08T17:04:11.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类总结">
 <meta name="twitter:description" content="目录 双指针  LC-1 2数求和 先带上index排序 LC-15 三数之和 排序，3指针: i，left=i+1, right=len(nums)-1；i/left/right都需要考虑去重 LC-16 最接近的三数之和 同，排序，3指针 LC-75 颜色分类 荷兰旗，head,mid=0,tail=n-1, mid=0交换mid和head前进, mid=2交换mid和tail，tail-1,">
@@ -3574,8 +3574,7 @@ return 结果
 <pre><code class="language-python"># 常规
 def binarySearch(nums, target):
     if len(nums) == 0: return -1
-    left = 0
-    right = len(nums) - 1
+    left, right = 0, len(nums) - 1
     while(left &lt;= right):
         mid = left + (right - left) // 2
         if nums[mid] == target:
@@ -3587,30 +3586,33 @@ def binarySearch(nums, target):
     return -1
 
 # 最左边界, right = mid，返回left
-def binarySearch(nums, target):
+def binarySearchLeft(nums, target):
     if len(nums) == 0: return -1
-    left, right = 0, len(nums) # 注意
-    while(left &lt; right): # 注意
+    left, right = 0, len(nums) - 1 
+    while(left &lt;= right): 
         mid = left + (right - left) // 2
         if nums[mid] &gt;= target:
-            right = mid # 注意
-        elif nums[mid] &lt; target:
+            right = mid - 1
+        else: 
             left = mid + 1
+    if left &gt;= len(nums) or nums[left] != target:
+        return -1
     return left
 
 # 最右边界，
-def binarySearch(nums, target):
+def binarySearchRight(nums, target):
     if len(nums) == 0: return -1
-    left, right = 0, len(nums) # 注意
-    while(left &lt; right): # 注意
+    left, right = 0, len(nums) - 1 
+    while (left &lt;= right):
         mid = left + (right - left) // 2
-        if nums[mid] == target:
-            left = mid + 1 # 注意
-        elif nums[mid] &lt; target:
+        if nums[mid] &lt;= target:
             left = mid + 1
-        elif nums[mid] &gt; target:
-            right = mid # 注意
-    return left - 1
+        else:
+            right = mid - 1
+    if right &lt; 0 or nums[right] != target:
+        return -1
+    return right
+
 
 </code></pre>
 <h3 id="a-name-p33-a-LC-33-搜索旋转排序数组"><a name="p33"></a> <a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/" target="_blank" rel="noopener">LC-33 搜索旋转排序数组</a></h3>
