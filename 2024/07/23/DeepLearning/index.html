@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="SciAes">
 <meta property="og:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2024-08-12T17:03:51.995Z">
+<meta property="og:updated_time" content="2024-09-08T16:13:39.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning">
 <meta name="twitter:description" content="FM class FactorizationMachine(tf.keras.Model):     def __init__(self, num_features, embedding_size):         super(FactorizationMachine, self).__init__()         self.num_features = num_features">
@@ -610,6 +610,62 @@ res = tf.expand_dims(out2, axis = -1) * input
         grad_list.append(grad_processing(concat_grad, embedding_size, rv_feas_len))
     return grad_list
 </code></pre>
+<h2 id="计算auc">计算auc</h2>
+<pre><code class="language-python">import numpy as np
+from sklearn.metrics import roc_auc_score
+# python sklearn包计算auc
+def get_auc(y_labels, y_scores):
+    auc = roc_auc_score(y_labels, y_scores)
+    print('AUC calculated by sklearn tool is {}'.format(auc))
+    return auc
+# 方法1计算auc
+def calcAUC_byProb(labels, probs):
+    N = 0           # 正样本数量
+    P = 0           # 负样本数量
+    neg_prob = []   # 负样本的预测值
+    pos_prob = []   # 正样本的预测值
+    for index, label in enumerate(labels):
+        if label == 1:
+            # 正样本数++
+            P += 1
+            # 把其对应的预测值加到“正样本预测值”列表中
+            pos_prob.append(probs[index])
+        else:
+            # 负样本数++
+            N += 1
+            # 把其对应的预测值加到“负样本预测值”列表中
+            neg_prob.append(probs[index])
+    number = 0
+    # 遍历正负样本间的两两组合
+    for pos in pos_prob:
+        for neg in neg_prob:
+            # 如果正样本预测值&gt;负样本预测值，正序对数+1
+            if (pos &gt; neg):
+                number += 1
+            # 如果正样本预测值==负样本预测值，算0.5个正序对
+            elif (pos == neg):
+                number += 0.5
+    return number / (N * P)
+
+# 方法2计算auc, 当预测分相同时，未按照定义使用排序值的均值，而是直接使用排序值，当数据量大时，对auc影响小
+def calculate_auc_func2(y_labels, y_scores):
+    samples = list(zip(y_scores, y_labels))
+    rank = [(values2, values1) for values1, values2 in sorted(samples, key=lambda x:x[0])]
+    pos_rank = [i+1 for i in range(len(rank)) if rank[i][0] == 1]
+    pos_cnt = np.sum(y_labels == 1)
+    neg_cnt = np.sum(y_labels == 0)
+    auc = (np.sum(pos_rank) - pos_cnt*(pos_cnt+1)/2) / (pos_cnt*neg_cnt)
+    print('AUC calculated by function2 is {:.2f}'.format(auc))
+    return auc
+
+
+if __name__ == '__main__':
+    y_labels = np.array([1, 1, 0, 0, 0])
+    y_scores = np.array([0.4, 0.8, 0.2, 0.4, 0.5])
+    get_auc(y_labels, y_scores)
+    calculate_auc_func1(y_labels, y_scores)
+    calculate_auc_func2(y_labels, y_scores)
+</code></pre>
 
       
     </div>
@@ -797,7 +853,7 @@ res = tf.expand_dims(out2, axis = -1) * input
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FM"><span class="nav-number">1.</span> <span class="nav-text">FM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MHA"><span class="nav-number">2.</span> <span class="nav-text">MHA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIN-简单"><span class="nav-number">3.</span> <span class="nav-text">DIN 简单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIN"><span class="nav-number">4.</span> <span class="nav-text">DIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MMOE"><span class="nav-number">5.</span> <span class="nav-text">MMOE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Senet"><span class="nav-number">6.</span> <span class="nav-text">Senet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度"><span class="nav-number">7.</span> <span class="nav-text">梯度</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FM"><span class="nav-number">1.</span> <span class="nav-text">FM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MHA"><span class="nav-number">2.</span> <span class="nav-text">MHA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIN-简单"><span class="nav-number">3.</span> <span class="nav-text">DIN 简单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIN"><span class="nav-number">4.</span> <span class="nav-text">DIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MMOE"><span class="nav-number">5.</span> <span class="nav-text">MMOE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Senet"><span class="nav-number">6.</span> <span class="nav-text">Senet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度"><span class="nav-number">7.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算auc"><span class="nav-number">8.</span> <span class="nav-text">计算auc</span></a></li></ol></div>
             
 
           </div>
